@@ -1,0 +1,86 @@
+---
+/**
+ * Forum index — lists scraped forum topics from src/content/forum/index.json.
+ * Shows an empty state when no content has been scraped yet.
+ */
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+const forumIndexPath = join(process.cwd(), "src/content/forum/index.json");
+
+interface ForumTopic {
+  title: string;
+  url: string;
+  board: string;
+  post_count: number;
+}
+
+interface ForumBoard {
+  id: number;
+  name: string;
+  label: string;
+}
+
+let topics: ForumTopic[] = [];
+let boards: ForumBoard[] = [];
+let scrapedAt = "";
+
+try {
+  const raw = await readFile(forumIndexPath, "utf-8");
+  const data = JSON.parse(raw);
+  topics = Array.isArray(data.topics) ? data.topics : [];
+  boards = Array.isArray(data.boards) ? data.boards : [];
+  scrapedAt = typeof data.scraped_at === "string" ? data.scraped_at : "";
+} catch {
+  // No index.json yet — fall through to the empty state below.
+}
+
+const boardLabels = new Map(boards.map((b) => [b.name, b.label]));
+const boardName = (name: string): string => boardLabels.get(name) ?? name;
+---
+
+<BaseLayout
+  title="论坛"
+  description="devkitPro 社区论坛镜像 — 获取帮助、分享项目、参与讨论"
+  originalPath="/forum/"
+>
+  <div class="page-header">
+    <h1>社区论坛</h1>
+    <p>devkitPro 用户论坛的帖子快照，涵盖公告、综合讨论、开发讨论与帮助支持。</p>
+    {scrapedAt && (
+      <p class="page-header__meta">最近同步：{new Date(scrapedAt).toLocaleString()}</p>
+    )}
+  </div>
+
+  {topics.length > 0 ? (
+    <ul class="forum-list">
+      {topics.map((topic) => (
+        <li class="forum-list__item">
+          <a href={topic.url} target="_blank" rel="noopener">
+            {topic.title}
+          </a>
+          <span class="forum-list__meta">
+            {boardName(topic.board)} · {topic.post_count} 条回复
+          </span>
+        </li>
+      ))}
+    </ul>
+  ) : (
+    <div class="empty-state">
+      <div class="empty-state__icon" aria-hidden="true">&#128172;</div>
+      <h2 class="empty-state__title">内容待抓取</h2>
+      <p class="empty-state__desc">
+        论坛内容尚未抓取。请运行
+        <code>npm run scrape:forum</code>
+        来同步原始站点的帖子快照。
+      </p>
+      <p class="empty-state__desc">
+        论坛发布需登录原始站点：
+        <a href="https://devkitpro.org/forum/" target="_blank" rel="noopener">
+          devkitpro.org/forum
+        </a>
+      </p>
+    </div>
+  )}
+</BaseLayout>

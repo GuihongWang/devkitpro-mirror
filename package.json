@@ -1,0 +1,42 @@
+{
+  "name": "devkitpro-mirror",
+  "type": "module",
+  "version": "0.1.0",
+  "description": "DevkitPro community mirror — wiki, forums, docs, packages, and APT repository",
+  "scripts": {
+    "dev": "astro dev --host",
+    "start": "astro dev --host",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "lint": "eslint .",
+    "format": "prettier --write \"src/**/*.{ts,astro,md}\"",
+    "scrape": "node scripts/build-static.mjs",
+    "scrape:packages": "node scripts/scrapers/packages-scraper.mjs",
+    "scrape:wiki": "node scripts/scrapers/wiki-scraper.mjs",
+    "scrape:forum": "node scripts/scrapers/forum-scraper.mjs",
+    "scrape:docs": "node scripts/scrapers/docs-scraper.mjs",
+    "scrape:all": "node scripts/build-static.mjs"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.4.0",
+    "@astrojs/vercel": "^8.1.0",
+    "@vercel/edge": "^1.1.0",
+    "astro": "^5.12.0",
+    "p-limit": "^7.3.1",
+    "sharp": "^0.33.0",
+    "turndown": "^7.2.4"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@types/node": "^22.0.0",
+    "eslint": "^9.0.0",
+    "prettier": "^3.4.0",
+    "prettier-plugin-astro": "^0.14.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": ["esbuild", "sharp"]
+  }
+}

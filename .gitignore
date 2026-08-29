@@ -1,0 +1,49 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+yarn.lock
+
+# Build output
+dist/
+.astro/
+
+# Vercel
+.vercel/
+.vercel/output/
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# TypeScript
+*.tsbuildinfo
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Scraped data (regenerable)
+src/content/packages/data.json
+src/content/packages/*.local.json
+scripts/scrapers/.cache/

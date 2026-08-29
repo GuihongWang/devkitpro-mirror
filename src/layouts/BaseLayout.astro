@@ -1,0 +1,63 @@
+---
+/**
+ * BaseLayout — root HTML shell for every page.
+ *
+ * Props:
+ *   title         – page title (<title> tag)
+ *   description   – meta description
+ *   originalPath  – canonical path on devkitpro.org (e.g. "/wiki/Main_Page")
+ */
+
+import MirrorBanner from "@components/MirrorBanner.astro";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+import { getCanonicalUrl, getRobotsMeta } from "@lib/seo";
+import "@styles/global.css";
+
+interface Props {
+  title: string;
+  description?: string;
+  originalPath?: string;
+}
+
+const {
+  title,
+  description = "devkitPro 社区镜像站 — Wiki、文档、软件包、APT 仓库的加速访问",
+  originalPath = "/",
+} = Astro.props;
+
+const canonicalUrl = getCanonicalUrl(originalPath);
+const robots = getRobotsMeta(true);
+const siteTitle = "devkitPro Mirror";
+const fullTitle = title === "首页" ? siteTitle : `${title} — ${siteTitle}`;
+---
+
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content={robots} />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="theme-color" content="#0d1117" />
+  </head>
+  <body>
+    <MirrorBanner />
+    <Header currentPath={Astro.url.pathname} />
+
+    <main class="site-main">
+      <div class="container">
+        <slot />
+      </div>
+    </main>
+
+    <Footer />
+  </body>
+</html>

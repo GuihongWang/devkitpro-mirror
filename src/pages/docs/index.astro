@@ -1,0 +1,55 @@
+---
+/**
+ * Docs index — library documentation landing page.
+ */
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+const libraries = [
+  {
+    icon: "\uD83E\uDD16",
+    name: "libnds",
+    desc: "Nintendo DS 核心库，提供图形、输入、音频等硬件接口。",
+    href: "/docs/libnds/",
+  },
+  {
+    icon: "\uD83C\uDFB5",
+    name: "maxmod",
+    desc: "音频播放库，支持 MOD、S3M、XM 等格式。",
+    href: "/docs/maxmod/",
+  },
+];
+---
+
+<BaseLayout
+  title="文档"
+  description="devkitPro 库文档镜像 — libnds、maxmod 等 API 参考"
+  originalPath="/docs/"
+>
+  <div class="page-header">
+    <h1>库文档</h1>
+    <p>
+      以下文档自动镜像自
+      <a href="https://devkitpro.org" target="_blank" rel="noopener">devkitPro.org</a>，
+      提供各核心库的 API 参考信息。
+    </p>
+  </div>
+
+  <div class="cards-grid">
+    {libraries.map((lib) => (
+      <a href={lib.href} class="card">
+        <span class="card__icon" aria-hidden="true">{lib.icon}</span>
+        <span class="card__title">{lib.name}</span>
+        <span class="card__desc">{lib.desc}</span>
+      </a>
+    ))}
+  </div>
+
+  <div class="info-box" style="margin-top: var(--space-xl);">
+    <p class="info-box__title">&#128221; 文档说明</p>
+    <p class="info-box__text">
+      本文档内容自动同步自原始站点，如有版本差异请以
+      <a href="https://devkitpro.org" target="_blank" rel="noopener">官方文档</a>
+      为准。
+    </p>
+  </div>
+</BaseLayout>

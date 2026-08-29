@@ -1,0 +1,75 @@
+---
+/**
+ * Homepage — overview cards linking to each section.
+ */
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+const sections = [
+  {
+    icon: "\uD83D\uDCDA",
+    href: "/wiki/",
+    title: "Wiki 文档",
+    desc: "devkitPro 生态系统的 Wiki 知识库，涵盖安装指南、使用教程、硬件信息等。",
+    badge: "Wiki 知识库",
+  },
+  {
+    icon: "\uD83D\uDCD6",
+    href: "/docs/",
+    title: "API 文档",
+    desc: "libnds、maxmod 等核心库的 API 参考文档，自动镜像自原始站点。",
+    badge: "API Reference",
+  },
+  {
+    icon: "\uD83D\uDC65",
+    href: "/forum/",
+    title: "社区论坛",
+    desc: "devkitPro 用户论坛，获取帮助、分享项目、参与讨论。",
+    badge: "Community Forum",
+  },
+  {
+    icon: "\uD83D\uDCE6",
+    href: "/packages/",
+    title: "软件包仓库",
+    desc: "devkitPro 发行的所有工具链、库和工具的软件包索引。",
+    badge: "Package Index",
+  },
+  {
+    icon: "\u2699\uFE0F",
+    href: "/apt/",
+    title: "APT 仓库",
+    desc: "通过 dkp-pacman 或 APT 访问的软件包仓库信息与配置说明。",
+    badge: "APT Repository",
+  },
+];
+---
+
+<BaseLayout title="首页" originalPath="/">
+  <div class="page-header">
+    <h1>devkitPro Mirror</h1>
+    <p>
+      本镜像站提供 devkitPro 官方资源的加速访问，包括 Wiki、API 文档、
+      软件包仓库和社区论坛。
+    </p>
+  </div>
+
+  <div class="info-box info-box--notice">
+    <p class="info-box__title">&#128161; 关于本站</p>
+    <p class="info-box__text">
+      这是一个<strong>非官方的社区镜像站</strong>，内容自动同步自
+      <a href="https://devkitpro.org" target="_blank" rel="noopener">devkitPro.org</a>。
+      如果遇到问题，请优先访问
+      <a href="https://devkitpro.org" target="_blank" rel="noopener">官方网站</a>。
+    </p>
+  </div>
+
+  <div class="cards-grid">
+    {sections.map((s) => (
+      <a href={s.href} class="card">
+        <span class="card__icon" aria-hidden="true">{s.icon}</span>
+        <span class="card__title">{s.title}</span>
+        <span class="card__desc">{s.desc}</span>
+        <span class="card__badge">{s.badge}</span>
+      </a>
+    ))}
+  </div>
+</BaseLayout>

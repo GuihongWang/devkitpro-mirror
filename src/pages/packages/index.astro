@@ -1,0 +1,95 @@
+---
+/**
+ * Packages index — lists available packages from src/content/packages/index.json.
+ * Shows an empty state with dkp-pacman configuration notes when no data exists.
+ */
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+const packagesIndexPath = join(process.cwd(), "src/content/packages/index.json");
+
+interface PackageEntry {
+  name: string;
+  architectures: string[];
+  versions: Record<string, string>;
+}
+
+let packages: PackageEntry[] = [];
+let uniqueCount = 0;
+let scrapedAt = "";
+
+try {
+  const raw = await readFile(packagesIndexPath, "utf-8");
+  const data = JSON.parse(raw);
+  packages = Array.isArray(data.packages) ? data.packages : [];
+  uniqueCount = typeof data.unique_packages === "number" ? data.unique_packages : packages.length;
+  scrapedAt = typeof data.scraped_at === "string" ? data.scraped_at : "";
+} catch {
+  // No index.json yet — fall through to the empty state below.
+}
+
+const starredPackage = (name: string): string =>
+  /^lib/.test(name) ? "\u2605 " : "";
+---
+
+<BaseLayout
+  title="软件包"
+  description="devkitPro 软件包索引 — 通过 dkp-pacman 安装的工具链、库和工具"
+  originalPath="/packages/"
+>
+  <div class="page-header">
+    <h1>软件包仓库</h1>
+    <p>
+      devkitPro 发行的所有工具链、库和工具的软件包索引，可通过
+      <code>dkp-pacman</code> 安装。
+    </p>
+  </div>
+
+  {scrapedAt && (
+    <div class="info-box" style="margin-bottom: var(--space-lg);">
+      <p class="info-box__title">&#128230; 安装说明</p>
+      <p class="info-box__text">
+        当前索引包含 <strong>{uniqueCount}</strong> 个软件包（最近同步于{" "}
+        {new Date(scrapedAt).toLocaleString()}）。在支持 dkp-pacman 的环境中执行：
+      </p>
+      <pre class="packages-config"><code>Server = https://pkg.devkitpro.org/packages</code></pre>
+    </div>
+  )}
+
+  {packages.length > 0 ? (
+    <table class="packages-table">
+      <thead>
+        <tr>
+          <th>软件包</th>
+          <th>架构</th>
+          <th>最新版本</th>
+        </tr>
+      </thead>
+      <tbody>
+        {packages.map((pkg) => (
+          <tr>
+            <td>{starredPackage(pkg.name)}{pkg.name}</td>
+            <td>{pkg.architectures.join(", ")}</td>
+            <td>{Object.values(pkg.versions)[0] ?? "—"}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  ) : (
+    <div class="empty-state">
+      <div class="empty-state__icon" aria-hidden="true">&#128230;</div>
+      <h2 class="empty-state__title">内容待抓取</h2>
+      <p class="empty-state__desc">
+        软件包索引尚未抓取。请运行
+        <code>npm run scrape:packages</code>
+        来同步包索引。
+      </p>
+      <p class="empty-state__desc">
+        在配置了 {`dkp-pacman`} 的环境中，将以下行添加到
+        <code>/etc/pacman.conf</code>：
+      </p>
+      <pre class="packages-config"><code>Server = https://pkg.devkitpro.org/packages</code></pre>
+    </div>
+  )}
+</BaseLayout>

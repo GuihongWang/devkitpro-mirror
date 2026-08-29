@@ -1,0 +1,69 @@
+---
+/**
+ * Wiki article — renders a single scraped wiki page.
+ *
+ * The `[...slug]` catch-all matches any path under /wiki/.
+ * Static routes are generated only for entries that exist in the wiki
+ * collection; unmatched slugs fall through to the 404 page.
+ */
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+interface WikiPage {
+  id: string;
+  data: {
+    title: string;
+    original_url?: string;
+    scraped_at?: string;
+  };
+  render: () => Promise<{ Content: any }>;
+}
+
+export async function getStaticPaths() {
+  // Cast required: with zero .md files in src/content/wiki, the inferred entry
+  // type degenerates to `never`, so we describe the runtime shape explicitly.
+  const wikiPages = (await getCollection("wiki")) as unknown as WikiPage[];
+  return wikiPages.map((page) => ({
+    params: { slug: page.id },
+    props: { page },
+  }));
+}
+
+const { page } = Astro.props;
+const { Content } = await page.render();
+
+const originalUrl = page.data.original_url;
+
+let originalPath = `/wiki/${page.id}`;
+if (originalUrl) {
+  try {
+    originalPath = new URL(originalUrl).pathname;
+  } catch {
+    // Keep the local path when original_url is not a valid URL.
+  }
+}
+---
+
+<BaseLayout
+  title={page.data.title}
+  description={`devkitPro Wiki — ${page.data.title}`}
+  originalPath={originalPath}
+>
+  <article class="wiki-article">
+    <header class="page-header">
+      <h1>{page.data.title}</h1>
+      {originalUrl && (
+        <p class="wiki-original">
+          原始链接：
+          <a href={originalUrl} target="_blank" rel="noopener">
+            devkitpro.org
+          </a>
+        </p>
+      )}
+    </header>
+
+    <div class="wiki-content">
+      <Content />
+    </div>
+  </article>
+</BaseLayout>

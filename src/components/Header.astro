@@ -1,0 +1,71 @@
+---
+/**
+ * Header — site navigation bar.
+ * Responsive: collapses into hamburger on mobile.
+ */
+
+interface Props {
+  currentPath?: string;
+}
+
+const { currentPath = "/" } = Astro.props;
+
+const navItems = [
+  { href: "/",           label: "首页" },
+  { href: "/wiki/",      label: "Wiki" },
+  { href: "/docs/",      label: "文档" },
+  { href: "/packages/",  label: "软件包" },
+  { href: "/forum/",     label: "论坛" },
+];
+
+function isActive(href: string): boolean {
+  if (href === "/") return currentPath === "/";
+  return currentPath.startsWith(href);
+}
+---
+
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="site-logo">
+      <span class="site-logo__icon" aria-hidden="true">dP</span>
+      <span>devkitPro Mirror</span>
+    </a>
+
+    <button class="nav-toggle" aria-label="切换导航菜单" aria-expanded="false">
+      &#9776;
+    </button>
+
+    <nav class="site-nav" aria-label="主导航">
+      {navItems.map((item) => (
+        <a
+          href={item.href}
+          aria-current={isActive(item.href) ? "page" : undefined}
+        >
+          {item.label}
+        </a>
+      ))}
+    </nav>
+  </div>
+</header>
+
+<script>
+  /* Lightweight toggle — no framework needed */
+  document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.querySelector(".nav-toggle");
+    const nav = document.querySelector(".site-nav");
+    if (!btn || !nav) return;
+
+    btn.addEventListener("click", () => {
+      const open = nav.classList.toggle("is-open");
+      btn.setAttribute("aria-expanded", String(open));
+    });
+
+    // Close on link click (mobile)
+    nav.querySelectorAll("a").forEach((a) => {
+      a.addEventListener("click", () => {
+        nav.classList.remove("is-open");
+        btn.setAttribute("aria-expanded", "false");
+      });
+    });
+  });
+</script>

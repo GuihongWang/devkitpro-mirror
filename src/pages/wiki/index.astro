@@ -1,0 +1,46 @@
+---
+/**
+ * Wiki index — lists available wiki pages from src/content/wiki/.
+ * Falls back to an empty state if no content has been scraped yet.
+ */
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+const wikiPages = await getCollection("wiki");
+const sorted = [...wikiPages].sort((a, b) =>
+  a.data.title.localeCompare(b.data.title),
+);
+---
+
+<BaseLayout
+  title="Wiki"
+  description="devkitPro Wiki 知识库镜像 — 安装指南、使用教程、硬件信息"
+  originalPath="/wiki/Main_Page"
+>
+  <div class="page-header">
+    <h1>Wiki 文档</h1>
+    <p>devkitPro 生态系统的 Wiki 知识库，涵盖安装指南、使用教程和硬件信息。</p>
+  </div>
+
+  {sorted.length > 0 ? (
+    <ul class="wiki-list">
+      {sorted.map((page) => (
+        <li class="wiki-list__item">
+          <a href={`/wiki/${page.id}/`}>
+            {page.data.title}
+          </a>
+        </li>
+      ))}
+    </ul>
+  ) : (
+    <div class="empty-state">
+      <div class="empty-state__icon" aria-hidden="true">&#128214;</div>
+      <h2 class="empty-state__title">内容待抓取</h2>
+      <p class="empty-state__desc">
+        Wiki 内容尚未抓取。请运行
+        <code>npm run scrape:wiki</code>
+        来同步原始站点的 Wiki 页面。
+      </p>
+    </div>
+  )}
+</BaseLayout>
