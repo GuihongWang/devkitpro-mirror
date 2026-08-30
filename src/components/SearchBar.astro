@@ -1,0 +1,267 @@
+---
+/**
+ * SearchBar — client-side site search over the build-time search index.
+ *
+ * Lazy-loads /search-index.json, filters by title + excerpt (case-insensitive
+ * substring match, title matches ranked first) and shows an inline dropdown.
+ * Pure vanilla JS — no search library, no framework.
+ *
+ * Keyboard: ↑ / ↓ select, Enter jump, Esc close.
+ * No-JS: a hint links to the wiki index instead.
+ *
+ * Props:
+ *   size — "header" (compact, for the navbar) | "hero" (large, for content pages)
+ */
+
+interface Props {
+  size?: "header" | "hero";
+}
+
+const { size = "header" } = Astro.props;
+---
+
+<div
+  class="search"
+  class:list={[`search--${size}`]}
+  data-search
+>
+  <label class="sr-only" for={`search-input-${size}`}>搜索站点内容</label>
+  <div class="search__input-wrap">
+    <svg
+      class="search__icon"
+      viewBox="0 0 16 16"
+      width="14"
+      height="14"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="1.6"
+      stroke-linecap="round"
+      aria-hidden="true"
+    >
+      <circle cx="7" cy="7" r="4.5" />
+      <path d="M10.5 10.5 L14 14" />
+    </svg>
+    <input
+      id={`search-input-${size}`}
+      class="search__input"
+      type="search"
+      placeholder="搜索 Wiki…"
+      autocomplete="off"
+      spellcheck="false"
+      role="combobox"
+      aria-expanded="false"
+      aria-controls={`search-results-${size}`}
+      aria-autocomplete="list"
+      aria-label="搜索站点内容"
+    />
+    <button class="search__clear" type="button" aria-label="清空搜索" hidden>&#215;</button>
+  </div>
+  <ul class="search__results" id={`search-results-${size}`} role="listbox" hidden></ul>
+  <noscript>
+    <p class="search__noscript">
+      搜索需要启用 JavaScript。你也可以浏览
+      <a href="/wiki/">Wiki 索引</a>。
+    </p>
+  </noscript>
+</div>
+
+<script>
+  /**
+   * Handles every <SearchBar /> instance on the page. The index JSON is
+   * fetched once and cached on `window`.
+   */
+  const INDEX_URL = "/search-index.json";
+  const MAX_RESULTS = 8;
+
+  function isLoaded(): boolean {
+    return Array.isArray((window as any).__DKP_SEARCH_INDEX__);
+  }
+
+  async function loadIndex(): Promise<Array<{ title: string; slug: string; excerpt: string }>> {
+    if (!isLoaded()) {
+      const res = await fetch(INDEX_URL, { headers: { Accept: "application/json" } });
+      if (!res.ok) throw new Error(`search index: HTTP ${res.status}`);
+      (window as any).__DKP_SEARCH_INDEX__ = await res.json();
+    }
+    return (window as any).__DKP_SEARCH_INDEX__;
+  }
+
+  /** Rank: exact title start > title substring > excerpt substring. */
+  function score(item: { title: string; excerpt: string }, q: string): number {
+    const t = item.title.toLowerCase().indexOf(q);
+    const e = item.excerpt.toLowerCase().indexOf(q);
+    if (t === 0) return 200;
+    if (t > -1) return 100;
+    if (e > -1) return 20;
+    return 0;
+  }
+
+  function findMatches(
+    index: Array<{ title: string; slug: string; excerpt: string }>,
+    q: string,
+  ) {
+    return index
+      .map((item) => ({ item, s: score(item, q) }))
+      .filter((r) => r.s > 0)
+      .sort((a, b) => b.s - a.s || a.item.title.localeCompare(b.item.title))
+      .slice(0, MAX_RESULTS)
+      .map((r) => r.item);
+  }
+
+  function initSearch(root: HTMLElement): void {
+    const input = root.querySelector<HTMLInputElement>(".search__input");
+    const list = root.querySelector<HTMLUListElement>(".search__results");
+    const clear = root.querySelector<HTMLButtonElement>(".search__clear");
+    if (!input || !list || !clear) return;
+
+    let results: Array<{ title: string; slug: string; excerpt: string }> = [];
+    let activeIndex = -1;
+    let indexPromise: Promise<unknown> | null = null;
+
+    const setExpanded = (open: boolean) =>
+      input.setAttribute("aria-expanded", String(open));
+
+    const setActive = (i: number) => {
+      activeIndex = i;
+      Array.from(list.children).forEach((child, idx) => {
+        child.classList.toggle("search__result--active", idx === i);
+        child.setAttribute("aria-selected", String(idx === i));
+      });
+      const active = list.children[Math.max(0, activeIndex)];
+      if (active && "scrollIntoView" in active) {
+        (active as HTMLElement).scrollIntoView({ block: "nearest" });
+      }
+    };
+
+    const render = (items: Array<{ title: string; slug: string; excerpt: string }>) => {
+      list.innerHTML = "";
+      results = items;
+      if (items.length === 0) {
+        const li = document.createElement("li");
+        li.className = "search__empty";
+        li.textContent = "未找到相关内容";
+        list.appendChild(li);
+        input.setAttribute("aria-expanded", "true");
+        list.hidden = false;
+        return;
+      }
+      activeIndex = 0;
+      items.forEach((item) => {
+        const li = document.createElement("li");
+        li.className = "search__result";
+        li.setAttribute("role", "option");
+        li.setAttribute("aria-selected", "false");
+        const a = document.createElement("a");
+        a.className = "search__result-link";
+        a.href = item.slug;
+        const title = document.createElement("span");
+        title.className = "search__result-title";
+        title.textContent = item.title;
+        const excerpt = document.createElement("span");
+        excerpt.className = "search__result-excerpt";
+        excerpt.textContent = item.excerpt;
+        a.append(title, excerpt);
+        li.appendChild(a);
+        li.addEventListener("mousemove", () => setActive(items.indexOf(item)));
+        list.appendChild(li);
+      });
+      setActive(0);
+      input.setAttribute("aria-expanded", "true");
+      list.hidden = false;
+    };
+
+    const showError = (message: string) => {
+      list.innerHTML = "";
+      results = [];
+      const li = document.createElement("li");
+      li.className = "search__empty";
+      li.textContent = message;
+      list.appendChild(li);
+      list.hidden = false;
+      setExpanded(true);
+    };
+
+    const close = () => {
+      list.hidden = true;
+      list.innerHTML = "";
+      results = [];
+      activeIndex = -1;
+      setExpanded(false);
+    };
+
+    const runSearch = (raw: string) => {
+      const q = raw.trim().toLowerCase();
+      if (!q) {
+        close();
+        return;
+      }
+      if (!indexPromise) {
+        indexPromise = loadIndex().catch(() => {
+          // Allow a retry on the next keystroke.
+          indexPromise = null;
+          showError("搜索索引加载失败，请稍后重试");
+          return null;
+        });
+      }
+      indexPromise.then(() => {
+        const current = input.value.trim().toLowerCase();
+        if (current !== q) return; // stale keystroke
+        if (!isLoaded()) return;
+        render(findMatches((window as any).__DKP_SEARCH_INDEX__, q));
+      });
+    };
+
+    input.addEventListener("input", () => {
+      runSearch(input.value);
+      clear.hidden = input.value.length === 0;
+    });
+
+    input.addEventListener("focus", () => {
+      if (input.value.trim()) runSearch(input.value);
+    });
+
+    input.addEventListener("keydown", (event) => {
+      switch (event.key) {
+        case "ArrowDown":
+          event.preventDefault();
+          if (results.length && activeIndex < results.length - 1) setActive(activeIndex + 1);
+          break;
+        case "ArrowUp":
+          event.preventDefault();
+          if (results.length && activeIndex > 0) setActive(activeIndex - 1);
+          break;
+        case "Enter": {
+          if (!results.length) return;
+          event.preventDefault();
+          const target = results[Math.max(0, activeIndex)];
+          if (target) window.location.assign(target.slug);
+          break;
+        }
+        case "Escape":
+          event.preventDefault();
+          close();
+          input.blur();
+          break;
+      }
+    });
+
+    clear.addEventListener("click", () => {
+      input.value = "";
+      clear.hidden = true;
+      close();
+      input.focus();
+    });
+
+    // Keep focus inside the input while clicking a result dropdown item.
+    list.addEventListener("mousedown", (event) => event.preventDefault());
+
+    // Clicking outside closes the dropdown.
+    document.addEventListener("click", (event) => {
+      if (!(event.target as Node).isConnected) return;
+      if (root.contains(event.target as Node)) return;
+      close();
+    });
+  }
+
+  document.querySelectorAll("[data-search]").forEach((root) => initSearch(root as HTMLElement));
+</script>

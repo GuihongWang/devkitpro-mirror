@@ -18,7 +18,7 @@ export default defineConfig({
 
   integrations: [
     sitemap({
-      filter: (page) => !page.includes("/api/"),
+      filter: (page) => !page.includes("/api/") && !page.endsWith(".json"),
       lastmod: new Date(),
       changefreq: "weekly",
       priority: 0.7,

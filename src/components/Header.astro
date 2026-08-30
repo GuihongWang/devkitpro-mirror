@@ -4,6 +4,8 @@
  * Responsive: collapses into hamburger on mobile.
  */
 
+import SearchBar from "@components/SearchBar.astro";
+
 interface Props {
   currentPath?: string;
 }
@@ -30,6 +32,8 @@ function isActive(href: string): boolean {
       <span class="site-logo__icon" aria-hidden="true">dP</span>
       <span>devkitPro Mirror</span>
     </a>
+
+    <SearchBar />
 
     <button class="nav-toggle" aria-label="切换导航菜单" aria-expanded="false">
       &#9776;

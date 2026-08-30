@@ -4,6 +4,7 @@
  * Falls back to an empty state if no content has been scraped yet.
  */
 import BaseLayout from "@layouts/BaseLayout.astro";
+import SearchBar from "@components/SearchBar.astro";
 import { getCollection } from "astro:content";
 
 const wikiPages = await getCollection("wiki");
@@ -20,6 +21,10 @@ const sorted = [...wikiPages].sort((a, b) =>
   <div class="page-header">
     <h1>Wiki 文档</h1>
     <p>devkitPro 生态系统的 Wiki 知识库，涵盖安装指南、使用教程和硬件信息。</p>
+    {sorted.length > 0 && (
+      <p class="page-header__meta">共 {sorted.length} 个页面，输入关键词可快速搜索。</p>
+    )}
+    <SearchBar size="hero" />
   </div>
 
   {sorted.length > 0 ? (

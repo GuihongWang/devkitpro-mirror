@@ -14,6 +14,9 @@ on:
         type: boolean
         default: false
 
+permissions:
+  contents: write
+
 jobs:
   scrape:
     name: Scrape devkitPro content
@@ -25,10 +28,10 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Setup Node.js 20
+      - name: Setup Node.js 24
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
@@ -75,4 +78,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git commit -m "chore: update content cache [$(date -u +%Y-%m-%d)]"
-          git push
+          git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/GuihongWang/devkitpro-mirror.git
+          git push origin main

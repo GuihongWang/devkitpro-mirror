@@ -6,6 +6,7 @@
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import BaseLayout from "@layouts/BaseLayout.astro";
+import { OFFICIAL_PACKAGE_SERVER, PACKAGE_MIRROR_SERVER } from "@lib/site";
 
 const packagesIndexPath = join(process.cwd(), "src/content/packages/index.json");
 
@@ -51,9 +52,14 @@ const starredPackage = (name: string): string =>
       <p class="info-box__title">&#128230; 安装说明</p>
       <p class="info-box__text">
         当前索引包含 <strong>{uniqueCount}</strong> 个软件包（最近同步于{" "}
-        {new Date(scrapedAt).toLocaleString()}）。在支持 dkp-pacman 的环境中执行：
+        {new Date(scrapedAt).toLocaleString()}）。在支持 dkp-pacman 的环境中，将以下行添加到
+        <code>/etc/pacman.conf</code>（或更新已存在的 Server 行）：
       </p>
-      <pre class="packages-config"><code>Server = https://pkg.devkitpro.org/packages</code></pre>
+      <pre class="packages-config"><code>Server = {PACKAGE_MIRROR_SERVER}
+# 备选（官方源）：Server = {OFFICIAL_PACKAGE_SERVER}</code></pre>
+      <p class="info-box__text">
+        镜像站的反向代理为社区维护，可能不稳定；若同步失败请改用官方源地址。
+      </p>
     </div>
   )}
 
@@ -89,7 +95,8 @@ const starredPackage = (name: string): string =>
         在配置了 {`dkp-pacman`} 的环境中，将以下行添加到
         <code>/etc/pacman.conf</code>：
       </p>
-      <pre class="packages-config"><code>Server = https://pkg.devkitpro.org/packages</code></pre>
+      <pre class="packages-config"><code>Server = {PACKAGE_MIRROR_SERVER}
+# 备选（官方源）：Server = {OFFICIAL_PACKAGE_SERVER}</code></pre>
     </div>
   )}
 </BaseLayout>
