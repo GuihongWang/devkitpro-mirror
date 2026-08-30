@@ -12,6 +12,9 @@
     "lint": "eslint .",
     "format": "prettier --write \"src/**/*.{ts,astro,md}\"",
     "scrape": "node scripts/build-static.mjs",
+    "scrape:force": "node scripts/build-static.mjs --force",
+    "scrape:dry-run": "node scripts/build-static.mjs --dry-run",
+    "scrape:check": "node scripts/build-static.mjs --check-only",
     "scrape:packages": "node scripts/scrapers/packages-scraper.mjs",
     "scrape:wiki": "node scripts/scrapers/wiki-scraper.mjs",
     "scrape:forum": "node scripts/scrapers/forum-scraper.mjs",
@@ -25,12 +28,14 @@
     "astro": "^5.12.0",
     "p-limit": "^7.3.1",
     "sharp": "^0.33.0",
-    "turndown": "^7.2.4"
+    "turndown": "^7.2.4",
+    "undici": "^8.10.0"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.4",
     "@types/node": "^22.0.0",
     "eslint": "^9.0.0",
+    "playwright": "^1.62.1",
     "prettier": "^3.4.0",
     "prettier-plugin-astro": "^0.14.0",
     "tsx": "^4.19.0",

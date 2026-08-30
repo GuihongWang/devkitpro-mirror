@@ -47,3 +47,5 @@ temp/
 src/content/packages/data.json
 src/content/packages/*.local.json
 scripts/scrapers/.cache/
+
+.vercel

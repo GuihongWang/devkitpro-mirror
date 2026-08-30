@@ -7,30 +7,22 @@
  * collection; unmatched slugs fall through to the 404 page.
  */
 import BaseLayout from "@layouts/BaseLayout.astro";
-import { getCollection } from "astro:content";
+import { getCollection, render } from "astro:content";
+import type { CollectionEntry } from "astro:content";
 
-interface WikiPage {
-  id: string;
-  data: {
-    title: string;
-    original_url?: string;
-    scraped_at?: string;
-  };
-  render: () => Promise<{ Content: any }>;
-}
+type WikiEntry = CollectionEntry<"wiki">;
 
 export async function getStaticPaths() {
-  // Cast required: with zero .md files in src/content/wiki, the inferred entry
-  // type degenerates to `never`, so we describe the runtime shape explicitly.
-  const wikiPages = (await getCollection("wiki")) as unknown as WikiPage[];
+  const wikiPages = (await getCollection("wiki")) as WikiEntry[];
   return wikiPages.map((page) => ({
     params: { slug: page.id },
     props: { page },
   }));
 }
 
-const { page } = Astro.props;
-const { Content } = await page.render();
+const { page } = Astro.props as { page: WikiEntry };
+// Astro 5 content layer 的渲染 API：render(entry) 基于条目中预渲染的 html 生成 Content
+const { Content } = await render(page);
 
 const originalUrl = page.data.original_url;
 

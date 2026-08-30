@@ -3,30 +3,20 @@ name: Manual Scrape
 on:
   workflow_dispatch:
     inputs:
-      wiki:
-        description: "Scrape wiki content"
+      force:
+        description: "Force full scrape (ignore cache policy)"
         required: false
         type: boolean
         default: false
-      forum:
-        description: "Scrape forum content"
-        required: false
-        type: boolean
-        default: false
-      docs:
-        description: "Scrape documentation"
-        required: false
-        type: boolean
-        default: false
-      packages:
-        description: "Scrape packages list"
+      dry_run:
+        description: "Dry run (show decisions, do not scrape or save state)"
         required: false
         type: boolean
         default: false
 
 jobs:
   scrape:
-    name: Run selected scrapers
+    name: Scrape devkitPro content
     runs-on: ubuntu-latest
 
     steps:
@@ -43,7 +33,7 @@ jobs:
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
         with:
-          version: 8
+          version: 9
 
       - name: Get pnpm store directory
         shell: bash
@@ -61,21 +51,13 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Run wiki scraper
-        if: ${{ inputs.wiki }}
-        run: pnpm run scrape:wiki || true
-
-      - name: Run forum scraper
-        if: ${{ inputs.forum }}
-        run: pnpm run scrape:forum || true
-
-      - name: Run docs scraper
-        if: ${{ inputs.docs }}
-        run: pnpm run scrape:docs || true
-
-      - name: Run packages scraper
-        if: ${{ inputs.packages }}
-        run: pnpm run scrape:packages || true
+      - name: Run scrapers
+        id: scrape
+        run: |
+          args=""
+          [ "${{ inputs.force }}" == "true" ] && args="$args --force"
+          [ "${{ inputs.dry_run }}" == "true" ] && args="$args --dry-run"
+          node scripts/build-static.mjs $args
 
       - name: Check for changes
         id: changes
@@ -92,9 +74,5 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git commit -m "chore: update scraped content [$(date -u +%Y-%m-%d)]"
+          git commit -m "chore: update content cache [$(date -u +%Y-%m-%d)]"
           git push
-
-      - name: Build verification
-        if: steps.changes.outputs.changed == 'true'
-        run: pnpm run build

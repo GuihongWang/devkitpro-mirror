@@ -34,11 +34,13 @@ const sections = [
     badge: "Package Index",
   },
   {
-    icon: "\u2699\uFE0F",
+    icon: "🛠️",
     href: "/apt/",
     title: "APT 仓库",
     desc: "通过 dkp-pacman 或 APT 访问的软件包仓库信息与配置说明。",
     badge: "APT Repository",
+    disabled: true,
+    disabledLabel: "官方源暂不可用",
   },
 ];
 ---
@@ -63,13 +65,22 @@ const sections = [
   </div>
 
   <div class="cards-grid">
-    {sections.map((s) => (
-      <a href={s.href} class="card">
-        <span class="card__icon" aria-hidden="true">{s.icon}</span>
-        <span class="card__title">{s.title}</span>
-        <span class="card__desc">{s.desc}</span>
-        <span class="card__badge">{s.badge}</span>
-      </a>
-    ))}
+    {sections.map((s) => 
+      s.disabled ? (
+        <div class="card card--disabled" aria-disabled="true">
+          <span class="card__icon" aria-hidden="true">{s.icon}</span>
+          <span class="card__title">{s.title}</span>
+          <span class="card__desc">{s.desc}</span>
+          <span class="card__badge card__badge--disabled">{s.disabledLabel}</span>
+        </div>
+      ) : (
+        <a href={s.href} class="card">
+          <span class="card__icon" aria-hidden="true">{s.icon}</span>
+          <span class="card__title">{s.title}</span>
+          <span class="card__desc">{s.desc}</span>
+          <span class="card__badge">{s.badge}</span>
+        </a>
+      )
+    )}
   </div>
 </BaseLayout>

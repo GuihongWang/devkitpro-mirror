@@ -1,0 +1,5290 @@
+{
+  "scraped_at": "2026-08-30T03:42:09.544Z",
+  "total_files": 310,
+  "unique_packages": 310,
+  "repos": [
+    {
+      "name": "dkp-libs",
+      "url": "https://pkg.devkitpro.org/packages/"
+    },
+    {
+      "name": "dkp-linux",
+      "url": "https://pkg.devkitpro.org/packages/linux/x86_64/"
+    }
+  ],
+  "packages": [
+    {
+      "name": "3ds-box2d",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.4.1-1"
+      }
+    },
+    {
+      "name": "3ds-bulletphysics",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.87-5"
+      }
+    },
+    {
+      "name": "3ds-bzip2",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.0.8-1"
+      }
+    },
+    {
+      "name": "3ds-cmake",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.5.2-1"
+      }
+    },
+    {
+      "name": "3ds-curl",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "8.4.0-1"
+      }
+    },
+    {
+      "name": "3ds-examples",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "20240917-1"
+      }
+    },
+    {
+      "name": "3ds-flac",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.3.4-1"
+      }
+    },
+    {
+      "name": "3ds-flite",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.1-2"
+      }
+    },
+    {
+      "name": "3ds-freetype",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.14.1-1"
+      }
+    },
+    {
+      "name": "3ds-giflib",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "5.1.4-3"
+      }
+    },
+    {
+      "name": "3ds-jansson",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.13-1"
+      }
+    },
+    {
+      "name": "3ds-libarchive",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "3.7.4-1"
+      }
+    },
+    {
+      "name": "3ds-libconfig",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.7.2-3"
+      }
+    },
+    {
+      "name": "3ds-libfribidi",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.0.12-1"
+      }
+    },
+    {
+      "name": "3ds-libiconv",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.17-1"
+      }
+    },
+    {
+      "name": "3ds-libid3tag",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.15.1b-2"
+      }
+    },
+    {
+      "name": "3ds-libjpeg-turbo",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "3.1.3-1"
+      }
+    },
+    {
+      "name": "3ds-libjson-c",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.16-1"
+      }
+    },
+    {
+      "name": "3ds-liblua51",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "5.1.5-1"
+      }
+    },
+    {
+      "name": "3ds-liblzma",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "5.8.2-1"
+      }
+    },
+    {
+      "name": "3ds-libmad",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.15.1b-2"
+      }
+    },
+    {
+      "name": "3ds-libmodplug",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.8.9.0-1"
+      }
+    },
+    {
+      "name": "3ds-libogg",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.3.6-1"
+      }
+    },
+    {
+      "name": "3ds-libopus",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.4-1"
+      }
+    },
+    {
+      "name": "3ds-libpng",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.6.53-1"
+      }
+    },
+    {
+      "name": "3ds-libsidplay",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.36.60-1"
+      }
+    },
+    {
+      "name": "3ds-libtheora",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.2.0alpha1-2"
+      }
+    },
+    {
+      "name": "3ds-libvorbisidec",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.2.1-3"
+      }
+    },
+    {
+      "name": "3ds-libxmp",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "4.6.0-1"
+      }
+    },
+    {
+      "name": "3ds-libzstd",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.5.5-2"
+      }
+    },
+    {
+      "name": "3ds-lz4",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.9.3-1"
+      }
+    },
+    {
+      "name": "3ds-mbedtls",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.28.8-1"
+      }
+    },
+    {
+      "name": "3ds-mikmod",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "3.3.13-1"
+      }
+    },
+    {
+      "name": "3ds-mpg123",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.31.3-3"
+      }
+    },
+    {
+      "name": "3ds-opusfile",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.11-1"
+      }
+    },
+    {
+      "name": "3ds-physfs",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "3.2.0-2"
+      }
+    },
+    {
+      "name": "3ds-pkg-config",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.28-5"
+      }
+    },
+    {
+      "name": "3ds-sdl",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.2.15-19"
+      }
+    },
+    {
+      "name": "3ds-sdl_gfx",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.0.25-2"
+      }
+    },
+    {
+      "name": "3ds-sdl_image",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.2.12-3"
+      }
+    },
+    {
+      "name": "3ds-sdl_mixer",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.2.12-9"
+      }
+    },
+    {
+      "name": "3ds-sdl_ttf",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.0.11-2"
+      }
+    },
+    {
+      "name": "3ds-tinyxml2",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "6.0.0-2"
+      }
+    },
+    {
+      "name": "3ds-wildmidi",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.4.3-2"
+      }
+    },
+    {
+      "name": "3ds-wslay",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.1.1-1"
+      }
+    },
+    {
+      "name": "3ds-yaml_cpp",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.8.0-1"
+      }
+    },
+    {
+      "name": "3ds-zlib",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.3.1-1"
+      }
+    },
+    {
+      "name": "3dslink",
+      "architectures": [
+        "x86_64"
+      ],
+      "versions": {
+        "x86_64": "0.6.3-1"
+      }
+    },
+    {
+      "name": "3dstools",
+      "architectures": [
+        "x86_64"
+      ],
+      "versions": {
+        "x86_64": "1.3.1-3"
+      }
+    },
+    {
+      "name": "armv4t-bzip2",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.0.8-1"
+      }
+    },
+    {
+      "name": "armv4t-flac",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.3.2-1"
+      }
+    },
+    {
+      "name": "armv4t-flite",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.1-2"
+      }
+    },
+    {
+      "name": "armv4t-freetype",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.13.0-1"
+      }
+    },
+    {
+      "name": "armv4t-libconfig",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.7.2-1"
+      }
+    },
+    {
+      "name": "armv4t-libexpat",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.2.5-1"
+      }
+    },
+    {
+      "name": "armv4t-libid3tag",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.15.1b-1"
+      }
+    },
+    {
+      "name": "armv4t-liblzma",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "5.8.2-1"
+      }
+    },
+    {
+      "name": "armv4t-libogg",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.3.4-1"
+      }
+    },
+    {
+      "name": "armv4t-libpng",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.6.48-1"
+      }
+    },
+    {
+      "name": "armv4t-libvorbisidec",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.2.1-1"
+      }
+    },
+    {
+      "name": "armv4t-mikmod",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "3.3.11.1-1"
+      }
+    },
+    {
+      "name": "armv4t-mpg123",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.31.3-2"
+      }
+    },
+    {
+      "name": "armv4t-pkg-config",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.28-1"
+      }
+    },
+    {
+      "name": "armv4t-zlib",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.3-1"
+      }
+    },
+    {
+      "name": "calico",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.2.0-1"
+      }
+    },
+    {
+      "name": "catnip",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.2.0-1"
+      }
+    },
+    {
+      "name": "citro2d",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.7.0-1"
+      }
+    },
+    {
+      "name": "citro3d",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.7.1-2"
+      }
+    },
+    {
+      "name": "contents-delivery-manager",
+      "architectures": [
+        "x86_64"
+      ],
+      "versions": {
+        "x86_64": "1.0.0-3"
+      }
+    },
+    {
+      "name": "default-arm7",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.8.4-4"
+      }
+    },
+    {
+      "name": "deko3d",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.5.0-1"
+      }
+    },
+    {
+      "name": "devkit-env",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.0.1-2"
+      }
+    },
+    {
+      "name": "devkitA64",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "r30-1"
+      }
+    },
+    {
+      "name": "devkita64-binutils",
+      "architectures": [
+        "x86_64"
+      ],
+      "versions": {
+        "x86_64": "2.46.0-1"
+      }
+    },
+    {
+      "name": "devkita64-cmake",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.1.3-1"
+      }
+    },
+    {
+      "name": "devkita64-gcc",
+      "architectures": [
+        "x86_64"
+      ],
+      "versions": {
+        "x86_64": "16.1.0-1"
+      }
+    },
+    {
+      "name": "devkitA64-gdb",
+      "architectures": [
+        "x86_64"
+      ],
+      "versions": {
+        "x86_64": "14.1-1"
+      }
+    },
+    {
+      "name": "devkita64-newlib",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "4.6.0.20260123-4"
+      }
+    },
+    {
+      "name": "devkita64-rules",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.1.1-1"
+      }
+    },
+    {
+      "name": "devkitARM",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "r68-1"
+      }
+    },
+    {
+      "name": "devkitarm-binutils",
+      "architectures": [
+        "x86_64"
+      ],
+      "versions": {
+        "x86_64": "2.46.0-1"
+      }
+    },
+    {
+      "name": "devkitarm-cmake",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.2.4-1"
+      }
+    },
+    {
+      "name": "devkitarm-crtls",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.2.6-1"
+      }
+    },
+    {
+      "name": "devkitarm-gcc",
+      "architectures": [
+        "x86_64"
+      ],
+      "versions": {
+        "x86_64": "16.1.0-1"
+      }
+    },
+    {
+      "name": "devkitARM-gdb",
+      "architectures": [
+        "x86_64"
+      ],
+      "versions": {
+        "x86_64": "14.1-2"
+      }
+    },
+    {
+      "name": "devkitarm-newlib",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "4.6.0.20260123-5"
+      }
+    },
+    {
+      "name": "devkitarm-rules",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.6.0-4"
+      }
+    },
+    {
+      "name": "devkitPPC",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "r50-1"
+      }
+    },
+    {
+      "name": "devkitppc-binutils",
+      "architectures": [
+        "x86_64"
+      ],
+      "versions": {
+        "x86_64": "2.46.0-1"
+      }
+    },
+    {
+      "name": "devkitppc-cmake",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.1.4-1"
+      }
+    },
+    {
+      "name": "devkitppc-crtls",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.1.0-1"
+      }
+    },
+    {
+      "name": "devkitppc-gcc",
+      "architectures": [
+        "x86_64"
+      ],
+      "versions": {
+        "x86_64": "16.1.0-1"
+      }
+    },
+    {
+      "name": "devkitPPC-gdb",
+      "architectures": [
+        "x86_64"
+      ],
+      "versions": {
+        "x86_64": "14.1-2"
+      }
+    },
+    {
+      "name": "devkitppc-mn10200-binutils",
+      "architectures": [
+        "x86_64"
+      ],
+      "versions": {
+        "x86_64": "2.24-3"
+      }
+    },
+    {
+      "name": "devkitppc-newlib",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "4.6.0.20260123-4"
+      }
+    },
+    {
+      "name": "devkitppc-rules",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.2.1-1"
+      }
+    },
+    {
+      "name": "devkitpro-keyring",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "20241017-2"
+      }
+    },
+    {
+      "name": "dkp-cmake-common-utils",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.5.3-1"
+      }
+    },
+    {
+      "name": "dkp-meson-scripts",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.1.0-1"
+      }
+    },
+    {
+      "name": "dkp-toolchain-vars",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.0.5-1"
+      }
+    },
+    {
+      "name": "dstools",
+      "architectures": [
+        "x86_64"
+      ],
+      "versions": {
+        "x86_64": "1.3.3-3"
+      }
+    },
+    {
+      "name": "dswifi",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.1.0-1"
+      }
+    },
+    {
+      "name": "gamecube-cmake",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.0.1-1"
+      }
+    },
+    {
+      "name": "gamecube-examples",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "20260125-1"
+      }
+    },
+    {
+      "name": "gamecube-freeglut",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "3.6.0-4"
+      }
+    },
+    {
+      "name": "gamecube-glu",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "9.0.3-1"
+      }
+    },
+    {
+      "name": "gamecube-opengx",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.17.0-2"
+      }
+    },
+    {
+      "name": "gamecube-physfs",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "3.2.0-3"
+      }
+    },
+    {
+      "name": "gamecube-pkg-config",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.28-5"
+      }
+    },
+    {
+      "name": "gamecube-sdl",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.2.15-21"
+      }
+    },
+    {
+      "name": "gamecube-sdl_gfx",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.0.25-3"
+      }
+    },
+    {
+      "name": "gamecube-sdl_image",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.2.12-6"
+      }
+    },
+    {
+      "name": "gamecube-sdl_mixer",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.2.12-2"
+      }
+    },
+    {
+      "name": "gamecube-sdl_ttf",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.0.11-5"
+      }
+    },
+    {
+      "name": "gamecube-sdl2",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.28.5-17"
+      }
+    },
+    {
+      "name": "gamecube-sdl2_gfx",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.0.4-4"
+      }
+    },
+    {
+      "name": "gamecube-sdl2_image",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.8.2-1"
+      }
+    },
+    {
+      "name": "gamecube-sdl2_mixer",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.6.3-2"
+      }
+    },
+    {
+      "name": "gamecube-sdl2_ttf",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.22.0-2"
+      }
+    },
+    {
+      "name": "gamecube-tools",
+      "architectures": [
+        "x86_64"
+      ],
+      "versions": {
+        "x86_64": "1.0.7-1"
+      }
+    },
+    {
+      "name": "gba-cmake",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.0.2-1"
+      }
+    },
+    {
+      "name": "gba-examples",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "20240626-1"
+      }
+    },
+    {
+      "name": "gba-pkg-config",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.28-4"
+      }
+    },
+    {
+      "name": "gba-tools",
+      "architectures": [
+        "x86_64"
+      ],
+      "versions": {
+        "x86_64": "1.2.0-1"
+      }
+    },
+    {
+      "name": "general-tools",
+      "architectures": [
+        "x86_64"
+      ],
+      "versions": {
+        "x86_64": "1.4.4-1"
+      }
+    },
+    {
+      "name": "gp2x-core",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.2.0-1"
+      }
+    },
+    {
+      "name": "gp2x-examples",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.2.1-1"
+      }
+    },
+    {
+      "name": "gp2x-pkg-config",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.29-1"
+      }
+    },
+    {
+      "name": "gp2x-tools",
+      "architectures": [
+        "x86_64"
+      ],
+      "versions": {
+        "x86_64": "1.0.1-1"
+      }
+    },
+    {
+      "name": "gp32-examples",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "20051021-2"
+      }
+    },
+    {
+      "name": "gp32-tools",
+      "architectures": [
+        "x86_64"
+      ],
+      "versions": {
+        "x86_64": "1.0.3-1"
+      }
+    },
+    {
+      "name": "grit",
+      "architectures": [
+        "x86_64"
+      ],
+      "versions": {
+        "x86_64": "0.10.0-1"
+      }
+    },
+    {
+      "name": "hactool",
+      "architectures": [
+        "x86_64"
+      ],
+      "versions": {
+        "x86_64": "1.4.0-3"
+      }
+    },
+    {
+      "name": "libctru",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.7.0-1"
+      }
+    },
+    {
+      "name": "libfat-gba",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.1.5-1"
+      }
+    },
+    {
+      "name": "libfat-gp2x",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.2.0-1"
+      }
+    },
+    {
+      "name": "libfat-nds",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.1.0-4"
+      }
+    },
+    {
+      "name": "libfat-ogc",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.1.0-4"
+      }
+    },
+    {
+      "name": "libgba",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.5.4-1"
+      }
+    },
+    {
+      "name": "libgxflux",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "20230423-3"
+      }
+    },
+    {
+      "name": "libmirko",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.9.8-1"
+      }
+    },
+    {
+      "name": "libnds",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.0.2-1"
+      }
+    },
+    {
+      "name": "libnx",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "4.12.0-1"
+      }
+    },
+    {
+      "name": "libogc",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "3.1.0-1"
+      }
+    },
+    {
+      "name": "libtonc",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.4.5-1"
+      }
+    },
+    {
+      "name": "maxmod-gba",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.0.15-1"
+      }
+    },
+    {
+      "name": "maxmod-nds",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.1.0-2"
+      }
+    },
+    {
+      "name": "mmutil",
+      "architectures": [
+        "x86_64"
+      ],
+      "versions": {
+        "x86_64": "1.10.1-1"
+      }
+    },
+    {
+      "name": "nds-bzip2",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.0.8-1"
+      }
+    },
+    {
+      "name": "nds-cmake",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.3.1-1"
+      }
+    },
+    {
+      "name": "nds-examples",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "20241110-1"
+      }
+    },
+    {
+      "name": "nds-freetype",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.13.2-1"
+      }
+    },
+    {
+      "name": "nds-libexpat",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.2.5-1"
+      }
+    },
+    {
+      "name": "nds-libmad",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.15.1b-1"
+      }
+    },
+    {
+      "name": "nds-libpng",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.6.39-3"
+      }
+    },
+    {
+      "name": "nds-pkg-config",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.28-4"
+      }
+    },
+    {
+      "name": "nds-zlib",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.3-1"
+      }
+    },
+    {
+      "name": "ndstool",
+      "architectures": [
+        "x86_64"
+      ],
+      "versions": {
+        "x86_64": "2.3.1-1"
+      }
+    },
+    {
+      "name": "ogc-cmake",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.3.0-1"
+      }
+    },
+    {
+      "name": "orcus",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.3.0-1"
+      }
+    },
+    {
+      "name": "pacman",
+      "architectures": [
+        "x86_64"
+      ],
+      "versions": {
+        "x86_64": "6.0.2-6"
+      }
+    },
+    {
+      "name": "picasso",
+      "architectures": [
+        "x86_64"
+      ],
+      "versions": {
+        "x86_64": "2.7.2-3"
+      }
+    },
+    {
+      "name": "ppc-box2d",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.4.1-2"
+      }
+    },
+    {
+      "name": "ppc-brotli",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.2.0-1"
+      }
+    },
+    {
+      "name": "ppc-bzip2",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.0.8-2"
+      }
+    },
+    {
+      "name": "ppc-faad2",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.11.2-1"
+      }
+    },
+    {
+      "name": "ppc-flac",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.5.0-1"
+      }
+    },
+    {
+      "name": "ppc-freetype",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.14.1-1"
+      }
+    },
+    {
+      "name": "ppc-giflib",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "5.1.4-2"
+      }
+    },
+    {
+      "name": "ppc-glm",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.0.2-1"
+      }
+    },
+    {
+      "name": "ppc-harfbuzz",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "12.3.2-1"
+      }
+    },
+    {
+      "name": "ppc-jansson",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.14-1"
+      }
+    },
+    {
+      "name": "ppc-jsoncpp",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.9.5-1"
+      }
+    },
+    {
+      "name": "ppc-libconfig",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.8.1-1"
+      }
+    },
+    {
+      "name": "ppc-libexpat",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.5.0-1"
+      }
+    },
+    {
+      "name": "ppc-libfribidi",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.0.16-1"
+      }
+    },
+    {
+      "name": "ppc-libgd",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.3.3-3"
+      }
+    },
+    {
+      "name": "ppc-libjpeg-turbo",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "3.1.4.1-1"
+      }
+    },
+    {
+      "name": "ppc-liblua51",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "5.1.5-2"
+      }
+    },
+    {
+      "name": "ppc-liblzma",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "5.8.2-1"
+      }
+    },
+    {
+      "name": "ppc-libmad",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.15.1b-2"
+      }
+    },
+    {
+      "name": "ppc-libmodplug",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.8.9.0-3"
+      }
+    },
+    {
+      "name": "ppc-libogg",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.3.6-1"
+      }
+    },
+    {
+      "name": "ppc-libopus",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.6.1-1"
+      }
+    },
+    {
+      "name": "ppc-libpng",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.6.55-1"
+      }
+    },
+    {
+      "name": "ppc-libtheora",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.2.0alpha1-1"
+      }
+    },
+    {
+      "name": "ppc-libvorbis",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.3.7-1"
+      }
+    },
+    {
+      "name": "ppc-libvorbisidec",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.2.1-2"
+      }
+    },
+    {
+      "name": "ppc-libwebp",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.6.0-1"
+      }
+    },
+    {
+      "name": "ppc-libzip",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.10.1-1"
+      }
+    },
+    {
+      "name": "ppc-lz4",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.9.3-1"
+      }
+    },
+    {
+      "name": "ppc-mpg123",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.33.4-1"
+      }
+    },
+    {
+      "name": "ppc-mxml",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "3.3.1-1"
+      }
+    },
+    {
+      "name": "ppc-ode",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.16.4-1"
+      }
+    },
+    {
+      "name": "ppc-opusfile",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.12-1"
+      }
+    },
+    {
+      "name": "ppc-pkg-config",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.28-5"
+      }
+    },
+    {
+      "name": "ppc-tinyxml2",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "10.0.0-1"
+      }
+    },
+    {
+      "name": "ppc-yaml_cpp",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.8.0-1"
+      }
+    },
+    {
+      "name": "ppc-zlib",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.3.1-1"
+      }
+    },
+    {
+      "name": "ppc-zstd",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.5.7-1"
+      }
+    },
+    {
+      "name": "switch-box2d",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.4.1-1"
+      }
+    },
+    {
+      "name": "switch-bulletphysics",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.88-3"
+      }
+    },
+    {
+      "name": "switch-bzip2",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.0.8-1"
+      }
+    },
+    {
+      "name": "switch-cmake",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.5.2-1"
+      }
+    },
+    {
+      "name": "switch-curl",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "7.69.1-5"
+      }
+    },
+    {
+      "name": "switch-dav1d",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.5.0-1"
+      }
+    },
+    {
+      "name": "switch-enet",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.3.17-1"
+      }
+    },
+    {
+      "name": "switch-examples",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "20260201-1"
+      }
+    },
+    {
+      "name": "switch-ffmpeg",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "7.1-5"
+      }
+    },
+    {
+      "name": "switch-flac",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.3.2-4"
+      }
+    },
+    {
+      "name": "switch-freetype",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.13.3-1"
+      }
+    },
+    {
+      "name": "switch-giflib",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "5.1.4-2"
+      }
+    },
+    {
+      "name": "switch-glad",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.1.27-1"
+      }
+    },
+    {
+      "name": "switch-glfw",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "3.3.4-2"
+      }
+    },
+    {
+      "name": "switch-glm",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.9.9.7-2"
+      }
+    },
+    {
+      "name": "switch-harfbuzz",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "10.0.1-1"
+      }
+    },
+    {
+      "name": "switch-jansson",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.11-3"
+      }
+    },
+    {
+      "name": "switch-libarchive",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "3.7.2-7"
+      }
+    },
+    {
+      "name": "switch-libass",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.17.3-1"
+      }
+    },
+    {
+      "name": "switch-libavif",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.0.1-2"
+      }
+    },
+    {
+      "name": "switch-libconfig",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.7.2-3"
+      }
+    },
+    {
+      "name": "switch-libdrm_nouveau",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.0.1-2"
+      }
+    },
+    {
+      "name": "switch-libexpat",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.2.5-3"
+      }
+    },
+    {
+      "name": "switch-libfribidi",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.0.12-1"
+      }
+    },
+    {
+      "name": "switch-libgd",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.2.5-2"
+      }
+    },
+    {
+      "name": "switch-libjpeg-turbo",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.1.2-2"
+      }
+    },
+    {
+      "name": "switch-libjson-c",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.16-2"
+      }
+    },
+    {
+      "name": "switch-liblua51",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "5.1.5-1"
+      }
+    },
+    {
+      "name": "switch-liblzma",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "5.8.2-1"
+      }
+    },
+    {
+      "name": "switch-liblzo2",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.10-2"
+      }
+    },
+    {
+      "name": "switch-libmad",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.15.1b-3"
+      }
+    },
+    {
+      "name": "switch-libmikmod",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "3.3.11.1-2"
+      }
+    },
+    {
+      "name": "switch-libmodplug",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.8.9.0-2"
+      }
+    },
+    {
+      "name": "switch-libmpv",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.39.0-4"
+      }
+    },
+    {
+      "name": "switch-libogg",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.3.4-2"
+      }
+    },
+    {
+      "name": "switch-libopus",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.3-2"
+      }
+    },
+    {
+      "name": "switch-libpcre2",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "10.33-1"
+      }
+    },
+    {
+      "name": "switch-libplacebo",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "6.338.2-1"
+      }
+    },
+    {
+      "name": "switch-libpng",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.6.48-1"
+      }
+    },
+    {
+      "name": "switch-libsamplerate",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.1.9-2"
+      }
+    },
+    {
+      "name": "switch-libsodium",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.0.20-1"
+      }
+    },
+    {
+      "name": "switch-libssh2",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.10.0-2"
+      }
+    },
+    {
+      "name": "switch-libtheora",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.2.0alpha1-1"
+      }
+    },
+    {
+      "name": "switch-libtimidity",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.2.6-2"
+      }
+    },
+    {
+      "name": "switch-libvorbis",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.3.7-1"
+      }
+    },
+    {
+      "name": "switch-libvorbisidec",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.2.1-2"
+      }
+    },
+    {
+      "name": "switch-libvpx",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.8.0-2"
+      }
+    },
+    {
+      "name": "switch-libwebp",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.0.2-2"
+      }
+    },
+    {
+      "name": "switch-libxml2",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.9.8-4"
+      }
+    },
+    {
+      "name": "switch-libzstd",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.5.7-1"
+      }
+    },
+    {
+      "name": "switch-lwext4",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.0.0-1"
+      }
+    },
+    {
+      "name": "switch-lz4",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.9.3-1"
+      }
+    },
+    {
+      "name": "switch-mbedtls",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.28.10-1"
+      }
+    },
+    {
+      "name": "switch-mesa",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "20.1.0-5"
+      }
+    },
+    {
+      "name": "switch-miniupnpc",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.1.20190824-1"
+      }
+    },
+    {
+      "name": "switch-mpg123",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.31.3-3"
+      }
+    },
+    {
+      "name": "switch-mupdf",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.17.0-1"
+      }
+    },
+    {
+      "name": "switch-ntfs-3g",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2022.10.3-4"
+      }
+    },
+    {
+      "name": "switch-ode",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.16.4-1"
+      }
+    },
+    {
+      "name": "switch-oniguruma",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "6.9.2-2"
+      }
+    },
+    {
+      "name": "switch-openal-soft",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.21.1-5"
+      }
+    },
+    {
+      "name": "switch-opusfile",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.10-3"
+      }
+    },
+    {
+      "name": "switch-physfs",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "3.2.0-3"
+      }
+    },
+    {
+      "name": "switch-pkg-config",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.28-4"
+      }
+    },
+    {
+      "name": "switch-sdl2",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.28.5-4"
+      }
+    },
+    {
+      "name": "switch-sdl2_gfx",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.0.4-2"
+      }
+    },
+    {
+      "name": "switch-sdl2_image",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.0.4-1"
+      }
+    },
+    {
+      "name": "switch-sdl2_mixer",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.0.4-2"
+      }
+    },
+    {
+      "name": "switch-sdl2_net",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.0.1-3"
+      }
+    },
+    {
+      "name": "switch-sdl2_ttf",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.22.0-2"
+      }
+    },
+    {
+      "name": "switch-smpeg2",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.0.0-1"
+      }
+    },
+    {
+      "name": "switch-tinyxml2",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "6.0.0-2"
+      }
+    },
+    {
+      "name": "switch-tools",
+      "architectures": [
+        "x86_64"
+      ],
+      "versions": {
+        "x86_64": "1.13.1-1"
+      }
+    },
+    {
+      "name": "switch-wslay",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.1.0-1"
+      }
+    },
+    {
+      "name": "switch-xxhash",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.8.2-1"
+      }
+    },
+    {
+      "name": "switch-zlib",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.3.1-1"
+      }
+    },
+    {
+      "name": "switch-zziplib",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.13.78-1"
+      }
+    },
+    {
+      "name": "tex3ds",
+      "architectures": [
+        "x86_64"
+      ],
+      "versions": {
+        "x86_64": "2.3.0-4"
+      }
+    },
+    {
+      "name": "uam",
+      "architectures": [
+        "x86_64"
+      ],
+      "versions": {
+        "x86_64": "1.1.0-1"
+      }
+    },
+    {
+      "name": "wii-cmake",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.0.1-1"
+      }
+    },
+    {
+      "name": "wii-examples",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "20260510-1"
+      }
+    },
+    {
+      "name": "wii-freeglut",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "3.6.0-4"
+      }
+    },
+    {
+      "name": "wii-glu",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "9.0.3-1"
+      }
+    },
+    {
+      "name": "wii-opengx",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.17.0-2"
+      }
+    },
+    {
+      "name": "wii-physfs",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "3.2.0-3"
+      }
+    },
+    {
+      "name": "wii-pkg-config",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.28-5"
+      }
+    },
+    {
+      "name": "wii-sdl",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.2.15-21"
+      }
+    },
+    {
+      "name": "wii-sdl_gfx",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.0.27-1"
+      }
+    },
+    {
+      "name": "wii-sdl_image",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.2.12-6"
+      }
+    },
+    {
+      "name": "wii-sdl_mixer",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.2.12-10"
+      }
+    },
+    {
+      "name": "wii-sdl_ttf",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.0.11-6"
+      }
+    },
+    {
+      "name": "wii-sdl2",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.28.5-17"
+      }
+    },
+    {
+      "name": "wii-sdl2_gfx",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.0.4-3"
+      }
+    },
+    {
+      "name": "wii-sdl2_image",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.8.2-1"
+      }
+    },
+    {
+      "name": "wii-sdl2_mixer",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.6.3-2"
+      }
+    },
+    {
+      "name": "wii-sdl2_ttf",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.22.0-2"
+      }
+    },
+    {
+      "name": "wiiload",
+      "architectures": [
+        "x86_64"
+      ],
+      "versions": {
+        "x86_64": "0.5.3-1"
+      }
+    },
+    {
+      "name": "wiiu-cmake",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.3.2-1"
+      }
+    },
+    {
+      "name": "wiiu-curl",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "8.7.1-4"
+      }
+    },
+    {
+      "name": "wiiu-mbedtls",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.28.8-1"
+      }
+    },
+    {
+      "name": "wiiu-physfs",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "3.0.2-4"
+      }
+    },
+    {
+      "name": "wiiu-pkg-config",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.28-4"
+      }
+    },
+    {
+      "name": "wiiu-sdl2",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.32.10-2"
+      }
+    },
+    {
+      "name": "wiiu-sdl2_gfx",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.0.4-1"
+      }
+    },
+    {
+      "name": "wiiu-sdl2_image",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.6.3-1"
+      }
+    },
+    {
+      "name": "wiiu-sdl2_mixer",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.6.3-3"
+      }
+    },
+    {
+      "name": "wiiu-sdl2_net",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.2.0-1"
+      }
+    },
+    {
+      "name": "wiiu-sdl2_ttf",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.20.2-1"
+      }
+    },
+    {
+      "name": "wut",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.9.1-1"
+      }
+    },
+    {
+      "name": "wut-tools",
+      "architectures": [
+        "x86_64"
+      ],
+      "versions": {
+        "x86_64": "1.3.5-1"
+      }
+    }
+  ],
+  "raw_files": [
+    {
+      "name": "3ds-box2d",
+      "version": "2.4.1-1",
+      "arch": "any",
+      "filename": "3ds-box2d-2.4.1-1-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/3ds-box2d-2.4.1-1-any.pkg.tar.xz"
+    },
+    {
+      "name": "3ds-bulletphysics",
+      "version": "2.87-5",
+      "arch": "any",
+      "filename": "3ds-bulletphysics-2.87-5-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/3ds-bulletphysics-2.87-5-any.pkg.tar.xz"
+    },
+    {
+      "name": "3ds-bzip2",
+      "version": "1.0.8-1",
+      "arch": "any",
+      "filename": "3ds-bzip2-1.0.8-1-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/3ds-bzip2-1.0.8-1-any.pkg.tar.xz"
+    },
+    {
+      "name": "3ds-cmake",
+      "version": "1.5.2-1",
+      "arch": "any",
+      "filename": "3ds-cmake-1.5.2-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/3ds-cmake-1.5.2-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "3ds-curl",
+      "version": "8.4.0-1",
+      "arch": "any",
+      "filename": "3ds-curl-8.4.0-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/3ds-curl-8.4.0-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "3ds-examples",
+      "version": "20240917-1",
+      "arch": "any",
+      "filename": "3ds-examples-20240917-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/3ds-examples-20240917-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "3ds-flac",
+      "version": "1.3.4-1",
+      "arch": "any",
+      "filename": "3ds-flac-1.3.4-1-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/3ds-flac-1.3.4-1-any.pkg.tar.xz"
+    },
+    {
+      "name": "3ds-flite",
+      "version": "2.1-2",
+      "arch": "any",
+      "filename": "3ds-flite-2.1-2-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/3ds-flite-2.1-2-any.pkg.tar.xz"
+    },
+    {
+      "name": "3ds-freetype",
+      "version": "2.14.1-1",
+      "arch": "any",
+      "filename": "3ds-freetype-2.14.1-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/3ds-freetype-2.14.1-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "3ds-giflib",
+      "version": "5.1.4-3",
+      "arch": "any",
+      "filename": "3ds-giflib-5.1.4-3-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/3ds-giflib-5.1.4-3-any.pkg.tar.zst"
+    },
+    {
+      "name": "3ds-jansson",
+      "version": "2.13-1",
+      "arch": "any",
+      "filename": "3ds-jansson-2.13-1-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/3ds-jansson-2.13-1-any.pkg.tar.xz"
+    },
+    {
+      "name": "3ds-libarchive",
+      "version": "3.7.4-1",
+      "arch": "any",
+      "filename": "3ds-libarchive-3.7.4-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/3ds-libarchive-3.7.4-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "3ds-libconfig",
+      "version": "1.7.2-3",
+      "arch": "any",
+      "filename": "3ds-libconfig-1.7.2-3-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/3ds-libconfig-1.7.2-3-any.pkg.tar.xz"
+    },
+    {
+      "name": "3ds-libfribidi",
+      "version": "1.0.12-1",
+      "arch": "any",
+      "filename": "3ds-libfribidi-1.0.12-1-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/3ds-libfribidi-1.0.12-1-any.pkg.tar.xz"
+    },
+    {
+      "name": "3ds-libiconv",
+      "version": "1.17-1",
+      "arch": "any",
+      "filename": "3ds-libiconv-1.17-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/3ds-libiconv-1.17-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "3ds-libid3tag",
+      "version": "0.15.1b-2",
+      "arch": "any",
+      "filename": "3ds-libid3tag-0.15.1b-2-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/3ds-libid3tag-0.15.1b-2-any.pkg.tar.xz"
+    },
+    {
+      "name": "3ds-libjpeg-turbo",
+      "version": "3.1.3-1",
+      "arch": "any",
+      "filename": "3ds-libjpeg-turbo-3.1.3-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/3ds-libjpeg-turbo-3.1.3-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "3ds-libjson-c",
+      "version": "0.16-1",
+      "arch": "any",
+      "filename": "3ds-libjson-c-0.16-1-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/3ds-libjson-c-0.16-1-any.pkg.tar.xz"
+    },
+    {
+      "name": "3ds-liblua51",
+      "version": "5.1.5-1",
+      "arch": "any",
+      "filename": "3ds-liblua51-5.1.5-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/3ds-liblua51-5.1.5-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "3ds-liblzma",
+      "version": "5.8.2-1",
+      "arch": "any",
+      "filename": "3ds-liblzma-5.8.2-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/3ds-liblzma-5.8.2-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "3ds-libmad",
+      "version": "0.15.1b-2",
+      "arch": "any",
+      "filename": "3ds-libmad-0.15.1b-2-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/3ds-libmad-0.15.1b-2-any.pkg.tar.xz"
+    },
+    {
+      "name": "3ds-libmodplug",
+      "version": "0.8.9.0-1",
+      "arch": "any",
+      "filename": "3ds-libmodplug-0.8.9.0-1-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/3ds-libmodplug-0.8.9.0-1-any.pkg.tar.xz"
+    },
+    {
+      "name": "3ds-libogg",
+      "version": "1.3.6-1",
+      "arch": "any",
+      "filename": "3ds-libogg-1.3.6-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/3ds-libogg-1.3.6-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "3ds-libopus",
+      "version": "1.4-1",
+      "arch": "any",
+      "filename": "3ds-libopus-1.4-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/3ds-libopus-1.4-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "3ds-libpng",
+      "version": "1.6.53-1",
+      "arch": "any",
+      "filename": "3ds-libpng-1.6.53-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/3ds-libpng-1.6.53-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "3ds-libsidplay",
+      "version": "1.36.60-1",
+      "arch": "any",
+      "filename": "3ds-libsidplay-1.36.60-1-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/3ds-libsidplay-1.36.60-1-any.pkg.tar.xz"
+    },
+    {
+      "name": "3ds-libtheora",
+      "version": "1.2.0alpha1-2",
+      "arch": "any",
+      "filename": "3ds-libtheora-1.2.0alpha1-2-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/3ds-libtheora-1.2.0alpha1-2-any.pkg.tar.xz"
+    },
+    {
+      "name": "3ds-libvorbisidec",
+      "version": "1.2.1-3",
+      "arch": "any",
+      "filename": "3ds-libvorbisidec-1.2.1-3-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/3ds-libvorbisidec-1.2.1-3-any.pkg.tar.xz"
+    },
+    {
+      "name": "3ds-libxmp",
+      "version": "4.6.0-1",
+      "arch": "any",
+      "filename": "3ds-libxmp-4.6.0-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/3ds-libxmp-4.6.0-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "3ds-libzstd",
+      "version": "1.5.5-2",
+      "arch": "any",
+      "filename": "3ds-libzstd-1.5.5-2-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/3ds-libzstd-1.5.5-2-any.pkg.tar.zst"
+    },
+    {
+      "name": "3ds-lz4",
+      "version": "1.9.3-1",
+      "arch": "any",
+      "filename": "3ds-lz4-1.9.3-1-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/3ds-lz4-1.9.3-1-any.pkg.tar.xz"
+    },
+    {
+      "name": "3ds-mbedtls",
+      "version": "2.28.8-1",
+      "arch": "any",
+      "filename": "3ds-mbedtls-2.28.8-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/3ds-mbedtls-2.28.8-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "3ds-mikmod",
+      "version": "3.3.13-1",
+      "arch": "any",
+      "filename": "3ds-mikmod-3.3.13-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/3ds-mikmod-3.3.13-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "3ds-mpg123",
+      "version": "1.31.3-3",
+      "arch": "any",
+      "filename": "3ds-mpg123-1.31.3-3-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/3ds-mpg123-1.31.3-3-any.pkg.tar.zst"
+    },
+    {
+      "name": "3ds-opusfile",
+      "version": "0.11-1",
+      "arch": "any",
+      "filename": "3ds-opusfile-0.11-1-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/3ds-opusfile-0.11-1-any.pkg.tar.xz"
+    },
+    {
+      "name": "3ds-physfs",
+      "version": "3.2.0-2",
+      "arch": "any",
+      "filename": "3ds-physfs-3.2.0-2-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/3ds-physfs-3.2.0-2-any.pkg.tar.zst"
+    },
+    {
+      "name": "3ds-pkg-config",
+      "version": "0.28-5",
+      "arch": "any",
+      "filename": "3ds-pkg-config-0.28-5-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/3ds-pkg-config-0.28-5-any.pkg.tar.xz"
+    },
+    {
+      "name": "3ds-sdl",
+      "version": "1.2.15-19",
+      "arch": "any",
+      "filename": "3ds-sdl-1.2.15-19-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/3ds-sdl-1.2.15-19-any.pkg.tar.zst"
+    },
+    {
+      "name": "3ds-sdl_gfx",
+      "version": "2.0.25-2",
+      "arch": "any",
+      "filename": "3ds-sdl_gfx-2.0.25-2-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/3ds-sdl_gfx-2.0.25-2-any.pkg.tar.xz"
+    },
+    {
+      "name": "3ds-sdl_image",
+      "version": "1.2.12-3",
+      "arch": "any",
+      "filename": "3ds-sdl_image-1.2.12-3-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/3ds-sdl_image-1.2.12-3-any.pkg.tar.xz"
+    },
+    {
+      "name": "3ds-sdl_mixer",
+      "version": "1.2.12-9",
+      "arch": "any",
+      "filename": "3ds-sdl_mixer-1.2.12-9-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/3ds-sdl_mixer-1.2.12-9-any.pkg.tar.xz"
+    },
+    {
+      "name": "3ds-sdl_ttf",
+      "version": "2.0.11-2",
+      "arch": "any",
+      "filename": "3ds-sdl_ttf-2.0.11-2-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/3ds-sdl_ttf-2.0.11-2-any.pkg.tar.xz"
+    },
+    {
+      "name": "3ds-tinyxml2",
+      "version": "6.0.0-2",
+      "arch": "any",
+      "filename": "3ds-tinyxml2-6.0.0-2-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/3ds-tinyxml2-6.0.0-2-any.pkg.tar.xz"
+    },
+    {
+      "name": "3ds-wildmidi",
+      "version": "0.4.3-2",
+      "arch": "any",
+      "filename": "3ds-wildmidi-0.4.3-2-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/3ds-wildmidi-0.4.3-2-any.pkg.tar.xz"
+    },
+    {
+      "name": "3ds-wslay",
+      "version": "1.1.1-1",
+      "arch": "any",
+      "filename": "3ds-wslay-1.1.1-1-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/3ds-wslay-1.1.1-1-any.pkg.tar.xz"
+    },
+    {
+      "name": "3ds-yaml_cpp",
+      "version": "0.8.0-1",
+      "arch": "any",
+      "filename": "3ds-yaml_cpp-0.8.0-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/3ds-yaml_cpp-0.8.0-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "3ds-zlib",
+      "version": "1.3.1-1",
+      "arch": "any",
+      "filename": "3ds-zlib-1.3.1-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/3ds-zlib-1.3.1-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "armv4t-bzip2",
+      "version": "1.0.8-1",
+      "arch": "any",
+      "filename": "armv4t-bzip2-1.0.8-1-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/armv4t-bzip2-1.0.8-1-any.pkg.tar.xz"
+    },
+    {
+      "name": "armv4t-flac",
+      "version": "1.3.2-1",
+      "arch": "any",
+      "filename": "armv4t-flac-1.3.2-1-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/armv4t-flac-1.3.2-1-any.pkg.tar.xz"
+    },
+    {
+      "name": "armv4t-flite",
+      "version": "2.1-2",
+      "arch": "any",
+      "filename": "armv4t-flite-2.1-2-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/armv4t-flite-2.1-2-any.pkg.tar.xz"
+    },
+    {
+      "name": "armv4t-freetype",
+      "version": "2.13.0-1",
+      "arch": "any",
+      "filename": "armv4t-freetype-2.13.0-1-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/armv4t-freetype-2.13.0-1-any.pkg.tar.xz"
+    },
+    {
+      "name": "armv4t-libconfig",
+      "version": "1.7.2-1",
+      "arch": "any",
+      "filename": "armv4t-libconfig-1.7.2-1-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/armv4t-libconfig-1.7.2-1-any.pkg.tar.xz"
+    },
+    {
+      "name": "armv4t-libexpat",
+      "version": "2.2.5-1",
+      "arch": "any",
+      "filename": "armv4t-libexpat-2.2.5-1-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/armv4t-libexpat-2.2.5-1-any.pkg.tar.xz"
+    },
+    {
+      "name": "armv4t-libid3tag",
+      "version": "0.15.1b-1",
+      "arch": "any",
+      "filename": "armv4t-libid3tag-0.15.1b-1-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/armv4t-libid3tag-0.15.1b-1-any.pkg.tar.xz"
+    },
+    {
+      "name": "armv4t-liblzma",
+      "version": "5.8.2-1",
+      "arch": "any",
+      "filename": "armv4t-liblzma-5.8.2-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/armv4t-liblzma-5.8.2-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "armv4t-libogg",
+      "version": "1.3.4-1",
+      "arch": "any",
+      "filename": "armv4t-libogg-1.3.4-1-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/armv4t-libogg-1.3.4-1-any.pkg.tar.xz"
+    },
+    {
+      "name": "armv4t-libpng",
+      "version": "1.6.48-1",
+      "arch": "any",
+      "filename": "armv4t-libpng-1.6.48-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/armv4t-libpng-1.6.48-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "armv4t-libvorbisidec",
+      "version": "1.2.1-1",
+      "arch": "any",
+      "filename": "armv4t-libvorbisidec-1.2.1-1-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/armv4t-libvorbisidec-1.2.1-1-any.pkg.tar.xz"
+    },
+    {
+      "name": "armv4t-mikmod",
+      "version": "3.3.11.1-1",
+      "arch": "any",
+      "filename": "armv4t-mikmod-3.3.11.1-1-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/armv4t-mikmod-3.3.11.1-1-any.pkg.tar.xz"
+    },
+    {
+      "name": "armv4t-mpg123",
+      "version": "1.31.3-2",
+      "arch": "any",
+      "filename": "armv4t-mpg123-1.31.3-2-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/armv4t-mpg123-1.31.3-2-any.pkg.tar.zst"
+    },
+    {
+      "name": "armv4t-pkg-config",
+      "version": "0.28-1",
+      "arch": "any",
+      "filename": "armv4t-pkg-config-0.28-1-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/armv4t-pkg-config-0.28-1-any.pkg.tar.xz"
+    },
+    {
+      "name": "armv4t-zlib",
+      "version": "1.3-1",
+      "arch": "any",
+      "filename": "armv4t-zlib-1.3-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/armv4t-zlib-1.3-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "calico",
+      "version": "1.2.0-1",
+      "arch": "any",
+      "filename": "calico-1.2.0-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/calico-1.2.0-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "catnip",
+      "version": "0.2.0-1",
+      "arch": "any",
+      "filename": "catnip-0.2.0-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/catnip-0.2.0-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "citro2d",
+      "version": "1.7.0-1",
+      "arch": "any",
+      "filename": "citro2d-1.7.0-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/citro2d-1.7.0-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "citro3d",
+      "version": "1.7.1-2",
+      "arch": "any",
+      "filename": "citro3d-1.7.1-2-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/citro3d-1.7.1-2-any.pkg.tar.zst"
+    },
+    {
+      "name": "default-arm7",
+      "version": "0.8.4-4",
+      "arch": "any",
+      "filename": "default-arm7-0.8.4-4-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/default-arm7-0.8.4-4-any.pkg.tar.zst"
+    },
+    {
+      "name": "deko3d",
+      "version": "0.5.0-1",
+      "arch": "any",
+      "filename": "deko3d-0.5.0-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/deko3d-0.5.0-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "devkita64-cmake",
+      "version": "1.1.3-1",
+      "arch": "any",
+      "filename": "devkita64-cmake-1.1.3-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/devkita64-cmake-1.1.3-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "devkita64-newlib",
+      "version": "4.6.0.20260123-4",
+      "arch": "any",
+      "filename": "devkita64-newlib-4.6.0.20260123-4-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/devkita64-newlib-4.6.0.20260123-4-any.pkg.tar.zst"
+    },
+    {
+      "name": "devkitA64",
+      "version": "r30-1",
+      "arch": "any",
+      "filename": "devkitA64-r30-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/devkitA64-r30-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "devkita64-rules",
+      "version": "1.1.1-1",
+      "arch": "any",
+      "filename": "devkita64-rules-1.1.1-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/devkita64-rules-1.1.1-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "devkitarm-cmake",
+      "version": "1.2.4-1",
+      "arch": "any",
+      "filename": "devkitarm-cmake-1.2.4-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/devkitarm-cmake-1.2.4-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "devkitarm-crtls",
+      "version": "1.2.6-1",
+      "arch": "any",
+      "filename": "devkitarm-crtls-1.2.6-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/devkitarm-crtls-1.2.6-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "devkitarm-newlib",
+      "version": "4.6.0.20260123-5",
+      "arch": "any",
+      "filename": "devkitarm-newlib-4.6.0.20260123-5-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/devkitarm-newlib-4.6.0.20260123-5-any.pkg.tar.zst"
+    },
+    {
+      "name": "devkitARM",
+      "version": "r68-1",
+      "arch": "any",
+      "filename": "devkitARM-r68-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/devkitARM-r68-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "devkitarm-rules",
+      "version": "1.6.0-4",
+      "arch": "any",
+      "filename": "devkitarm-rules-1.6.0-4-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/devkitarm-rules-1.6.0-4-any.pkg.tar.zst"
+    },
+    {
+      "name": "devkitppc-cmake",
+      "version": "1.1.4-1",
+      "arch": "any",
+      "filename": "devkitppc-cmake-1.1.4-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/devkitppc-cmake-1.1.4-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "devkitppc-crtls",
+      "version": "2.1.0-1",
+      "arch": "any",
+      "filename": "devkitppc-crtls-2.1.0-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/devkitppc-crtls-2.1.0-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "devkitppc-newlib",
+      "version": "4.6.0.20260123-4",
+      "arch": "any",
+      "filename": "devkitppc-newlib-4.6.0.20260123-4-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/devkitppc-newlib-4.6.0.20260123-4-any.pkg.tar.zst"
+    },
+    {
+      "name": "devkitPPC",
+      "version": "r50-1",
+      "arch": "any",
+      "filename": "devkitPPC-r50-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/devkitPPC-r50-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "devkitppc-rules",
+      "version": "1.2.1-1",
+      "arch": "any",
+      "filename": "devkitppc-rules-1.2.1-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/devkitppc-rules-1.2.1-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "dkp-cmake-common-utils",
+      "version": "1.5.3-1",
+      "arch": "any",
+      "filename": "dkp-cmake-common-utils-1.5.3-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/dkp-cmake-common-utils-1.5.3-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "dkp-meson-scripts",
+      "version": "1.1.0-1",
+      "arch": "any",
+      "filename": "dkp-meson-scripts-1.1.0-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/dkp-meson-scripts-1.1.0-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "dkp-toolchain-vars",
+      "version": "1.0.5-1",
+      "arch": "any",
+      "filename": "dkp-toolchain-vars-1.0.5-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/dkp-toolchain-vars-1.0.5-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "dswifi",
+      "version": "2.1.0-1",
+      "arch": "any",
+      "filename": "dswifi-2.1.0-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/dswifi-2.1.0-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "gamecube-cmake",
+      "version": "1.0.1-1",
+      "arch": "any",
+      "filename": "gamecube-cmake-1.0.1-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/gamecube-cmake-1.0.1-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "gamecube-examples",
+      "version": "20260125-1",
+      "arch": "any",
+      "filename": "gamecube-examples-20260125-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/gamecube-examples-20260125-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "gamecube-freeglut",
+      "version": "3.6.0-4",
+      "arch": "any",
+      "filename": "gamecube-freeglut-3.6.0-4-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/gamecube-freeglut-3.6.0-4-any.pkg.tar.zst"
+    },
+    {
+      "name": "gamecube-glu",
+      "version": "9.0.3-1",
+      "arch": "any",
+      "filename": "gamecube-glu-9.0.3-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/gamecube-glu-9.0.3-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "gamecube-opengx",
+      "version": "0.17.0-2",
+      "arch": "any",
+      "filename": "gamecube-opengx-0.17.0-2-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/gamecube-opengx-0.17.0-2-any.pkg.tar.zst"
+    },
+    {
+      "name": "gamecube-physfs",
+      "version": "3.2.0-3",
+      "arch": "any",
+      "filename": "gamecube-physfs-3.2.0-3-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/gamecube-physfs-3.2.0-3-any.pkg.tar.zst"
+    },
+    {
+      "name": "gamecube-pkg-config",
+      "version": "0.28-5",
+      "arch": "any",
+      "filename": "gamecube-pkg-config-0.28-5-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/gamecube-pkg-config-0.28-5-any.pkg.tar.xz"
+    },
+    {
+      "name": "gamecube-sdl",
+      "version": "1.2.15-21",
+      "arch": "any",
+      "filename": "gamecube-sdl-1.2.15-21-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/gamecube-sdl-1.2.15-21-any.pkg.tar.zst"
+    },
+    {
+      "name": "gamecube-sdl2",
+      "version": "2.28.5-17",
+      "arch": "any",
+      "filename": "gamecube-sdl2-2.28.5-17-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/gamecube-sdl2-2.28.5-17-any.pkg.tar.zst"
+    },
+    {
+      "name": "gamecube-sdl2_gfx",
+      "version": "1.0.4-4",
+      "arch": "any",
+      "filename": "gamecube-sdl2_gfx-1.0.4-4-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/gamecube-sdl2_gfx-1.0.4-4-any.pkg.tar.zst"
+    },
+    {
+      "name": "gamecube-sdl2_image",
+      "version": "2.8.2-1",
+      "arch": "any",
+      "filename": "gamecube-sdl2_image-2.8.2-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/gamecube-sdl2_image-2.8.2-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "gamecube-sdl2_mixer",
+      "version": "2.6.3-2",
+      "arch": "any",
+      "filename": "gamecube-sdl2_mixer-2.6.3-2-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/gamecube-sdl2_mixer-2.6.3-2-any.pkg.tar.zst"
+    },
+    {
+      "name": "gamecube-sdl2_ttf",
+      "version": "2.22.0-2",
+      "arch": "any",
+      "filename": "gamecube-sdl2_ttf-2.22.0-2-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/gamecube-sdl2_ttf-2.22.0-2-any.pkg.tar.zst"
+    },
+    {
+      "name": "gamecube-sdl_gfx",
+      "version": "2.0.25-3",
+      "arch": "any",
+      "filename": "gamecube-sdl_gfx-2.0.25-3-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/gamecube-sdl_gfx-2.0.25-3-any.pkg.tar.zst"
+    },
+    {
+      "name": "gamecube-sdl_image",
+      "version": "1.2.12-6",
+      "arch": "any",
+      "filename": "gamecube-sdl_image-1.2.12-6-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/gamecube-sdl_image-1.2.12-6-any.pkg.tar.zst"
+    },
+    {
+      "name": "gamecube-sdl_mixer",
+      "version": "1.2.12-2",
+      "arch": "any",
+      "filename": "gamecube-sdl_mixer-1.2.12-2-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/gamecube-sdl_mixer-1.2.12-2-any.pkg.tar.xz"
+    },
+    {
+      "name": "gamecube-sdl_ttf",
+      "version": "2.0.11-5",
+      "arch": "any",
+      "filename": "gamecube-sdl_ttf-2.0.11-5-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/gamecube-sdl_ttf-2.0.11-5-any.pkg.tar.zst"
+    },
+    {
+      "name": "gba-cmake",
+      "version": "1.0.2-1",
+      "arch": "any",
+      "filename": "gba-cmake-1.0.2-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/gba-cmake-1.0.2-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "gba-examples",
+      "version": "20240626-1",
+      "arch": "any",
+      "filename": "gba-examples-20240626-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/gba-examples-20240626-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "gba-pkg-config",
+      "version": "0.28-4",
+      "arch": "any",
+      "filename": "gba-pkg-config-0.28-4-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/gba-pkg-config-0.28-4-any.pkg.tar.xz"
+    },
+    {
+      "name": "gp2x-core",
+      "version": "1.2.0-1",
+      "arch": "any",
+      "filename": "gp2x-core-1.2.0-1-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/gp2x-core-1.2.0-1-any.pkg.tar.xz"
+    },
+    {
+      "name": "gp2x-examples",
+      "version": "1.2.1-1",
+      "arch": "any",
+      "filename": "gp2x-examples-1.2.1-1-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/gp2x-examples-1.2.1-1-any.pkg.tar.xz"
+    },
+    {
+      "name": "gp2x-pkg-config",
+      "version": "0.29-1",
+      "arch": "any",
+      "filename": "gp2x-pkg-config-0.29-1-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/gp2x-pkg-config-0.29-1-any.pkg.tar.xz"
+    },
+    {
+      "name": "gp32-examples",
+      "version": "20051021-2",
+      "arch": "any",
+      "filename": "gp32-examples-20051021-2-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/gp32-examples-20051021-2-any.pkg.tar.xz"
+    },
+    {
+      "name": "libctru",
+      "version": "2.7.0-1",
+      "arch": "any",
+      "filename": "libctru-2.7.0-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/libctru-2.7.0-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "libfat-gba",
+      "version": "1.1.5-1",
+      "arch": "any",
+      "filename": "libfat-gba-1.1.5-1-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/libfat-gba-1.1.5-1-any.pkg.tar.xz"
+    },
+    {
+      "name": "libfat-gp2x",
+      "version": "1.2.0-1",
+      "arch": "any",
+      "filename": "libfat-gp2x-1.2.0-1-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/libfat-gp2x-1.2.0-1-any.pkg.tar.xz"
+    },
+    {
+      "name": "libfat-nds",
+      "version": "2.1.0-4",
+      "arch": "any",
+      "filename": "libfat-nds-2.1.0-4-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/libfat-nds-2.1.0-4-any.pkg.tar.zst"
+    },
+    {
+      "name": "libfat-ogc",
+      "version": "2.1.0-4",
+      "arch": "any",
+      "filename": "libfat-ogc-2.1.0-4-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/libfat-ogc-2.1.0-4-any.pkg.tar.zst"
+    },
+    {
+      "name": "libgba",
+      "version": "0.5.4-1",
+      "arch": "any",
+      "filename": "libgba-0.5.4-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/libgba-0.5.4-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "libgxflux",
+      "version": "20230423-3",
+      "arch": "any",
+      "filename": "libgxflux-20230423-3-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/libgxflux-20230423-3-any.pkg.tar.zst"
+    },
+    {
+      "name": "libmirko",
+      "version": "0.9.8-1",
+      "arch": "any",
+      "filename": "libmirko-0.9.8-1-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/libmirko-0.9.8-1-any.pkg.tar.xz"
+    },
+    {
+      "name": "libnds",
+      "version": "2.0.2-1",
+      "arch": "any",
+      "filename": "libnds-2.0.2-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/libnds-2.0.2-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "libnx",
+      "version": "4.12.0-1",
+      "arch": "any",
+      "filename": "libnx-4.12.0-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/libnx-4.12.0-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "libogc",
+      "version": "3.1.0-1",
+      "arch": "any",
+      "filename": "libogc-3.1.0-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/libogc-3.1.0-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "libtonc",
+      "version": "1.4.5-1",
+      "arch": "any",
+      "filename": "libtonc-1.4.5-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/libtonc-1.4.5-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "maxmod-gba",
+      "version": "1.0.15-1",
+      "arch": "any",
+      "filename": "maxmod-gba-1.0.15-1-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/maxmod-gba-1.0.15-1-any.pkg.tar.xz"
+    },
+    {
+      "name": "maxmod-nds",
+      "version": "2.1.0-2",
+      "arch": "any",
+      "filename": "maxmod-nds-2.1.0-2-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/maxmod-nds-2.1.0-2-any.pkg.tar.zst"
+    },
+    {
+      "name": "nds-bzip2",
+      "version": "1.0.8-1",
+      "arch": "any",
+      "filename": "nds-bzip2-1.0.8-1-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/nds-bzip2-1.0.8-1-any.pkg.tar.xz"
+    },
+    {
+      "name": "nds-cmake",
+      "version": "1.3.1-1",
+      "arch": "any",
+      "filename": "nds-cmake-1.3.1-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/nds-cmake-1.3.1-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "nds-examples",
+      "version": "20241110-1",
+      "arch": "any",
+      "filename": "nds-examples-20241110-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/nds-examples-20241110-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "nds-freetype",
+      "version": "2.13.2-1",
+      "arch": "any",
+      "filename": "nds-freetype-2.13.2-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/nds-freetype-2.13.2-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "nds-libexpat",
+      "version": "2.2.5-1",
+      "arch": "any",
+      "filename": "nds-libexpat-2.2.5-1-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/nds-libexpat-2.2.5-1-any.pkg.tar.xz"
+    },
+    {
+      "name": "nds-libmad",
+      "version": "0.15.1b-1",
+      "arch": "any",
+      "filename": "nds-libmad-0.15.1b-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/nds-libmad-0.15.1b-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "nds-libpng",
+      "version": "1.6.39-3",
+      "arch": "any",
+      "filename": "nds-libpng-1.6.39-3-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/nds-libpng-1.6.39-3-any.pkg.tar.zst"
+    },
+    {
+      "name": "nds-pkg-config",
+      "version": "0.28-4",
+      "arch": "any",
+      "filename": "nds-pkg-config-0.28-4-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/nds-pkg-config-0.28-4-any.pkg.tar.xz"
+    },
+    {
+      "name": "nds-zlib",
+      "version": "1.3-1",
+      "arch": "any",
+      "filename": "nds-zlib-1.3-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/nds-zlib-1.3-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "ogc-cmake",
+      "version": "1.3.0-1",
+      "arch": "any",
+      "filename": "ogc-cmake-1.3.0-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/ogc-cmake-1.3.0-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "orcus",
+      "version": "1.3.0-1",
+      "arch": "any",
+      "filename": "orcus-1.3.0-1-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/orcus-1.3.0-1-any.pkg.tar.xz"
+    },
+    {
+      "name": "ppc-box2d",
+      "version": "2.4.1-2",
+      "arch": "any",
+      "filename": "ppc-box2d-2.4.1-2-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/ppc-box2d-2.4.1-2-any.pkg.tar.xz"
+    },
+    {
+      "name": "ppc-brotli",
+      "version": "1.2.0-1",
+      "arch": "any",
+      "filename": "ppc-brotli-1.2.0-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/ppc-brotli-1.2.0-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "ppc-bzip2",
+      "version": "1.0.8-2",
+      "arch": "any",
+      "filename": "ppc-bzip2-1.0.8-2-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/ppc-bzip2-1.0.8-2-any.pkg.tar.zst"
+    },
+    {
+      "name": "ppc-faad2",
+      "version": "2.11.2-1",
+      "arch": "any",
+      "filename": "ppc-faad2-2.11.2-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/ppc-faad2-2.11.2-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "ppc-flac",
+      "version": "1.5.0-1",
+      "arch": "any",
+      "filename": "ppc-flac-1.5.0-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/ppc-flac-1.5.0-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "ppc-freetype",
+      "version": "2.14.1-1",
+      "arch": "any",
+      "filename": "ppc-freetype-2.14.1-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/ppc-freetype-2.14.1-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "ppc-giflib",
+      "version": "5.1.4-2",
+      "arch": "any",
+      "filename": "ppc-giflib-5.1.4-2-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/ppc-giflib-5.1.4-2-any.pkg.tar.xz"
+    },
+    {
+      "name": "ppc-glm",
+      "version": "1.0.2-1",
+      "arch": "any",
+      "filename": "ppc-glm-1.0.2-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/ppc-glm-1.0.2-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "ppc-harfbuzz",
+      "version": "12.3.2-1",
+      "arch": "any",
+      "filename": "ppc-harfbuzz-12.3.2-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/ppc-harfbuzz-12.3.2-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "ppc-jansson",
+      "version": "2.14-1",
+      "arch": "any",
+      "filename": "ppc-jansson-2.14-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/ppc-jansson-2.14-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "ppc-jsoncpp",
+      "version": "1.9.5-1",
+      "arch": "any",
+      "filename": "ppc-jsoncpp-1.9.5-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/ppc-jsoncpp-1.9.5-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "ppc-libconfig",
+      "version": "1.8.1-1",
+      "arch": "any",
+      "filename": "ppc-libconfig-1.8.1-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/ppc-libconfig-1.8.1-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "ppc-libexpat",
+      "version": "2.5.0-1",
+      "arch": "any",
+      "filename": "ppc-libexpat-2.5.0-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/ppc-libexpat-2.5.0-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "ppc-libfribidi",
+      "version": "1.0.16-1",
+      "arch": "any",
+      "filename": "ppc-libfribidi-1.0.16-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/ppc-libfribidi-1.0.16-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "ppc-libgd",
+      "version": "2.3.3-3",
+      "arch": "any",
+      "filename": "ppc-libgd-2.3.3-3-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/ppc-libgd-2.3.3-3-any.pkg.tar.zst"
+    },
+    {
+      "name": "ppc-libjpeg-turbo",
+      "version": "3.1.4.1-1",
+      "arch": "any",
+      "filename": "ppc-libjpeg-turbo-3.1.4.1-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/ppc-libjpeg-turbo-3.1.4.1-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "ppc-liblua51",
+      "version": "5.1.5-2",
+      "arch": "any",
+      "filename": "ppc-liblua51-5.1.5-2-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/ppc-liblua51-5.1.5-2-any.pkg.tar.zst"
+    },
+    {
+      "name": "ppc-liblzma",
+      "version": "5.8.2-1",
+      "arch": "any",
+      "filename": "ppc-liblzma-5.8.2-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/ppc-liblzma-5.8.2-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "ppc-libmad",
+      "version": "0.15.1b-2",
+      "arch": "any",
+      "filename": "ppc-libmad-0.15.1b-2-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/ppc-libmad-0.15.1b-2-any.pkg.tar.xz"
+    },
+    {
+      "name": "ppc-libmodplug",
+      "version": "0.8.9.0-3",
+      "arch": "any",
+      "filename": "ppc-libmodplug-0.8.9.0-3-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/ppc-libmodplug-0.8.9.0-3-any.pkg.tar.zst"
+    },
+    {
+      "name": "ppc-libogg",
+      "version": "1.3.6-1",
+      "arch": "any",
+      "filename": "ppc-libogg-1.3.6-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/ppc-libogg-1.3.6-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "ppc-libopus",
+      "version": "1.6.1-1",
+      "arch": "any",
+      "filename": "ppc-libopus-1.6.1-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/ppc-libopus-1.6.1-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "ppc-libpng",
+      "version": "1.6.55-1",
+      "arch": "any",
+      "filename": "ppc-libpng-1.6.55-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/ppc-libpng-1.6.55-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "ppc-libtheora",
+      "version": "1.2.0alpha1-1",
+      "arch": "any",
+      "filename": "ppc-libtheora-1.2.0alpha1-1-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/ppc-libtheora-1.2.0alpha1-1-any.pkg.tar.xz"
+    },
+    {
+      "name": "ppc-libvorbis",
+      "version": "1.3.7-1",
+      "arch": "any",
+      "filename": "ppc-libvorbis-1.3.7-1-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/ppc-libvorbis-1.3.7-1-any.pkg.tar.xz"
+    },
+    {
+      "name": "ppc-libvorbisidec",
+      "version": "1.2.1-2",
+      "arch": "any",
+      "filename": "ppc-libvorbisidec-1.2.1-2-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/ppc-libvorbisidec-1.2.1-2-any.pkg.tar.xz"
+    },
+    {
+      "name": "ppc-libwebp",
+      "version": "1.6.0-1",
+      "arch": "any",
+      "filename": "ppc-libwebp-1.6.0-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/ppc-libwebp-1.6.0-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "ppc-libzip",
+      "version": "1.10.1-1",
+      "arch": "any",
+      "filename": "ppc-libzip-1.10.1-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/ppc-libzip-1.10.1-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "ppc-lz4",
+      "version": "1.9.3-1",
+      "arch": "any",
+      "filename": "ppc-lz4-1.9.3-1-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/ppc-lz4-1.9.3-1-any.pkg.tar.xz"
+    },
+    {
+      "name": "ppc-mpg123",
+      "version": "1.33.4-1",
+      "arch": "any",
+      "filename": "ppc-mpg123-1.33.4-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/ppc-mpg123-1.33.4-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "ppc-mxml",
+      "version": "3.3.1-1",
+      "arch": "any",
+      "filename": "ppc-mxml-3.3.1-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/ppc-mxml-3.3.1-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "ppc-ode",
+      "version": "0.16.4-1",
+      "arch": "any",
+      "filename": "ppc-ode-0.16.4-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/ppc-ode-0.16.4-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "ppc-opusfile",
+      "version": "0.12-1",
+      "arch": "any",
+      "filename": "ppc-opusfile-0.12-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/ppc-opusfile-0.12-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "ppc-pkg-config",
+      "version": "0.28-5",
+      "arch": "any",
+      "filename": "ppc-pkg-config-0.28-5-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/ppc-pkg-config-0.28-5-any.pkg.tar.xz"
+    },
+    {
+      "name": "ppc-tinyxml2",
+      "version": "10.0.0-1",
+      "arch": "any",
+      "filename": "ppc-tinyxml2-10.0.0-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/ppc-tinyxml2-10.0.0-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "ppc-yaml_cpp",
+      "version": "0.8.0-1",
+      "arch": "any",
+      "filename": "ppc-yaml_cpp-0.8.0-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/ppc-yaml_cpp-0.8.0-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "ppc-zlib",
+      "version": "1.3.1-1",
+      "arch": "any",
+      "filename": "ppc-zlib-1.3.1-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/ppc-zlib-1.3.1-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "ppc-zstd",
+      "version": "1.5.7-1",
+      "arch": "any",
+      "filename": "ppc-zstd-1.5.7-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/ppc-zstd-1.5.7-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "switch-box2d",
+      "version": "2.4.1-1",
+      "arch": "any",
+      "filename": "switch-box2d-2.4.1-1-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/switch-box2d-2.4.1-1-any.pkg.tar.xz"
+    },
+    {
+      "name": "switch-bulletphysics",
+      "version": "2.88-3",
+      "arch": "any",
+      "filename": "switch-bulletphysics-2.88-3-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/switch-bulletphysics-2.88-3-any.pkg.tar.xz"
+    },
+    {
+      "name": "switch-bzip2",
+      "version": "1.0.8-1",
+      "arch": "any",
+      "filename": "switch-bzip2-1.0.8-1-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/switch-bzip2-1.0.8-1-any.pkg.tar.xz"
+    },
+    {
+      "name": "switch-cmake",
+      "version": "1.5.2-1",
+      "arch": "any",
+      "filename": "switch-cmake-1.5.2-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/switch-cmake-1.5.2-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "switch-curl",
+      "version": "7.69.1-5",
+      "arch": "any",
+      "filename": "switch-curl-7.69.1-5-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/switch-curl-7.69.1-5-any.pkg.tar.zst"
+    },
+    {
+      "name": "switch-dav1d",
+      "version": "1.5.0-1",
+      "arch": "any",
+      "filename": "switch-dav1d-1.5.0-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/switch-dav1d-1.5.0-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "switch-enet",
+      "version": "1.3.17-1",
+      "arch": "any",
+      "filename": "switch-enet-1.3.17-1-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/switch-enet-1.3.17-1-any.pkg.tar.xz"
+    },
+    {
+      "name": "switch-examples",
+      "version": "20260201-1",
+      "arch": "any",
+      "filename": "switch-examples-20260201-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/switch-examples-20260201-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "switch-ffmpeg",
+      "version": "7.1-5",
+      "arch": "any",
+      "filename": "switch-ffmpeg-7.1-5-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/switch-ffmpeg-7.1-5-any.pkg.tar.zst"
+    },
+    {
+      "name": "switch-flac",
+      "version": "1.3.2-4",
+      "arch": "any",
+      "filename": "switch-flac-1.3.2-4-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/switch-flac-1.3.2-4-any.pkg.tar.xz"
+    },
+    {
+      "name": "switch-freetype",
+      "version": "2.13.3-1",
+      "arch": "any",
+      "filename": "switch-freetype-2.13.3-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/switch-freetype-2.13.3-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "switch-giflib",
+      "version": "5.1.4-2",
+      "arch": "any",
+      "filename": "switch-giflib-5.1.4-2-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/switch-giflib-5.1.4-2-any.pkg.tar.xz"
+    },
+    {
+      "name": "switch-glad",
+      "version": "0.1.27-1",
+      "arch": "any",
+      "filename": "switch-glad-0.1.27-1-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/switch-glad-0.1.27-1-any.pkg.tar.xz"
+    },
+    {
+      "name": "switch-glfw",
+      "version": "3.3.4-2",
+      "arch": "any",
+      "filename": "switch-glfw-3.3.4-2-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/switch-glfw-3.3.4-2-any.pkg.tar.xz"
+    },
+    {
+      "name": "switch-glm",
+      "version": "0.9.9.7-2",
+      "arch": "any",
+      "filename": "switch-glm-0.9.9.7-2-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/switch-glm-0.9.9.7-2-any.pkg.tar.xz"
+    },
+    {
+      "name": "switch-harfbuzz",
+      "version": "10.0.1-1",
+      "arch": "any",
+      "filename": "switch-harfbuzz-10.0.1-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/switch-harfbuzz-10.0.1-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "switch-jansson",
+      "version": "2.11-3",
+      "arch": "any",
+      "filename": "switch-jansson-2.11-3-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/switch-jansson-2.11-3-any.pkg.tar.zst"
+    },
+    {
+      "name": "switch-libarchive",
+      "version": "3.7.2-7",
+      "arch": "any",
+      "filename": "switch-libarchive-3.7.2-7-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/switch-libarchive-3.7.2-7-any.pkg.tar.zst"
+    },
+    {
+      "name": "switch-libass",
+      "version": "0.17.3-1",
+      "arch": "any",
+      "filename": "switch-libass-0.17.3-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/switch-libass-0.17.3-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "switch-libavif",
+      "version": "1.0.1-2",
+      "arch": "any",
+      "filename": "switch-libavif-1.0.1-2-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/switch-libavif-1.0.1-2-any.pkg.tar.zst"
+    },
+    {
+      "name": "switch-libconfig",
+      "version": "1.7.2-3",
+      "arch": "any",
+      "filename": "switch-libconfig-1.7.2-3-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/switch-libconfig-1.7.2-3-any.pkg.tar.xz"
+    },
+    {
+      "name": "switch-libdrm_nouveau",
+      "version": "1.0.1-2",
+      "arch": "any",
+      "filename": "switch-libdrm_nouveau-1.0.1-2-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/switch-libdrm_nouveau-1.0.1-2-any.pkg.tar.xz"
+    },
+    {
+      "name": "switch-libexpat",
+      "version": "2.2.5-3",
+      "arch": "any",
+      "filename": "switch-libexpat-2.2.5-3-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/switch-libexpat-2.2.5-3-any.pkg.tar.zst"
+    },
+    {
+      "name": "switch-libfribidi",
+      "version": "1.0.12-1",
+      "arch": "any",
+      "filename": "switch-libfribidi-1.0.12-1-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/switch-libfribidi-1.0.12-1-any.pkg.tar.xz"
+    },
+    {
+      "name": "switch-libgd",
+      "version": "2.2.5-2",
+      "arch": "any",
+      "filename": "switch-libgd-2.2.5-2-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/switch-libgd-2.2.5-2-any.pkg.tar.xz"
+    },
+    {
+      "name": "switch-libjpeg-turbo",
+      "version": "2.1.2-2",
+      "arch": "any",
+      "filename": "switch-libjpeg-turbo-2.1.2-2-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/switch-libjpeg-turbo-2.1.2-2-any.pkg.tar.xz"
+    },
+    {
+      "name": "switch-libjson-c",
+      "version": "0.16-2",
+      "arch": "any",
+      "filename": "switch-libjson-c-0.16-2-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/switch-libjson-c-0.16-2-any.pkg.tar.zst"
+    },
+    {
+      "name": "switch-liblua51",
+      "version": "5.1.5-1",
+      "arch": "any",
+      "filename": "switch-liblua51-5.1.5-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/switch-liblua51-5.1.5-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "switch-liblzma",
+      "version": "5.8.2-1",
+      "arch": "any",
+      "filename": "switch-liblzma-5.8.2-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/switch-liblzma-5.8.2-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "switch-liblzo2",
+      "version": "2.10-2",
+      "arch": "any",
+      "filename": "switch-liblzo2-2.10-2-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/switch-liblzo2-2.10-2-any.pkg.tar.xz"
+    },
+    {
+      "name": "switch-libmad",
+      "version": "0.15.1b-3",
+      "arch": "any",
+      "filename": "switch-libmad-0.15.1b-3-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/switch-libmad-0.15.1b-3-any.pkg.tar.xz"
+    },
+    {
+      "name": "switch-libmikmod",
+      "version": "3.3.11.1-2",
+      "arch": "any",
+      "filename": "switch-libmikmod-3.3.11.1-2-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/switch-libmikmod-3.3.11.1-2-any.pkg.tar.xz"
+    },
+    {
+      "name": "switch-libmodplug",
+      "version": "0.8.9.0-2",
+      "arch": "any",
+      "filename": "switch-libmodplug-0.8.9.0-2-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/switch-libmodplug-0.8.9.0-2-any.pkg.tar.xz"
+    },
+    {
+      "name": "switch-libmpv",
+      "version": "0.39.0-4",
+      "arch": "any",
+      "filename": "switch-libmpv-0.39.0-4-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/switch-libmpv-0.39.0-4-any.pkg.tar.zst"
+    },
+    {
+      "name": "switch-libogg",
+      "version": "1.3.4-2",
+      "arch": "any",
+      "filename": "switch-libogg-1.3.4-2-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/switch-libogg-1.3.4-2-any.pkg.tar.xz"
+    },
+    {
+      "name": "switch-libopus",
+      "version": "1.3-2",
+      "arch": "any",
+      "filename": "switch-libopus-1.3-2-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/switch-libopus-1.3-2-any.pkg.tar.xz"
+    },
+    {
+      "name": "switch-libpcre2",
+      "version": "10.33-1",
+      "arch": "any",
+      "filename": "switch-libpcre2-10.33-1-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/switch-libpcre2-10.33-1-any.pkg.tar.xz"
+    },
+    {
+      "name": "switch-libplacebo",
+      "version": "6.338.2-1",
+      "arch": "any",
+      "filename": "switch-libplacebo-6.338.2-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/switch-libplacebo-6.338.2-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "switch-libpng",
+      "version": "1.6.48-1",
+      "arch": "any",
+      "filename": "switch-libpng-1.6.48-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/switch-libpng-1.6.48-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "switch-libsamplerate",
+      "version": "0.1.9-2",
+      "arch": "any",
+      "filename": "switch-libsamplerate-0.1.9-2-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/switch-libsamplerate-0.1.9-2-any.pkg.tar.xz"
+    },
+    {
+      "name": "switch-libsodium",
+      "version": "1.0.20-1",
+      "arch": "any",
+      "filename": "switch-libsodium-1.0.20-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/switch-libsodium-1.0.20-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "switch-libssh2",
+      "version": "1.10.0-2",
+      "arch": "any",
+      "filename": "switch-libssh2-1.10.0-2-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/switch-libssh2-1.10.0-2-any.pkg.tar.zst"
+    },
+    {
+      "name": "switch-libtheora",
+      "version": "1.2.0alpha1-1",
+      "arch": "any",
+      "filename": "switch-libtheora-1.2.0alpha1-1-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/switch-libtheora-1.2.0alpha1-1-any.pkg.tar.xz"
+    },
+    {
+      "name": "switch-libtimidity",
+      "version": "0.2.6-2",
+      "arch": "any",
+      "filename": "switch-libtimidity-0.2.6-2-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/switch-libtimidity-0.2.6-2-any.pkg.tar.xz"
+    },
+    {
+      "name": "switch-libvorbis",
+      "version": "1.3.7-1",
+      "arch": "any",
+      "filename": "switch-libvorbis-1.3.7-1-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/switch-libvorbis-1.3.7-1-any.pkg.tar.xz"
+    },
+    {
+      "name": "switch-libvorbisidec",
+      "version": "1.2.1-2",
+      "arch": "any",
+      "filename": "switch-libvorbisidec-1.2.1-2-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/switch-libvorbisidec-1.2.1-2-any.pkg.tar.xz"
+    },
+    {
+      "name": "switch-libvpx",
+      "version": "1.8.0-2",
+      "arch": "any",
+      "filename": "switch-libvpx-1.8.0-2-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/switch-libvpx-1.8.0-2-any.pkg.tar.xz"
+    },
+    {
+      "name": "switch-libwebp",
+      "version": "1.0.2-2",
+      "arch": "any",
+      "filename": "switch-libwebp-1.0.2-2-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/switch-libwebp-1.0.2-2-any.pkg.tar.xz"
+    },
+    {
+      "name": "switch-libxml2",
+      "version": "2.9.8-4",
+      "arch": "any",
+      "filename": "switch-libxml2-2.9.8-4-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/switch-libxml2-2.9.8-4-any.pkg.tar.zst"
+    },
+    {
+      "name": "switch-libzstd",
+      "version": "1.5.7-1",
+      "arch": "any",
+      "filename": "switch-libzstd-1.5.7-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/switch-libzstd-1.5.7-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "switch-lwext4",
+      "version": "1.0.0-1",
+      "arch": "any",
+      "filename": "switch-lwext4-1.0.0-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/switch-lwext4-1.0.0-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "switch-lz4",
+      "version": "1.9.3-1",
+      "arch": "any",
+      "filename": "switch-lz4-1.9.3-1-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/switch-lz4-1.9.3-1-any.pkg.tar.xz"
+    },
+    {
+      "name": "switch-mbedtls",
+      "version": "2.28.10-1",
+      "arch": "any",
+      "filename": "switch-mbedtls-2.28.10-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/switch-mbedtls-2.28.10-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "switch-mesa",
+      "version": "20.1.0-5",
+      "arch": "any",
+      "filename": "switch-mesa-20.1.0-5-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/switch-mesa-20.1.0-5-any.pkg.tar.zst"
+    },
+    {
+      "name": "switch-miniupnpc",
+      "version": "2.1.20190824-1",
+      "arch": "any",
+      "filename": "switch-miniupnpc-2.1.20190824-1-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/switch-miniupnpc-2.1.20190824-1-any.pkg.tar.xz"
+    },
+    {
+      "name": "switch-mpg123",
+      "version": "1.31.3-3",
+      "arch": "any",
+      "filename": "switch-mpg123-1.31.3-3-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/switch-mpg123-1.31.3-3-any.pkg.tar.zst"
+    },
+    {
+      "name": "switch-mupdf",
+      "version": "1.17.0-1",
+      "arch": "any",
+      "filename": "switch-mupdf-1.17.0-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/switch-mupdf-1.17.0-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "switch-ntfs-3g",
+      "version": "2022.10.3-4",
+      "arch": "any",
+      "filename": "switch-ntfs-3g-2022.10.3-4-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/switch-ntfs-3g-2022.10.3-4-any.pkg.tar.zst"
+    },
+    {
+      "name": "switch-ode",
+      "version": "0.16.4-1",
+      "arch": "any",
+      "filename": "switch-ode-0.16.4-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/switch-ode-0.16.4-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "switch-oniguruma",
+      "version": "6.9.2-2",
+      "arch": "any",
+      "filename": "switch-oniguruma-6.9.2-2-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/switch-oniguruma-6.9.2-2-any.pkg.tar.xz"
+    },
+    {
+      "name": "switch-openal-soft",
+      "version": "1.21.1-5",
+      "arch": "any",
+      "filename": "switch-openal-soft-1.21.1-5-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/switch-openal-soft-1.21.1-5-any.pkg.tar.zst"
+    },
+    {
+      "name": "switch-opusfile",
+      "version": "0.10-3",
+      "arch": "any",
+      "filename": "switch-opusfile-0.10-3-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/switch-opusfile-0.10-3-any.pkg.tar.xz"
+    },
+    {
+      "name": "switch-physfs",
+      "version": "3.2.0-3",
+      "arch": "any",
+      "filename": "switch-physfs-3.2.0-3-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/switch-physfs-3.2.0-3-any.pkg.tar.zst"
+    },
+    {
+      "name": "switch-pkg-config",
+      "version": "0.28-4",
+      "arch": "any",
+      "filename": "switch-pkg-config-0.28-4-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/switch-pkg-config-0.28-4-any.pkg.tar.xz"
+    },
+    {
+      "name": "switch-sdl2",
+      "version": "2.28.5-4",
+      "arch": "any",
+      "filename": "switch-sdl2-2.28.5-4-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/switch-sdl2-2.28.5-4-any.pkg.tar.zst"
+    },
+    {
+      "name": "switch-sdl2_gfx",
+      "version": "1.0.4-2",
+      "arch": "any",
+      "filename": "switch-sdl2_gfx-1.0.4-2-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/switch-sdl2_gfx-1.0.4-2-any.pkg.tar.xz"
+    },
+    {
+      "name": "switch-sdl2_image",
+      "version": "2.0.4-1",
+      "arch": "any",
+      "filename": "switch-sdl2_image-2.0.4-1-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/switch-sdl2_image-2.0.4-1-any.pkg.tar.xz"
+    },
+    {
+      "name": "switch-sdl2_mixer",
+      "version": "2.0.4-2",
+      "arch": "any",
+      "filename": "switch-sdl2_mixer-2.0.4-2-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/switch-sdl2_mixer-2.0.4-2-any.pkg.tar.xz"
+    },
+    {
+      "name": "switch-sdl2_net",
+      "version": "2.0.1-3",
+      "arch": "any",
+      "filename": "switch-sdl2_net-2.0.1-3-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/switch-sdl2_net-2.0.1-3-any.pkg.tar.xz"
+    },
+    {
+      "name": "switch-sdl2_ttf",
+      "version": "2.22.0-2",
+      "arch": "any",
+      "filename": "switch-sdl2_ttf-2.22.0-2-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/switch-sdl2_ttf-2.22.0-2-any.pkg.tar.zst"
+    },
+    {
+      "name": "switch-smpeg2",
+      "version": "2.0.0-1",
+      "arch": "any",
+      "filename": "switch-smpeg2-2.0.0-1-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/switch-smpeg2-2.0.0-1-any.pkg.tar.xz"
+    },
+    {
+      "name": "switch-tinyxml2",
+      "version": "6.0.0-2",
+      "arch": "any",
+      "filename": "switch-tinyxml2-6.0.0-2-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/switch-tinyxml2-6.0.0-2-any.pkg.tar.xz"
+    },
+    {
+      "name": "switch-wslay",
+      "version": "1.1.0-1",
+      "arch": "any",
+      "filename": "switch-wslay-1.1.0-1-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/switch-wslay-1.1.0-1-any.pkg.tar.xz"
+    },
+    {
+      "name": "switch-xxhash",
+      "version": "0.8.2-1",
+      "arch": "any",
+      "filename": "switch-xxhash-0.8.2-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/switch-xxhash-0.8.2-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "switch-zlib",
+      "version": "1.3.1-1",
+      "arch": "any",
+      "filename": "switch-zlib-1.3.1-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/switch-zlib-1.3.1-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "switch-zziplib",
+      "version": "0.13.78-1",
+      "arch": "any",
+      "filename": "switch-zziplib-0.13.78-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/switch-zziplib-0.13.78-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "wii-cmake",
+      "version": "1.0.1-1",
+      "arch": "any",
+      "filename": "wii-cmake-1.0.1-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/wii-cmake-1.0.1-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "wii-examples",
+      "version": "20260510-1",
+      "arch": "any",
+      "filename": "wii-examples-20260510-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/wii-examples-20260510-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "wii-freeglut",
+      "version": "3.6.0-4",
+      "arch": "any",
+      "filename": "wii-freeglut-3.6.0-4-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/wii-freeglut-3.6.0-4-any.pkg.tar.zst"
+    },
+    {
+      "name": "wii-glu",
+      "version": "9.0.3-1",
+      "arch": "any",
+      "filename": "wii-glu-9.0.3-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/wii-glu-9.0.3-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "wii-opengx",
+      "version": "0.17.0-2",
+      "arch": "any",
+      "filename": "wii-opengx-0.17.0-2-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/wii-opengx-0.17.0-2-any.pkg.tar.zst"
+    },
+    {
+      "name": "wii-physfs",
+      "version": "3.2.0-3",
+      "arch": "any",
+      "filename": "wii-physfs-3.2.0-3-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/wii-physfs-3.2.0-3-any.pkg.tar.zst"
+    },
+    {
+      "name": "wii-pkg-config",
+      "version": "0.28-5",
+      "arch": "any",
+      "filename": "wii-pkg-config-0.28-5-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/wii-pkg-config-0.28-5-any.pkg.tar.xz"
+    },
+    {
+      "name": "wii-sdl",
+      "version": "1.2.15-21",
+      "arch": "any",
+      "filename": "wii-sdl-1.2.15-21-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/wii-sdl-1.2.15-21-any.pkg.tar.zst"
+    },
+    {
+      "name": "wii-sdl2",
+      "version": "2.28.5-17",
+      "arch": "any",
+      "filename": "wii-sdl2-2.28.5-17-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/wii-sdl2-2.28.5-17-any.pkg.tar.zst"
+    },
+    {
+      "name": "wii-sdl2_gfx",
+      "version": "1.0.4-3",
+      "arch": "any",
+      "filename": "wii-sdl2_gfx-1.0.4-3-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/wii-sdl2_gfx-1.0.4-3-any.pkg.tar.zst"
+    },
+    {
+      "name": "wii-sdl2_image",
+      "version": "2.8.2-1",
+      "arch": "any",
+      "filename": "wii-sdl2_image-2.8.2-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/wii-sdl2_image-2.8.2-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "wii-sdl2_mixer",
+      "version": "2.6.3-2",
+      "arch": "any",
+      "filename": "wii-sdl2_mixer-2.6.3-2-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/wii-sdl2_mixer-2.6.3-2-any.pkg.tar.zst"
+    },
+    {
+      "name": "wii-sdl2_ttf",
+      "version": "2.22.0-2",
+      "arch": "any",
+      "filename": "wii-sdl2_ttf-2.22.0-2-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/wii-sdl2_ttf-2.22.0-2-any.pkg.tar.zst"
+    },
+    {
+      "name": "wii-sdl_gfx",
+      "version": "2.0.27-1",
+      "arch": "any",
+      "filename": "wii-sdl_gfx-2.0.27-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/wii-sdl_gfx-2.0.27-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "wii-sdl_image",
+      "version": "1.2.12-6",
+      "arch": "any",
+      "filename": "wii-sdl_image-1.2.12-6-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/wii-sdl_image-1.2.12-6-any.pkg.tar.zst"
+    },
+    {
+      "name": "wii-sdl_mixer",
+      "version": "1.2.12-10",
+      "arch": "any",
+      "filename": "wii-sdl_mixer-1.2.12-10-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/wii-sdl_mixer-1.2.12-10-any.pkg.tar.xz"
+    },
+    {
+      "name": "wii-sdl_ttf",
+      "version": "2.0.11-6",
+      "arch": "any",
+      "filename": "wii-sdl_ttf-2.0.11-6-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/wii-sdl_ttf-2.0.11-6-any.pkg.tar.zst"
+    },
+    {
+      "name": "wiiu-cmake",
+      "version": "1.3.2-1",
+      "arch": "any",
+      "filename": "wiiu-cmake-1.3.2-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/wiiu-cmake-1.3.2-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "wiiu-curl",
+      "version": "8.7.1-4",
+      "arch": "any",
+      "filename": "wiiu-curl-8.7.1-4-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/wiiu-curl-8.7.1-4-any.pkg.tar.zst"
+    },
+    {
+      "name": "wiiu-mbedtls",
+      "version": "2.28.8-1",
+      "arch": "any",
+      "filename": "wiiu-mbedtls-2.28.8-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/wiiu-mbedtls-2.28.8-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "wiiu-physfs",
+      "version": "3.0.2-4",
+      "arch": "any",
+      "filename": "wiiu-physfs-3.0.2-4-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/wiiu-physfs-3.0.2-4-any.pkg.tar.zst"
+    },
+    {
+      "name": "wiiu-pkg-config",
+      "version": "0.28-4",
+      "arch": "any",
+      "filename": "wiiu-pkg-config-0.28-4-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/wiiu-pkg-config-0.28-4-any.pkg.tar.xz"
+    },
+    {
+      "name": "wiiu-sdl2",
+      "version": "2.32.10-2",
+      "arch": "any",
+      "filename": "wiiu-sdl2-2.32.10-2-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/wiiu-sdl2-2.32.10-2-any.pkg.tar.zst"
+    },
+    {
+      "name": "wiiu-sdl2_gfx",
+      "version": "1.0.4-1",
+      "arch": "any",
+      "filename": "wiiu-sdl2_gfx-1.0.4-1-any.pkg.tar.xz",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/wiiu-sdl2_gfx-1.0.4-1-any.pkg.tar.xz"
+    },
+    {
+      "name": "wiiu-sdl2_image",
+      "version": "2.6.3-1",
+      "arch": "any",
+      "filename": "wiiu-sdl2_image-2.6.3-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/wiiu-sdl2_image-2.6.3-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "wiiu-sdl2_mixer",
+      "version": "2.6.3-3",
+      "arch": "any",
+      "filename": "wiiu-sdl2_mixer-2.6.3-3-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/wiiu-sdl2_mixer-2.6.3-3-any.pkg.tar.zst"
+    },
+    {
+      "name": "wiiu-sdl2_net",
+      "version": "2.2.0-1",
+      "arch": "any",
+      "filename": "wiiu-sdl2_net-2.2.0-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/wiiu-sdl2_net-2.2.0-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "wiiu-sdl2_ttf",
+      "version": "2.20.2-1",
+      "arch": "any",
+      "filename": "wiiu-sdl2_ttf-2.20.2-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/wiiu-sdl2_ttf-2.20.2-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "wut",
+      "version": "1.9.1-1",
+      "arch": "any",
+      "filename": "wut-1.9.1-1-any.pkg.tar.zst",
+      "repo": "dkp-libs",
+      "download_url": "https://pkg.devkitpro.org/packages/wut-1.9.1-1-any.pkg.tar.zst"
+    },
+    {
+      "name": "3dslink",
+      "version": "0.6.3-1",
+      "arch": "x86_64",
+      "filename": "3dslink-0.6.3-1-x86_64.pkg.tar.zst",
+      "repo": "dkp-linux",
+      "download_url": "https://pkg.devkitpro.org/packages/linux/x86_64/3dslink-0.6.3-1-x86_64.pkg.tar.zst"
+    },
+    {
+      "name": "3dstools",
+      "version": "1.3.1-3",
+      "arch": "x86_64",
+      "filename": "3dstools-1.3.1-3-x86_64.pkg.tar.zst",
+      "repo": "dkp-linux",
+      "download_url": "https://pkg.devkitpro.org/packages/linux/x86_64/3dstools-1.3.1-3-x86_64.pkg.tar.zst"
+    },
+    {
+      "name": "contents-delivery-manager",
+      "version": "1.0.0-3",
+      "arch": "x86_64",
+      "filename": "contents-delivery-manager-1.0.0-3-x86_64.pkg.tar.xz",
+      "repo": "dkp-linux",
+      "download_url": "https://pkg.devkitpro.org/packages/linux/x86_64/contents-delivery-manager-1.0.0-3-x86_64.pkg.tar.xz"
+    },
+    {
+      "name": "devkita64-binutils",
+      "version": "2.46.0-1",
+      "arch": "x86_64",
+      "filename": "devkita64-binutils-2.46.0-1-x86_64.pkg.tar.zst",
+      "repo": "dkp-linux",
+      "download_url": "https://pkg.devkitpro.org/packages/linux/x86_64/devkita64-binutils-2.46.0-1-x86_64.pkg.tar.zst"
+    },
+    {
+      "name": "devkita64-gcc",
+      "version": "16.1.0-1",
+      "arch": "x86_64",
+      "filename": "devkita64-gcc-16.1.0-1-x86_64.pkg.tar.zst",
+      "repo": "dkp-linux",
+      "download_url": "https://pkg.devkitpro.org/packages/linux/x86_64/devkita64-gcc-16.1.0-1-x86_64.pkg.tar.zst"
+    },
+    {
+      "name": "devkitA64-gdb",
+      "version": "14.1-1",
+      "arch": "x86_64",
+      "filename": "devkitA64-gdb-14.1-1-x86_64.pkg.tar.zst",
+      "repo": "dkp-linux",
+      "download_url": "https://pkg.devkitpro.org/packages/linux/x86_64/devkitA64-gdb-14.1-1-x86_64.pkg.tar.zst"
+    },
+    {
+      "name": "devkitarm-binutils",
+      "version": "2.46.0-1",
+      "arch": "x86_64",
+      "filename": "devkitarm-binutils-2.46.0-1-x86_64.pkg.tar.zst",
+      "repo": "dkp-linux",
+      "download_url": "https://pkg.devkitpro.org/packages/linux/x86_64/devkitarm-binutils-2.46.0-1-x86_64.pkg.tar.zst"
+    },
+    {
+      "name": "devkitarm-gcc",
+      "version": "16.1.0-1",
+      "arch": "x86_64",
+      "filename": "devkitarm-gcc-16.1.0-1-x86_64.pkg.tar.zst",
+      "repo": "dkp-linux",
+      "download_url": "https://pkg.devkitpro.org/packages/linux/x86_64/devkitarm-gcc-16.1.0-1-x86_64.pkg.tar.zst"
+    },
+    {
+      "name": "devkitARM-gdb",
+      "version": "14.1-2",
+      "arch": "x86_64",
+      "filename": "devkitARM-gdb-14.1-2-x86_64.pkg.tar.zst",
+      "repo": "dkp-linux",
+      "download_url": "https://pkg.devkitpro.org/packages/linux/x86_64/devkitARM-gdb-14.1-2-x86_64.pkg.tar.zst"
+    },
+    {
+      "name": "devkit-env",
+      "version": "1.0.1-2",
+      "arch": "any",
+      "filename": "devkit-env-1.0.1-2-any.pkg.tar.xz",
+      "repo": "dkp-linux",
+      "download_url": "https://pkg.devkitpro.org/packages/linux/x86_64/devkit-env-1.0.1-2-any.pkg.tar.xz"
+    },
+    {
+      "name": "devkitppc-binutils",
+      "version": "2.46.0-1",
+      "arch": "x86_64",
+      "filename": "devkitppc-binutils-2.46.0-1-x86_64.pkg.tar.zst",
+      "repo": "dkp-linux",
+      "download_url": "https://pkg.devkitpro.org/packages/linux/x86_64/devkitppc-binutils-2.46.0-1-x86_64.pkg.tar.zst"
+    },
+    {
+      "name": "devkitppc-gcc",
+      "version": "16.1.0-1",
+      "arch": "x86_64",
+      "filename": "devkitppc-gcc-16.1.0-1-x86_64.pkg.tar.zst",
+      "repo": "dkp-linux",
+      "download_url": "https://pkg.devkitpro.org/packages/linux/x86_64/devkitppc-gcc-16.1.0-1-x86_64.pkg.tar.zst"
+    },
+    {
+      "name": "devkitPPC-gdb",
+      "version": "14.1-2",
+      "arch": "x86_64",
+      "filename": "devkitPPC-gdb-14.1-2-x86_64.pkg.tar.zst",
+      "repo": "dkp-linux",
+      "download_url": "https://pkg.devkitpro.org/packages/linux/x86_64/devkitPPC-gdb-14.1-2-x86_64.pkg.tar.zst"
+    },
+    {
+      "name": "devkitppc-mn10200-binutils",
+      "version": "2.24-3",
+      "arch": "x86_64",
+      "filename": "devkitppc-mn10200-binutils-2.24-3-x86_64.pkg.tar.zst",
+      "repo": "dkp-linux",
+      "download_url": "https://pkg.devkitpro.org/packages/linux/x86_64/devkitppc-mn10200-binutils-2.24-3-x86_64.pkg.tar.zst"
+    },
+    {
+      "name": "devkitpro-keyring",
+      "version": "20241017-2",
+      "arch": "any",
+      "filename": "devkitpro-keyring-20241017-2-any.pkg.tar.zst",
+      "repo": "dkp-linux",
+      "download_url": "https://pkg.devkitpro.org/packages/linux/x86_64/devkitpro-keyring-20241017-2-any.pkg.tar.zst"
+    },
+    {
+      "name": "dstools",
+      "version": "1.3.3-3",
+      "arch": "x86_64",
+      "filename": "dstools-1.3.3-3-x86_64.pkg.tar.zst",
+      "repo": "dkp-linux",
+      "download_url": "https://pkg.devkitpro.org/packages/linux/x86_64/dstools-1.3.3-3-x86_64.pkg.tar.zst"
+    },
+    {
+      "name": "gamecube-tools",
+      "version": "1.0.7-1",
+      "arch": "x86_64",
+      "filename": "gamecube-tools-1.0.7-1-x86_64.pkg.tar.zst",
+      "repo": "dkp-linux",
+      "download_url": "https://pkg.devkitpro.org/packages/linux/x86_64/gamecube-tools-1.0.7-1-x86_64.pkg.tar.zst"
+    },
+    {
+      "name": "gba-tools",
+      "version": "1.2.0-1",
+      "arch": "x86_64",
+      "filename": "gba-tools-1.2.0-1-x86_64.pkg.tar.xz",
+      "repo": "dkp-linux",
+      "download_url": "https://pkg.devkitpro.org/packages/linux/x86_64/gba-tools-1.2.0-1-x86_64.pkg.tar.xz"
+    },
+    {
+      "name": "general-tools",
+      "version": "1.4.4-1",
+      "arch": "x86_64",
+      "filename": "general-tools-1.4.4-1-x86_64.pkg.tar.zst",
+      "repo": "dkp-linux",
+      "download_url": "https://pkg.devkitpro.org/packages/linux/x86_64/general-tools-1.4.4-1-x86_64.pkg.tar.zst"
+    },
+    {
+      "name": "gp2x-tools",
+      "version": "1.0.1-1",
+      "arch": "x86_64",
+      "filename": "gp2x-tools-1.0.1-1-x86_64.pkg.tar.xz",
+      "repo": "dkp-linux",
+      "download_url": "https://pkg.devkitpro.org/packages/linux/x86_64/gp2x-tools-1.0.1-1-x86_64.pkg.tar.xz"
+    },
+    {
+      "name": "gp32-tools",
+      "version": "1.0.3-1",
+      "arch": "x86_64",
+      "filename": "gp32-tools-1.0.3-1-x86_64.pkg.tar.xz",
+      "repo": "dkp-linux",
+      "download_url": "https://pkg.devkitpro.org/packages/linux/x86_64/gp32-tools-1.0.3-1-x86_64.pkg.tar.xz"
+    },
+    {
+      "name": "grit",
+      "version": "0.10.0-1",
+      "arch": "x86_64",
+      "filename": "grit-0.10.0-1-x86_64.pkg.tar.zst",
+      "repo": "dkp-linux",
+      "download_url": "https://pkg.devkitpro.org/packages/linux/x86_64/grit-0.10.0-1-x86_64.pkg.tar.zst"
+    },
+    {
+      "name": "hactool",
+      "version": "1.4.0-3",
+      "arch": "x86_64",
+      "filename": "hactool-1.4.0-3-x86_64.pkg.tar.xz",
+      "repo": "dkp-linux",
+      "download_url": "https://pkg.devkitpro.org/packages/linux/x86_64/hactool-1.4.0-3-x86_64.pkg.tar.xz"
+    },
+    {
+      "name": "mmutil",
+      "version": "1.10.1-1",
+      "arch": "x86_64",
+      "filename": "mmutil-1.10.1-1-x86_64.pkg.tar.xz",
+      "repo": "dkp-linux",
+      "download_url": "https://pkg.devkitpro.org/packages/linux/x86_64/mmutil-1.10.1-1-x86_64.pkg.tar.xz"
+    },
+    {
+      "name": "ndstool",
+      "version": "2.3.1-1",
+      "arch": "x86_64",
+      "filename": "ndstool-2.3.1-1-x86_64.pkg.tar.zst",
+      "repo": "dkp-linux",
+      "download_url": "https://pkg.devkitpro.org/packages/linux/x86_64/ndstool-2.3.1-1-x86_64.pkg.tar.zst"
+    },
+    {
+      "name": "pacman",
+      "version": "6.0.2-6",
+      "arch": "x86_64",
+      "filename": "pacman-6.0.2-6-x86_64.pkg.tar.xz",
+      "repo": "dkp-linux",
+      "download_url": "https://pkg.devkitpro.org/packages/linux/x86_64/pacman-6.0.2-6-x86_64.pkg.tar.xz"
+    },
+    {
+      "name": "picasso",
+      "version": "2.7.2-3",
+      "arch": "x86_64",
+      "filename": "picasso-2.7.2-3-x86_64.pkg.tar.zst",
+      "repo": "dkp-linux",
+      "download_url": "https://pkg.devkitpro.org/packages/linux/x86_64/picasso-2.7.2-3-x86_64.pkg.tar.zst"
+    },
+    {
+      "name": "switch-tools",
+      "version": "1.13.1-1",
+      "arch": "x86_64",
+      "filename": "switch-tools-1.13.1-1-x86_64.pkg.tar.zst",
+      "repo": "dkp-linux",
+      "download_url": "https://pkg.devkitpro.org/packages/linux/x86_64/switch-tools-1.13.1-1-x86_64.pkg.tar.zst"
+    },
+    {
+      "name": "tex3ds",
+      "version": "2.3.0-4",
+      "arch": "x86_64",
+      "filename": "tex3ds-2.3.0-4-x86_64.pkg.tar.zst",
+      "repo": "dkp-linux",
+      "download_url": "https://pkg.devkitpro.org/packages/linux/x86_64/tex3ds-2.3.0-4-x86_64.pkg.tar.zst"
+    },
+    {
+      "name": "uam",
+      "version": "1.1.0-1",
+      "arch": "x86_64",
+      "filename": "uam-1.1.0-1-x86_64.pkg.tar.xz",
+      "repo": "dkp-linux",
+      "download_url": "https://pkg.devkitpro.org/packages/linux/x86_64/uam-1.1.0-1-x86_64.pkg.tar.xz"
+    },
+    {
+      "name": "wiiload",
+      "version": "0.5.3-1",
+      "arch": "x86_64",
+      "filename": "wiiload-0.5.3-1-x86_64.pkg.tar.zst",
+      "repo": "dkp-linux",
+      "download_url": "https://pkg.devkitpro.org/packages/linux/x86_64/wiiload-0.5.3-1-x86_64.pkg.tar.zst"
+    },
+    {
+      "name": "wut-tools",
+      "version": "1.3.5-1",
+      "arch": "x86_64",
+      "filename": "wut-tools-1.3.5-1-x86_64.pkg.tar.zst",
+      "repo": "dkp-linux",
+      "download_url": "https://pkg.devkitpro.org/packages/linux/x86_64/wut-tools-1.3.5-1-x86_64.pkg.tar.zst"
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,163 @@
+{
+  "boards": [
+    {
+      "id": 13,
+      "name": "announcements",
+      "label": "公告"
+    }
+  ],
+  "total_topics": 25,
+  "scraped_at": "2026-08-30T03:35:48.980Z",
+  "topics": [
+    {
+      "title": "February 2026 updates",
+      "url": "https://devkitpro.org/viewtopic.php?t=9866&sid=c6a123665b670691838cd46d445e6b84",
+      "board": "announcements",
+      "post_count": 21
+    },
+    {
+      "title": "January 2026 updates",
+      "url": "https://devkitpro.org/viewtopic.php?t=9853&sid=c6a123665b670691838cd46d445e6b84",
+      "board": "announcements",
+      "post_count": 21
+    },
+    {
+      "title": "December 2025 updates",
+      "url": "https://devkitpro.org/viewtopic.php?t=9855&sid=c6a123665b670691838cd46d445e6b84",
+      "board": "announcements",
+      "post_count": 9
+    },
+    {
+      "title": "November 2025 updates.",
+      "url": "https://devkitpro.org/viewtopic.php?t=9857&sid=c6a123665b670691838cd46d445e6b84",
+      "board": "announcements",
+      "post_count": 2
+    },
+    {
+      "title": "September 2025 Updates",
+      "url": "https://devkitpro.org/viewtopic.php?t=9856&sid=c6a123665b670691838cd46d445e6b84",
+      "board": "announcements",
+      "post_count": 5
+    },
+    {
+      "title": "July 2025 updates",
+      "url": "https://devkitpro.org/viewtopic.php?t=9854&sid=c6a123665b670691838cd46d445e6b84",
+      "board": "announcements",
+      "post_count": 2
+    },
+    {
+      "title": "June 2025 updates",
+      "url": "https://devkitpro.org/viewtopic.php?t=9774&sid=c6a123665b670691838cd46d445e6b84",
+      "board": "announcements",
+      "post_count": 11
+    },
+    {
+      "title": "May 2025 updates",
+      "url": "https://devkitpro.org/viewtopic.php?t=9750&sid=c6a123665b670691838cd46d445e6b84",
+      "board": "announcements",
+      "post_count": 21
+    },
+    {
+      "title": "libogc license controversy",
+      "url": "https://devkitpro.org/viewtopic.php?t=9745&sid=c6a123665b670691838cd46d445e6b84",
+      "board": "announcements",
+      "post_count": 5
+    },
+    {
+      "title": "April 2025 updates",
+      "url": "https://devkitpro.org/viewtopic.php?t=9749&sid=c6a123665b670691838cd46d445e6b84",
+      "board": "announcements",
+      "post_count": 7
+    },
+    {
+      "title": "March 2025 Updates",
+      "url": "https://devkitpro.org/viewtopic.php?t=9748&sid=c6a123665b670691838cd46d445e6b84",
+      "board": "announcements",
+      "post_count": 5
+    },
+    {
+      "title": "January 2025 updates",
+      "url": "https://devkitpro.org/viewtopic.php?t=9682&sid=c6a123665b670691838cd46d445e6b84",
+      "board": "announcements",
+      "post_count": 5
+    },
+    {
+      "title": "December 2024 updates",
+      "url": "https://devkitpro.org/viewtopic.php?t=9676&sid=c6a123665b670691838cd46d445e6b84",
+      "board": "announcements",
+      "post_count": 15
+    },
+    {
+      "title": "November 2024 updates.",
+      "url": "https://devkitpro.org/viewtopic.php?t=9662&sid=c6a123665b670691838cd46d445e6b84",
+      "board": "announcements",
+      "post_count": 21
+    },
+    {
+      "title": "devkitPro 2024 donation drive",
+      "url": "https://devkitpro.org/viewtopic.php?t=9631&sid=c6a123665b670691838cd46d445e6b84",
+      "board": "announcements",
+      "post_count": 6
+    },
+    {
+      "title": "October 2024 Updates",
+      "url": "https://devkitpro.org/viewtopic.php?t=9650&sid=c6a123665b670691838cd46d445e6b84",
+      "board": "announcements",
+      "post_count": 19
+    },
+    {
+      "title": "September 2024 updates",
+      "url": "https://devkitpro.org/viewtopic.php?t=9632&sid=c6a123665b670691838cd46d445e6b84",
+      "board": "announcements",
+      "post_count": 19
+    },
+    {
+      "title": "August 2024 updates",
+      "url": "https://devkitpro.org/viewtopic.php?t=9626&sid=c6a123665b670691838cd46d445e6b84",
+      "board": "announcements",
+      "post_count": 11
+    },
+    {
+      "title": "July 2024 updates",
+      "url": "https://devkitpro.org/viewtopic.php?t=9625&sid=c6a123665b670691838cd46d445e6b84",
+      "board": "announcements",
+      "post_count": 2
+    },
+    {
+      "title": "June 2024 Updates",
+      "url": "https://devkitpro.org/viewtopic.php?t=9597&sid=c6a123665b670691838cd46d445e6b84",
+      "board": "announcements",
+      "post_count": 15
+    },
+    {
+      "title": "May 2024 updates",
+      "url": "https://devkitpro.org/viewtopic.php?t=9596&sid=c6a123665b670691838cd46d445e6b84",
+      "board": "announcements",
+      "post_count": 21
+    },
+    {
+      "title": "April 2024 updates",
+      "url": "https://devkitpro.org/viewtopic.php?t=9595&sid=c6a123665b670691838cd46d445e6b84",
+      "board": "announcements",
+      "post_count": 19
+    },
+    {
+      "title": "March 2024 Updates",
+      "url": "https://devkitpro.org/viewtopic.php?t=9589&sid=c6a123665b670691838cd46d445e6b84",
+      "board": "announcements",
+      "post_count": 21
+    },
+    {
+      "title": "February 2024 updates",
+      "url": "https://devkitpro.org/viewtopic.php?t=9530&sid=c6a123665b670691838cd46d445e6b84",
+      "board": "announcements",
+      "post_count": 21
+    },
+    {
+      "title": "January 2024 updates",
+      "url": "https://devkitpro.org/viewtopic.php?t=9527&sid=c6a123665b670691838cd46d445e6b84",
+      "board": "announcements",
+      "post_count": 21
+    }
+  ]
+}

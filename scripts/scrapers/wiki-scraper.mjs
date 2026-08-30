@@ -8,9 +8,19 @@ import { join } from 'node:path';
 import { throttledFetch, logInfo, logOk, logWarn, logErr, logStep, sleep } from '../utils/fetcher.mjs';
 import { htmlToMarkdown, frontmatter } from '../utils/converter.mjs';
 
-const WIKI_API = 'https://devkitpro.org/wiki/api.php';
+const WIKI_API = 'https://devkitpro.org/w/api.php';
 const WIKI_BASE = 'https://devkitpro.org/wiki/';
 const OUTPUT_DIR = join(import.meta.dirname, '../../src/content/wiki');
+
+// ── Cloudflare 挑战页检测 ──
+function looksLikeCloudflareBlock(html) {
+  if (!html || typeof html !== 'string') return false;
+  return (
+    /<title>Just a moment\.\.\./i.test(html) ||
+    /<title>Attention Required! \| Cloudflare/i.test(html) ||
+    /challenge-platform|cf-chl-|cf-browser-verification|__cf_chl_/i.test(html)
+  );
+}
 
 // ── 获取所有页面列表 ──
 async function getAllPages() {
@@ -61,14 +71,30 @@ async function getPageContent(title) {
 
   const url = `${WIKI_API}?${params.toString()}`;
   const res = await throttledFetch(url, { interval: 500 });
-  const data = await res.json();
+  const rawText = await res.text();
+
+  // API 返回的 JSON 可能被 Cloudflare 挑战页替换（个别页面）
+  if (looksLikeCloudflareBlock(rawText)) {
+    const err = new Error(`Cloudflare 拦截了本页: ${title}`);
+    err.cloudflareBlocked = true;
+    throw err;
+  }
+
+  const data = JSON.parse(rawText);
 
   if (data.error) {
     throw new Error(`API error: ${data.error.info}`);
   }
 
+  const html = data.parse?.text?.['*'] || '';
+  if (looksLikeCloudflareBlock(html)) {
+    const err = new Error(`parse 内容被 Cloudflare 拦截: ${title}`);
+    err.cloudflareBlocked = true;
+    throw err;
+  }
+
   return {
-    html: data.parse?.text?.['*'] || '',
+    html,
     displayTitle: data.parse?.displaytitle || title,
   };
 }
@@ -96,7 +122,11 @@ export async function scrapeWiki() {
 
   let success = 0;
   let failed = 0;
+  let blocked = 0;
   const failedPages = [];
+  const blockedPages = [];
+  // 防文件名碰撞（Windows 文件系统大小写不敏感：portlibs vs Portlibs）
+  const usedFilenames = new Set();
 
   for (let i = 0; i < titles.length; i++) {
     const title = titles[i];
@@ -124,19 +154,34 @@ export async function scrapeWiki() {
       };
 
       const filename = sanitizeFilename(title) + '.md';
-      const filePath = join(OUTPUT_DIR, filename);
       const content = frontmatter(meta) + md + '\n';
 
-      writeFileSync(filePath, content, 'utf-8');
+      // 若与已有文件同名（Windows 大小写不敏感），追加数字后缀避免覆盖
+      let finalFilename = filename;
+      let dup = 2;
+      while (usedFilenames.has(finalFilename.toLowerCase())) {
+        finalFilename = filename.replace(/\.md$/, `_${dup}.md`);
+        dup++;
+      }
+      usedFilenames.add(finalFilename.toLowerCase());
+      const finalPath = join(OUTPUT_DIR, finalFilename);
+
+      writeFileSync(finalPath, content, 'utf-8');
       success++;
 
       if ((i + 1) % 20 === 0) {
         logInfo(`  进度: ${i + 1}/${titles.length} (成功: ${success}, 失败: ${failed})`);
       }
     } catch (err) {
-      logWarn(`${progress} 失败: ${title} — ${err.message}`);
-      failed++;
-      failedPages.push(title);
+      if (err.cloudflareBlocked) {
+        blocked++;
+        blockedPages.push(title);
+        logWarn(`${progress} Cloudflare 拦截: ${title} — ${err.message}`);
+      } else {
+        logWarn(`${progress} 失败: ${title} — ${err.message}`);
+        failed++;
+        failedPages.push(title);
+      }
     }
   }
 
@@ -145,11 +190,15 @@ export async function scrapeWiki() {
   logInfo(`  总页面: ${titles.length}`);
   logInfo(`  成功: ${success}`);
   logInfo(`  失败: ${failed}`);
+  if (blocked > 0) logWarn(`  Cloudflare 拦截: ${blocked}`);
   if (failedPages.length > 0) {
     logWarn(`  失败页面: ${failedPages.slice(0, 10).join(', ')}${failedPages.length > 10 ? '...' : ''}`);
   }
+  if (blockedPages.length > 0) {
+    logWarn(`  被拦截页面: ${blockedPages.slice(0, 10).join(', ')}${blockedPages.length > 10 ? '...' : ''}`);
+  }
 
-  return { success, failed, total: titles.length, failedPages };
+  return { success, failed, blocked, total: titles.length, failedPages, blockedPages };
 }
 
 // ── 独立运行 ──

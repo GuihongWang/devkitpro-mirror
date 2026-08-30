@@ -1,21 +1,62 @@
 /**
  * packages-scraper.mjs - 包索引爬虫
  * 抓取 pkg.devkitpro.org 的 pacman 仓库包索引
+ *
+ * pkg.devkitpro.org 已关闭 HTML 目录索引（/packages/ → 404），
+ * 改为下载 pacman 数据库文件（dkp-libs.db / dkp-linux.db，gzip 的 tar 包）
+ * 解析其中的 desc 元数据。
  */
 
 import { writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
-import { throttledFetch, logInfo, logOk, logWarn, logErr, logStep } from '../utils/fetcher.mjs';
+import { gunzipSync } from 'node:zlib';
+import { logInfo, logOk, logWarn, logErr, logStep, sleep } from '../utils/fetcher.mjs';
+import { curlGet } from '../utils/curl-fetch.mjs';
 
 const PKG_BASE = 'https://pkg.devkitpro.org';
 const OUTPUT_DIR = join(import.meta.dirname, '../../src/content/packages');
 
-// pacman 仓库结构 — 每个 group 一个目录
+// pacman 仓库结构 — 每个 repo 一个 .db 数据库文件（路径参照官方 wiki）
 const REPO_GROUPS = [
-  // devkitARM 和相关
-  { name: 'packages', url: `${PKG_BASE}/packages/` },
-  { name: 'packages-linux', url: `${PKG_BASE}/packages-linux/` },
+  {
+    name: 'dkp-libs',
+    url: `${PKG_BASE}/packages/`,                       // HTML 目录页（已 404，仅尝试）
+    dbUrl: `${PKG_BASE}/packages/dkp-libs.db`,
+  },
+  {
+    name: 'dkp-linux',
+    url: `${PKG_BASE}/packages/linux/x86_64/`,           // HTML 目录页（已 404，仅尝试）
+    dbUrl: `${PKG_BASE}/packages/linux/x86_64/dkp-linux.db`,
+  },
 ];
+
+// ── 本地带重试的 curl 请求（返回 { status, headers, body, url }）──
+async function pkgFetch(url, { timeout = 30000, binary = false, attempts = 5 } = {}) {
+  let lastErr;
+  for (let i = 1; i <= attempts; i++) {
+    try {
+      const r = await curlGet(url, { timeout, binary });
+      if (r.status === 429 || r.status === 403 || (r.status >= 500 && r.status < 600)) {
+        const delay = 1200 * 2 ** (i - 1) + Math.floor(Math.random() * 400);
+        lastErr = new Error(`HTTP ${r.status} ${url}`);
+        if (i < attempts) {
+          logWarn(`  ${lastErr.message} — ${delay}ms 后重试 (${i}/${attempts})`);
+          await sleep(delay);
+          continue;
+        }
+      }
+      return r;
+    } catch (err) {
+      lastErr = err;
+      if (i < attempts) {
+        const delay = 1000 * 2 ** (i - 1) + Math.floor(Math.random() * 500);
+        logWarn(`  ${err.message} — ${delay}ms 后重试 (${i}/${attempts})`);
+        await sleep(delay);
+      }
+    }
+  }
+  throw lastErr;
+}
 
 // ── 解析 pacman 目录索引 HTML ──
 function parsePacmanIndex(html) {
@@ -42,6 +83,49 @@ function parsePacmanIndex(html) {
     }
   }
   return files;
+}
+
+// ── 解析 pacman 数据库 .db（gzip 压缩的 tar，内含 <pkgver>/desc）──
+function parsePacmanDb(dbBody) {
+  const tar = gunzipSync(dbBody);
+
+  const entries = [];
+  let offset = 0;
+  while (offset + 512 <= tar.length) {
+    const nameBuf = tar.subarray(offset, offset + 100);
+    if (nameBuf[0] === 0) break; // 全零块 = tar 结束
+    const name = nameBuf.toString('utf-8').replace(/\0[\s\S]*$/, '');
+    if (!name) break;
+    const sizeStr = tar.subarray(offset + 124, offset + 136).toString('utf-8').replace(/\0[\s\S]*$/, '').trim();
+    const size = parseInt(sizeStr, 8) || 0;
+    offset += 512;
+    const data = tar.subarray(offset, offset + size);
+    offset += Math.ceil(size / 512) * 512;
+    entries.push({ name, data });
+  }
+
+  const pkgs = [];
+  for (const e of entries) {
+    if (!e.name.endsWith('/desc')) continue;
+    const text = e.data.toString('utf-8');
+    const fields = {};
+    let current = null;
+    for (const line of text.split('\n')) {
+      if (line.startsWith('%') && line.endsWith('%')) {
+        current = line.slice(1, -1).toUpperCase();
+        fields[current] = '';
+      } else if (current && line.trim() !== '' && fields[current] !== undefined) {
+        fields[current] += fields[current] ? `\n${line}` : line;
+      }
+    }
+    pkgs.push({
+      name: fields.NAME || e.name.replace(/-[^-/]+\/desc$/, ''),
+      version: fields.VERSION || '',
+      arch: fields.ARCH || '',
+      filename: fields.FILENAME || '',
+    });
+  }
+  return pkgs;
 }
 
 // ── 解析 pacman 文件的元数据（从文件名推断） ──
@@ -71,26 +155,60 @@ function parsePkgMeta(filename) {
   return { name: base, version: '', arch: 'unknown' };
 }
 
-// ── 抓取 repo 目录 ──
+// ── 把文件列表转成包条目（HTML 索引路径） ──
+function buildFromFiles(files, repo) {
+  return files.map((f) => ({
+    ...parsePkgMeta(f.filename),
+    filename: f.filename,
+    repo: repo.name,
+    download_url: `${repo.url}${f.filename}`,
+  }));
+}
+
+// ── 抓取 repo（优先 HTML 索引，失败则解析 .db） ──
 async function scrapeRepo(repo) {
-  logStep(`抓取仓库: ${repo.name} (${repo.url})`);
-  const res = await throttledFetch(repo.url, { interval: 600 });
-  const html = await res.text();
-  const files = parsePacmanIndex(html);
-  logInfo(`  找到 ${files.length} 个包文件`);
+  logStep(`抓取仓库: ${repo.name}`);
+  logInfo(`  HTML 目录: ${repo.url}`);
+  logInfo(`  .db 数据库: ${repo.dbUrl}`);
 
-  // 解析元数据
-  const packages = files.map((f) => {
-    const meta = parsePkgMeta(f.filename);
-    return {
-      ...meta,
-      filename: f.filename,
-      repo: repo.name,
-      download_url: `${repo.url}${f.filename}`,
-    };
-  });
+  // 1) 尝试 HTML 目录索引
+  try {
+    const htmlRes = await pkgFetch(repo.url, { timeout: 30000 });
+    if (htmlRes.status === 200) {
+      const files = parsePacmanIndex(htmlRes.body || '');
+      if (files.length > 0) {
+        logInfo(`  [HTML] 找到 ${files.length} 个包文件`);
+        return buildFromFiles(files, repo);
+      }
+      logWarn('  [HTML] 目录页无包文件（可能未开启 autoindex），改用 .db');
+    } else {
+      logWarn(`  [HTML] HTTP ${htmlRes.status}，改用 .db`);
+    }
+  } catch (err) {
+    logWarn(`  [HTML] ${err.message}，改用 .db`);
+  }
 
-  return packages;
+  // 2) 下载并解析 pacman .db
+  const db = await pkgFetch(repo.dbUrl, { timeout: 60000, binary: true });
+  if (db.status !== 200) throw new Error(`.db 下载失败 HTTP ${db.status}`);
+  logInfo(`  [.db] 下载完成: ${db.body.length} bytes`);
+
+  let pkgs;
+  try {
+    pkgs = parsePacmanDb(db.body);
+  } catch (err) {
+    throw new Error(`.db 解析失败: ${err.message}`);
+  }
+  logInfo(`  [.db] 解析到 ${pkgs.length} 个包`);
+
+  return pkgs.map((p) => ({
+    name: p.name,
+    version: p.version,
+    arch: p.arch,
+    filename: p.filename || `${p.name}-${p.version}-${p.arch}.pkg.tar.zst`,
+    repo: repo.name,
+    download_url: p.filename ? `${repo.url}${p.filename}` : `${repo.url}${p.name}/`,
+  }));
 }
 
 // ── 主入口 ──

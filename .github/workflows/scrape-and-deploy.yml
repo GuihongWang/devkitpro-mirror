@@ -28,7 +28,7 @@ jobs:
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
         with:
-          version: 8
+          version: 9
 
       - name: Get pnpm store directory
         shell: bash
@@ -48,7 +48,7 @@ jobs:
 
       - name: Run scrapers
         id: scrape
-        run: pnpm run scrape || true
+        run: node scripts/build-static.mjs
 
       - name: Check for changes
         id: changes
@@ -65,7 +65,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git commit -m "chore: update scraped content [$(date -u +%Y-%m-%d)]"
+          git commit -m "chore: update content cache [$(date -u +%Y-%m-%d)]"
           git push
 
       - name: Build verification
