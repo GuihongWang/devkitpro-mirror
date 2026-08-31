@@ -18,6 +18,3 @@
 
 /*.js
   Cache-Control: public, max-age=2592000, immutable
-
-/*.json
-  Cache-Control: public, s-maxage=300, max-age=60
