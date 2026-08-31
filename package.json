@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "astro dev --host",
     "start": "astro dev --host",
-    "build": "astro check && astro build",
+    "build": "astro check && astro build && node scripts/fix-wreq-binding.mjs",
     "preview": "astro preview",
     "astro": "astro",
     "lint": "eslint .",
@@ -29,7 +29,8 @@
     "p-limit": "^7.3.1",
     "sharp": "^0.33.0",
     "turndown": "^7.2.4",
-    "undici": "^8.10.0"
+    "undici": "^8.10.0",
+    "wreq-js": "^3.2.0"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.4",
@@ -42,6 +43,9 @@
     "typescript": "^5.7.0"
   },
   "pnpm": {
-    "onlyBuiltDependencies": ["esbuild", "sharp"]
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "sharp"
+    ]
   }
 }

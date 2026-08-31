@@ -23,7 +23,12 @@
     {
       "source": "/api/packages(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, s-maxage=300, max-age=60" },
+        { "key": "Access-Control-Allow-Origin", "value": "*" }
+      ]
+    },
+    {
+      "source": "/api/apt(.*)",
+      "headers": [
         { "key": "Access-Control-Allow-Origin", "value": "*" }
       ]
     }

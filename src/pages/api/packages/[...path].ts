@@ -1,6 +1,10 @@
 import type { APIRoute } from "astro";
+import { fetch as wreqFetch } from "wreq-js";
 
 // Served as a Serverless Function on Vercel (not prerendered).
+// NOTE: wreq-js loads a native NAPI binding, so this MUST run as a
+// Node.js Serverless Function (not the Edge Runtime). The page does not set
+// `runtime = "edge"`, so @astrojs/vercel emits it as a Node function.
 export const prerender = false;
 
 /**
@@ -21,6 +25,16 @@ const UPSTREAM_BASE = "https://pkg.devkitpro.org/packages";
 const UPSTREAM_HOST = "pkg.devkitpro.org";
 
 const REQUEST_TIMEOUT_MS = 30_000;
+
+/**
+ * wreq-js browser TLS fingerprint used against the upstream.
+ *
+ * Cloudflare blocks Node's native (undici) TLS fingerprint with a 403, so we
+ * impersonate a current Chrome (JA3/JA4 + HTTP/2 SETTINGS). Chrome 149 is the
+ * newest profile and is confirmed to return 200; older profiles (124/131) are
+ * blocked. Do NOT downgrade this to an outdated fingerprint.
+ */
+const BROWSER_FINGERPRINT = "chrome_149";
 
 /**
  * Select a Cache-Control value based on the requested file.
@@ -65,56 +79,71 @@ export const GET: APIRoute = async ({ params, request }) => {
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
 
+  let upstream;
   try {
-    const upstream = await fetch(upstreamUrl.toString(), {
+    upstream = await wreqFetch(upstreamUrl.toString(), {
       method: request.method,
-      headers: {
-        "user-agent": "devkitpro-mirror/0.1 (reverse proxy)",
-      },
+      browser: BROWSER_FINGERPRINT,
+      // Keep the raw (possibly compressed) bytes and the upstream
+      // Content-Encoding header intact so we can proxy them verbatim.
+      compress: false,
       redirect: "follow",
       signal: controller.signal,
-    });
-
-    clearTimeout(timeout);
-
-    if (!upstream.ok && upstream.status !== 404 && upstream.status !== 410) {
-      return new Response(
-        `Upstream error: ${upstream.status} ${upstream.statusText}`,
-        { status: upstream.status >= 500 ? 502 : upstream.status },
-      );
-    }
-
-    const upstreamBody = await upstream.arrayBuffer();
-
-    const headers = new Headers();
-    headers.set("Cache-Control", cacheControlFor(path));
-    headers.set("X-Mirror-Upstream", UPSTREAM_HOST);
-
-    const contentType = upstream.headers.get("content-type");
-    if (contentType) headers.set("Content-Type", contentType);
-
-    const contentLength = upstream.headers.get("content-length");
-    if (contentLength) headers.set("Content-Length", contentLength);
-
-    const lastModified = upstream.headers.get("last-modified");
-    if (lastModified) headers.set("Last-Modified", lastModified);
-
-    const etag = upstream.headers.get("etag");
-    if (etag) headers.set("ETag", etag);
-
-    return new Response(upstreamBody, {
-      status: upstream.status,
-      headers,
+      headers: {
+        "user-agent": "pacman/6.1.0 (Arch Linux)",
+      },
     });
   } catch (error) {
     clearTimeout(timeout);
 
     // The request was aborted because the upstream took too long.
     if (error instanceof Error && error.name === "AbortError") {
-      return new Response("Upstream timeout", { status: 504 });
+      return new Response(
+        "上游请求超时（504 Gateway Timeout）——请稍后重试",
+        { status: 504 },
+      );
     }
 
-    // The upstream is unreachable.
-    return new Response("Upstream unreachable", { status: 502 });
+    // Connection-level failure (upstream unreachable / TLS / proxy error).
+    return new Response(
+      "无法连接上游服务器（502 Bad Gateway）——镜像源暂时不可用",
+      { status: 502 },
+    );
   }
+  clearTimeout(timeout);
+
+  if (!upstream.ok && upstream.status !== 404 && upstream.status !== 410) {
+    return new Response(
+      `上游错误（${upstream.status} ${upstream.statusText}）`,
+      { status: upstream.status >= 500 ? 502 : upstream.status },
+    );
+  }
+
+  const upstreamBody = await upstream.arrayBuffer();
+
+  const headers = new Headers();
+  headers.set("Cache-Control", cacheControlFor(path));
+  headers.set("X-Mirror-Upstream", UPSTREAM_HOST);
+
+  const contentType = upstream.headers.get("content-type");
+  if (contentType) headers.set("Content-Type", contentType);
+
+  // With `compress: false` the body holds the raw bytes exactly as upstream
+  // sent them, so preserve the transfer-level Content-Encoding (e.g. gzip).
+  const contentEncoding = upstream.headers.get("content-encoding");
+  if (contentEncoding) headers.set("Content-Encoding", contentEncoding);
+
+  // Content-Length must describe the bytes we actually forward.
+  headers.set("Content-Length", String(upstreamBody.byteLength));
+
+  const lastModified = upstream.headers.get("last-modified");
+  if (lastModified) headers.set("Last-Modified", lastModified);
+
+  const etag = upstream.headers.get("etag");
+  if (etag) headers.set("ETag", etag);
+
+  return new Response(upstreamBody, {
+    status: upstream.status,
+    headers,
+  });
 };
