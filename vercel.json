@@ -31,11 +31,19 @@
       "headers": [
         { "key": "Access-Control-Allow-Origin", "value": "*" }
       ]
+    },
+    {
+      "source": "/repo/(.*)",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "*" }
+      ]
+    },
+    {
+      "source": "/apt/(.*)",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "*" }
+      ]
     }
-  ],
-  "rewrites": [
-    { "source": "/apt/(.*)", "destination": "/api/apt/$1" },
-    { "source": "/repo/(.*)", "destination": "/api/packages/$1" }
   ],
   "redirects": [
     { "source": "/forum", "destination": "/forum/", "permanent": true },
