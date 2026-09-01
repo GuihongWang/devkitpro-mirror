@@ -1,5 +1,5 @@
 import type { APIRoute } from "astro";
-import { curlImpersonateFetch } from "@lib/curl-impersonate-fetch";
+import { curlImpersonateFetch, binaryDiag } from "@lib/curl-impersonate-fetch";
 
 // Served as a Serverless Function on Vercel (not prerendered).
 // NOTE: this proxy shells out to a static curl-impersonate binary (no native
@@ -64,11 +64,53 @@ function cacheControlFor(path: string): string {
   return "public, s-maxage=300, max-age=60";
 }
 
+/**
+ * 把任意异常序列化为 text/plain 诊断体（用于暴露被 FUNCTION_INVOCATION_FAILED
+ * 掩盖的真异常）。内含 message、stack、code、cause。
+ */
+function diagBody(error: unknown): string {
+  const e = error instanceof Error ? error : new Error(String(error));
+  const cause = (e as { cause?: unknown }).cause;
+  let causeStr: string;
+  try {
+    causeStr = cause === undefined ? "undefined" : JSON.stringify(cause);
+  } catch {
+    causeStr = String(cause);
+  }
+  return [
+    `[proxy diagnostic] uncaught handler error (500)`,
+    `message: ${e.message}`,
+    `code: ${(e as { code?: unknown }).code ?? "undefined"}`,
+    `cause: ${causeStr}`,
+    `stack:\n${e.stack ?? "(no stack)"}`,
+  ].join("\n");
+}
+
 export const GET: APIRoute = async ({ params, request }) => {
+  try {
+    return await handleGET({ params, request });
+  } catch (error) {
+    return new Response(diagBody(error), {
+      status: 500,
+      headers: { "Content-Type": "text/plain; charset=utf-8" },
+    });
+  }
+};
+
+async function handleGET({ params, request }: { params: { path?: string }; request: Request }): Promise<Response> {
   const path = params.path;
 
   if (!path || path === "") {
     return new Response("Not Found", { status: 404 });
+  }
+
+  // 二进制自检：仅当 URL 携带 __diag 参数时生效，不请求上游。
+  if (path.includes("__diag")) {
+    const diag = await binaryDiag();
+    return new Response(JSON.stringify(diag, null, 2), {
+      status: 200,
+      headers: { "Content-Type": "application/json; charset=utf-8" },
+    });
   }
 
   const upstreamUrl = new URL(`${UPSTREAM_BASE}/${path}`);

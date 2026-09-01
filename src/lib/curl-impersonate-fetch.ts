@@ -32,7 +32,7 @@
  */
 
 import { execFile } from "node:child_process";
-import { mkdtempSync, readFileSync, rmSync, existsSync } from "node:fs";
+import { mkdtempSync, readFileSync, rmSync, existsSync, statSync, accessSync, constants } from "node:fs";
 import { tmpdir } from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -92,7 +92,105 @@ export function resolveBinaryPath(): string {
   );
 }
 
-/** 解析 curl `-D` 头文件输出 → { status, statusText, headers }（headers 小写键） */
+/**
+ * 收集 curl-impersonate 二进制的诊断信息（供 `?__diag=1` 自检与异常兜底使用）。
+ * 不抛错——任何 stat/access 失败都折叠成字段返回。
+ */
+export interface BinaryDiag {
+  /** resolveBinaryPath() 解析出的路径（可能不带具体二进制是否存在）。 */
+  path: string;
+  exists: boolean;
+  executable: boolean;
+  size: number | null;
+  isFile: boolean;
+  mode: string | null;
+  /** 环境变量是否覆盖了二进制路径。 */
+  fromEnv: boolean;
+  /** execFile --version 的输出（成功时）。 */
+  version: string | null;
+  versionError: string | null;
+}
+
+function safeStat(binPath: string): { size: number | null; isFile: boolean; mode: string | null } {
+  try {
+    const s = statSync(binPath);
+    return {
+      size: s.size,
+      isFile: s.isFile(),
+      mode: s.mode != null ? s.mode.toString(8) : null,
+    };
+  } catch {
+    return { size: null, isFile: false, mode: null };
+  }
+}
+
+function safeAccess(binPath: string): boolean {
+  try {
+    accessSync(binPath, constants.X_OK);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+/**
+ * 仅用于诊断：返回二进制路径 / 存在 / 可执行 / 大小 / 是否文件 + `--version` 输出。
+ * 该函数本身极少抛错（尽力返回数据），便于在生产暴露二进制是否能跑。
+ */
+export async function binaryDiag(): Promise<BinaryDiag> {
+  let binPath: string;
+  try {
+    binPath = resolveBinaryPath();
+  } catch (e) {
+    return {
+      path: "",
+      exists: false,
+      executable: false,
+      size: null,
+      isFile: false,
+      mode: null,
+      fromEnv: !!process.env.CURL_IMPERSONATE_BIN,
+      version: null,
+      versionError: e instanceof Error ? e.message : String(e),
+    };
+  }
+
+  const exists = existsSync(binPath);
+  const st = safeStat(binPath);
+  const executable = exists ? safeAccess(binPath) : false;
+
+  let version: string | null = null;
+  let versionError: string | null = null;
+  if (exists) {
+    try {
+      version = await new Promise<string>((resolve, reject) => {
+        execFile(binPath, ["--version"], { timeout: 10_000, windowsHide: true }, (err, stdout, stderr) => {
+          if (err) {
+            reject(new Error(`${err.message}${stderr ? ` :: ${stderr.toString().trim()}` : ""}`));
+            return;
+          }
+          resolve(stdout.toString().trim().split("\n")[0] || "");
+        });
+      });
+    } catch (e) {
+      versionError = e instanceof Error ? e.message : String(e);
+    }
+  }
+
+  return {
+    path: binPath,
+    exists,
+    executable,
+    size: st.size,
+    isFile: st.isFile,
+    mode: st.mode,
+    fromEnv: !!process.env.CURL_IMPERSONATE_BIN,
+    version,
+    versionError,
+  };
+}
+
+/* 解析 curl `-D` 头文件输出 → { status, statusText, headers }（headers 小写键） */
 function parseHeaders(raw: string): { status: number; statusText: string; headers: Record<string, string> } {
   const lines = raw.replace(/\r/g, "").split("\n");
   let status = 0;
@@ -168,11 +266,24 @@ export async function curlImpersonateFetch(
             reject(e);
             return;
           }
+          // 附加二进制诊断：路径 / 存在 / 可执行(X_OK) / 大小。
+          // 帮助判断失败是「子进程本身起不来」（binary 缺失/不可执行）还是「上游连接问题」。
+          let binDiag = "";
+          try {
+            const dp = resolveBinaryPath();
+            const de = existsSync(dp);
+            const dst = de ? safeStat(dp) : { size: null, isFile: false, mode: null };
+            const dex = de ? safeAccess(dp) : false;
+            binDiag = ` [bin path=${dp} exists=${de} exec=${dex} size=${dst.size ?? "?"}]`;
+          } catch {
+            binDiag = " [bin resolve=failed]";
+          }
           const e = new Error(
-            `无法连接上游（curl 退出码 ${errCode ?? "?"}）: ${cause || err.message}`,
+            `无法连接上游（curl 退出码 ${errCode ?? "?"}）: ${cause || err.message}${binDiag}`,
           ) as CurlImpersonateError;
           e.code = "ENETUNREACH";
           e.exitCode = typeof errCode === "number" ? errCode : undefined;
+          e.cause = cause;
           reject(e);
           return;
         }
