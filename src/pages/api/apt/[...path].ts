@@ -1,10 +1,11 @@
 import type { APIRoute } from "astro";
-import { fetch as wreqFetch } from "wreq-js";
+import { curlImpersonateFetch } from "@lib/curl-impersonate-fetch";
 
 // Served as a Serverless Function on Vercel (not prerendered).
-// NOTE: wreq-js loads a native NAPI binding, so this MUST run as a
-// Node.js Serverless Function (not the Edge Runtime). The page does not set
-// `runtime = "edge"`, so @astrojs/vercel emits it as a Node function.
+// NOTE: this proxy shells out to a static curl-impersonate binary (no native
+// binding), so it MUST run as a Node.js Serverless Function (not the Edge
+// Runtime). The page does not set `runtime = "edge"`, so @astrojs/vercel emits
+// it as a Node function.
 export const prerender = false;
 
 /**
@@ -23,14 +24,15 @@ const UPSTREAM_HOST = "apt.devkitpro.org";
 const REQUEST_TIMEOUT_MS = 30_000;
 
 /**
- * wreq-js browser TLS fingerprint used against the upstream.
+ * curl-impersonate browser TLS fingerprint used against the upstream.
  *
  * Cloudflare blocks Node's native (undici) TLS fingerprint with a 403, so we
- * impersonate a current Chrome (JA3/JA4 + HTTP/2 SETTINGS). Chrome 149 is the
- * newest profile and is confirmed to return 200; older profiles (124/131) are
- * blocked. Do NOT downgrade this to an outdated fingerprint.
+ * impersonate a current Chrome (JA3/JA4 + HTTP/2 SETTINGS) via the static
+ * curl-impersonate binary. chrome142 is the newest-available impersonation
+ * profile and is confirmed to return 200; older profiles (124/131) are blocked.
+ * Do NOT downgrade this to an outdated fingerprint.
  */
-const BROWSER_FINGERPRINT = "chrome_149";
+const IMPERSONATE_PROFILE = "chrome142";
 
 /**
  * Select a Cache-Control value based on the requested file.
@@ -91,28 +93,21 @@ export const GET: APIRoute = async ({ params, request }) => {
     upstreamUrl.searchParams.append(key, value);
   }
 
-  const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
-
   let upstream;
   try {
-    upstream = await wreqFetch(upstreamUrl.toString(), {
+    upstream = await curlImpersonateFetch(upstreamUrl.toString(), {
       method: request.method,
-      browser: BROWSER_FINGERPRINT,
-      // Keep the raw (possibly compressed) bytes and the upstream
-      // Content-Encoding header intact so we can proxy them verbatim.
-      compress: false,
-      redirect: "follow",
-      signal: controller.signal,
-      headers: {
-        "user-agent": "apt/2.7.14 (x86_64-pc-linux-gnu)",
-      },
+      impersonate: IMPERSONATE_PROFILE,
+      // Raw bytes are proxied verbatim (see module notes). No --compressed,
+      // so the upstream sees no Accept-Encoding and sends the file as-is.
+      ua: "apt/2.7.14 (x86_64-pc-linux-gnu)",
+      timeoutMs: REQUEST_TIMEOUT_MS,
+      // On Vercel we connect DIRECT to upstream; no proxy. Local tests may
+      // pass a proxy via `proxy:` (we don't set one here so it stays direct).
     });
   } catch (error) {
-    clearTimeout(timeout);
-
     // The request was aborted because the upstream took too long.
-    if (error instanceof Error && error.name === "AbortError") {
+    if (error instanceof Error && (error as { code?: string }).code === "ETIMEDOUT") {
       return new Response(
         "上游请求超时（504 Gateway Timeout）——请稍后重试",
         { status: 504 },
@@ -125,39 +120,38 @@ export const GET: APIRoute = async ({ params, request }) => {
       { status: 502 },
     );
   }
-  clearTimeout(timeout);
 
-  if (!upstream.ok && upstream.status !== 404 && upstream.status !== 410) {
+  if (upstream.status !== 200 && upstream.status !== 404 && upstream.status !== 410) {
     return new Response(
       `上游错误（${upstream.status} ${upstream.statusText}）`,
       { status: upstream.status >= 500 ? 502 : upstream.status },
     );
   }
 
-  const upstreamBody = await upstream.arrayBuffer();
+  const upstreamBody = upstream.body;
 
   const headers = new Headers();
   headers.set("Cache-Control", cacheControlFor(path));
   headers.set("X-Mirror-Upstream", UPSTREAM_HOST);
 
-  const contentType = upstream.headers.get("content-type");
+  const contentType = upstream.headers["content-type"];
   if (contentType) headers.set("Content-Type", contentType);
 
-  // With `compress: false` the body holds the raw bytes exactly as upstream
-  // sent them, so preserve the transfer-level Content-Encoding (e.g. gzip).
-  const contentEncoding = upstream.headers.get("content-encoding");
+  // Raw bytes are forwarded exactly as upstream sent them, so preserve the
+  // transfer-level Content-Encoding (if any) verbatim.
+  const contentEncoding = upstream.headers["content-encoding"];
   if (contentEncoding) headers.set("Content-Encoding", contentEncoding);
 
   // Content-Length must describe the bytes we actually forward.
   headers.set("Content-Length", String(upstreamBody.byteLength));
 
-  const lastModified = upstream.headers.get("last-modified");
+  const lastModified = upstream.headers["last-modified"];
   if (lastModified) headers.set("Last-Modified", lastModified);
 
-  const etag = upstream.headers.get("etag");
+  const etag = upstream.headers["etag"];
   if (etag) headers.set("ETag", etag);
 
-  return new Response(upstreamBody, {
+  return new Response(new Uint8Array(upstreamBody), {
     status: upstream.status,
     headers,
   });
