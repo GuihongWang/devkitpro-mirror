@@ -137,6 +137,7 @@ export async function curlImpersonateFetch(
   const args = [
     "-sS",
     "--impersonate", impersonate,
+    "-L", // 跟随重定向（上游 3xx），与旧 wreq-js 的 redirect: "follow" 行为一致
     "--raw", // 禁用自动解压，保留原始字节
     "--max-time", String(Math.max(5, Math.round(timeoutMs / 1000))),
     "-o", bodyFile,
