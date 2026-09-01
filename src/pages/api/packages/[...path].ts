@@ -1,5 +1,5 @@
 import type { APIRoute } from "astro";
-import { curlImpersonateFetch, binaryDiag } from "@lib/curl-impersonate-fetch";
+import { curlImpersonateFetch, binaryDiagFs, binaryDiagExec } from "@lib/curl-impersonate-fetch";
 
 // Served as a Serverless Function on Vercel (not prerendered).
 // NOTE: this proxy shells out to a static curl-impersonate binary (no native
@@ -104,9 +104,16 @@ async function handleGET({ params, request }: { params: { path?: string }; reque
     return new Response("Not Found", { status: 404 });
   }
 
-  // 二进制自检：仅当 URL 携带 __diag 参数时生效，不请求上游。
+  // 二进制自检：仅当 URL 携带 __diag 时生效，不请求上游。
+  //
+  // 精确二分假设 A / B：
+  //   - __diag 默认（无 ?__exec=1）→ 只跑纯 fs 检查（binaryDiagFs），**绝不 execFile/spawn**
+  //     任何进程。若返回 200 → _render 函数/模块加载正常，问题在「执行二进制」→ 假设 A。
+  //     若仍 FUNCTION_INVOCATION_FAILED → _render 函数级/模块加载问题 → 假设 B。
+  //   - __diag?__exec=1 → 才执行 execFile(binary, ["--version"]) 并返回（用于确认执行二进制时是否崩）。
   if (path.includes("__diag")) {
-    const diag = await binaryDiag();
+    const execReq = new URL(request.url).searchParams.get("__exec") === "1";
+    const diag = execReq ? await binaryDiagExec() : binaryDiagFs();
     return new Response(JSON.stringify(diag, null, 2), {
       status: 200,
       headers: { "Content-Type": "application/json; charset=utf-8" },
