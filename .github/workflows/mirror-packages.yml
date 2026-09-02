@@ -34,6 +34,9 @@ permissions:
 jobs:
   mirror:
     name: Mirror devkitPro pacman/apt indexes
+    # 保留 ubuntu-latest（当前为 24.04，未来可能 26.04）。不再使用 fscarmen/warp-on-actions，
+    # 改为内联 wireguard 步骤，且内联步骤是版本无关的（不依赖被 24.04 移除的 resolvconf/openresolv），
+    # 因此在后续任一 LTS 上都能工作，无需锁定具体版本。
     runs-on: ubuntu-latest
     timeout-minutes: 30
 
@@ -49,46 +52,155 @@ jobs:
           node-version: 22
 
       # devkitPro 上游在 Cloudflare 后面，gh runner 直连经常被 403。用 WARP 换一个
-      # 干净出口。注：WARP 步骤偶发随 runner 网络抖动失败；这里故意**用 continue-on-error
-      # 但加后续连通性校验**：若 WARP 生效，上游返回 200；若 WARP 失败但直连偶然可用，
-      # 也放行（首次先拿日志看真实结构）。担心 WARP 崩会导致整次 workflow 白跑，因此
-      # 不把它设为硬失败。
-      - name: Setup Cloudflare WARP (WireGuard)
-        uses: fscarmen/warp-on-actions@v1.4
-        with:
-          mode: wireguard
-          stack: ipv4
-        continue-on-error: true
+      # 干净出口。
+      #
+      # 为何不再用 fscarmen/warp-on-actions@v1.4：
+      #   * 其 action.yml 的 wireguard 分支（v1.4，L38-45）在 Ubuntu >= 24.04 时执行
+      #       apt-get install ... resolvconf ...（L42），但 Ubuntu 24.04 已移除 resolvconf
+      #       与 openresolv 两个包（改由 systemd-resolved 提供该接口）：
+      #         - https://askubuntu.com/questions/1513526  “Package 'openresolv' has no installation candidate”
+      #         - https://github.com/fscarmen/warp-sh/issues/66
+      #         - https://github.com/fscarmen/warp-on-actions/issues/5
+      #     而 GitHub Actions 的 bash 默认带 `set -e`，apt 失败即令 composite step 以非零
+      #     退出（首次 run step 退出码 2）→ WARP 未建立 → 出口 IP 未切换 → 零下载。
+      #   * 内联实现规避整类问题：配置里**不写 DNS= 行**，wg-quick 就不会调用 resolvconf，
+      #     随后手动写入隧道可达的 resolver（1.1.1.1/8.8.8.8）。版本无关，22.04/24.04/26.04 通吃。
+      #
+      # 失败策略：不 fail-fast。若 WARP 建立/出口校验失败，打 ::error:: 后 exit 0 继续，
+      # 仍尝试直连（mirror 脚本自带 curl-impersonate 可绕过部分 403）。失败不再静默吞掉——
+      # ::error:: 会显示在无登录即可见的 run Summary 页。
+      - name: Setup Cloudflare WARP (inline WireGuard)
+        id: warp
+        shell: bash
+        run: |
+          set -uo pipefail
+          FAIL=0
+          echo "::group::WARP setup (inline wireguard)"
+
+          # 1) 安装用户态工具。不装 resolvconf/openresolv（24.04 已移除）；DNS 由下面手动处理。
+          sudo apt-get -y -qq update || FAIL=1
+          sudo apt-get -y -qq install --no-install-recommends \
+            wireguard-tools iproute2 net-tools dnsutils iptables || FAIL=1
+
+          # 2) 探测主网卡源 IP（用于 PostUp 路由规则）；grep -P 失败或取不到则回退默认路由网卡。
+          LAN="$(ip route get 192.168.193.10 2>/dev/null | grep -oP 'src \K\S+' | head -1 || true)"
+          if [ -z "${LAN:-}" ]; then
+            LAN="$(ip -4 route show default 2>/dev/null | grep -oP 'dev \K\S+' | head -1 || true)"
+          fi
+          if [ -z "${LAN:-}" ]; then
+            echo "::error::WARP_SETUP_FAILED cannot-detect-lan-ip"
+            echo "ip=unreachable" >> "$GITHUB_OUTPUT"
+            echo "::endgroup::"
+            exit 0
+          fi
+
+          # 3) WARP WireGuard 配置（复用 fscarmen 的公开 WARP 客户端凭据）；
+          #    **不含 DNS= 行** → wg-quick 不触碰 resolvconf，绕开 24.04 包缺失问题。
+          cat > /tmp/warp.conf <<EOF
+          [Interface]
+          PrivateKey = cKE7LmCF61IhqqABGhvJ44jWXp8fKymcMAEVAzbDF2k=
+          Address = 172.16.0.2/32
+          MTU = 1280
+          PostUp = ip -4 rule add from ${LAN} lookup main
+          PostDown = ip -4 rule delete from ${LAN} lookup main
+
+          [Peer]
+          PublicKey = bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
+          AllowedIPs = 0.0.0.0/0
+          Endpoint = engage.cloudflareclient.com:2408
+          EOF
+          sudo install -m 0600 /tmp/warp.conf /etc/wireguard/warp.conf || FAIL=1
+
+          # 4) 起隧道（无 DNS= 故无需 resolvconf）
+          sudo wg-quick up warp || FAIL=1
+
+          # 5) AllowedIPs=0.0.0.0/0 会把解析请求也导入隧道，原系统 resolver（Azure 内网）不可达，
+          #    故显式写入隧道可达的 resolver（先固化为普通文件，防它是 systemd-resolved 符号链接）。
+          sudo bash -c 'rm -f /etc/resolv.conf; printf "nameserver 1.1.1.1\nnameserver 8.8.8.8\n" > /etc/resolv.conf' || FAIL=1
+
+          echo "::endgroup::"
+
+          # 6) 校验出口 IP → annotation（Summary 页无需登录可见）
+          IP="$(curl -s4 --max-time 10 https://api-ipv4.ip.sb/geoip 2>/dev/null || true)"
+          if [ "$FAIL" -eq 0 ] && [ -n "${IP:-}" ]; then
+            echo "::notice::WARP_OK ip=${IP}"
+            echo "ip=${IP}" >> "$GITHUB_OUTPUT"
+          else
+            echo "::error::WARP_SETUP_FAILED fail=${FAIL} ip=${IP:-unreachable}"
+            echo "ip=unreachable" >> "$GITHUB_OUTPUT"
+          fi
+          # 不 fail-fast：exit 0，让后续 verify + mirror 继续（直连备选），失败经 ::error:: 可见。
+          exit 0
 
       - name: Verify WARP egress + upstream reachability
         id: reach
-        continue-on-error: true
+        shell: bash
         run: |
-          echo "--- geoip ---"
-          curl -s --max-time 10 https://api-ipv4.ip.sb/geoip || echo "(geoip failed)"
-          echo "--- pkg.devkitpro.org/packages/dkp-libs.db ---"
-          curl -sS -o /dev/null -w "pkg:%{http_code}\n" --max-time 15 https://pkg.devkitpro.org/packages/dkp-libs.db || echo "(pkg unreachable)"
-          echo "--- apt.devkitpro.org/dists/stable/InRelease ---"
-          curl -sS -o /dev/null -w "apt:%{http_code}\n" --max-time 15 https://apt.devkitpro.org/dists/stable/InRelease || echo "(apt unreachable)"
+          set +e
+          GEO="$(curl -s4 --max-time 10 https://api-ipv4.ip.sb/geoip 2>/dev/null || true)"
+          PKG="$(curl -sS -o /dev/null -w '%{http_code}' --max-time 15 https://pkg.devkitpro.org/packages/dkp-libs.db 2>/dev/null || true)"
+          APT="$(curl -sS -o /dev/null -w '%{http_code}' --max-time 15 https://apt.devkitpro.org/dists/stable/InRelease 2>/dev/null || true)"
+          set -e
+          PKG="${PKG:-000}"; APT="${APT:-000}"; GEO="${GEO:-unreachable}"
+          # 供无登录 Summary 页查看的 annotation
+          echo "::notice::UPSTREAM pkg=${PKG} apt=${APT} geoip=${GEO}"
+          echo "pkg=${PKG}" >> "$GITHUB_OUTPUT"
+          echo "apt=${APT}" >> "$GITHUB_OUTPUT"
+          echo "geoip=${GEO}" >> "$GITHUB_OUTPUT"
+          echo
+          echo "pkg.devkitpro.org -> ${PKG}"
+          echo "apt.devkitpro.org  -> ${APT}"
+          echo "geoip (egress)     -> ${GEO}"
+          exit 0
 
       - name: Verify bundled curl-impersonate binary
-        continue-on-error: true
+        shell: bash
         run: |
-          chmod +x "${{ github.workspace }}/bin/curl-impersonate"
-          "${{ github.workspace }}/bin/curl-impersonate" --version
+          set +e
+          chmod +x "${{ github.workspace }}/bin/curl-impersonate" 2>/dev/null
+          OUT="$("${{ github.workspace }}/bin/curl-impersonate" --version 2>&1)"
+          CODE=$?
+          set -e
+          printf '%s\n' "$OUT"
+          if [ "$CODE" -eq 0 ]; then
+            echo "::notice::CURL_IMPERSONATE_OK"
+          else
+            echo "::error::CURL_IMPERSONATE_FAILED rc=${CODE}"
+          fi
+          exit 0
 
       - name: Run mirror-indexes
         id: mirror
         env:
           CURL_IMPERSONATE_BIN: ${{ github.workspace }}/bin/curl-impersonate
+        shell: bash
         run: |
           args=""
           [ "${{ inputs.force }}" == "true" ] && args="$args --force"
           if [ "${{ inputs.scope }}" != "all" ]; then args="$args --scope ${{ inputs.scope }}"; fi
-          node scripts/mirror-indexes.mjs $args
-        # 核心索引失败返回非零；这里显式 continue-on-error 以保留退出码诊断，
-        # 但仍允许后续 commit（部分核心失败仍应把已成功的镜像提交）。
-        continue-on-error: true
+
+          # 捕获输出与退出码，同时打印完整日志并输出 annotation。
+          set +e
+          OUT="$(node scripts/mirror-indexes.mjs $args 2>&1)"
+          CODE=$?
+          set -e
+          printf '%s\n' "$OUT"
+
+          DL="$(printf '%s' "$OUT" | sed -n 's/.*downloaded[ ]*:[ ]*\([0-9][0-9]*\).*/\1/p' | head -1)"
+          SK="$(printf '%s' "$OUT" | sed -n 's/.*skipped404[ ]*:[ ]*\([0-9][0-9]*\).*/\1/p' | head -1)"
+          ER="$(printf '%s' "$OUT" | sed -n 's/.*errors[ ]*:[ ]*\([0-9][0-9]*\).*/\1/p' | head -1)"
+          DL="${DL:-0}"; SK="${SK:-0}"; ER="${ER:-0}"
+
+          # 供无登录 Summary 页查看的 annotation
+          echo "::notice::MIRROR exit=${CODE:-?} downloaded=${DL} skipped404=${SK} errors=${ER}"
+          if [ "${CODE:-0}" -ne 0 ]; then
+            echo "::error::MIRROR exit=${CODE} — 至少一个核心索引文件失败，已成功的部分仍会提交"
+          fi
+          echo "downloaded=${DL}" >> "$GITHUB_OUTPUT"
+          echo "errors=${ER}" >> "$GITHUB_OUTPUT"
+          # 不 fail-fast：部分核心失败也把已成功的镜像提交（沿用原 continue-on-error 意图），
+          # 失败信息经 ::error:: 可见，不再静默吞掉。
+          exit 0
 
       - name: Check for changes
         id: changes
