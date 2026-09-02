@@ -1,0 +1,102 @@
+name: Mirror Package Indexes
+
+on:
+  schedule:
+    - cron: "0 4 * * *" # Every day at UTC 04:00 (mirror before US/EU peak)
+  workflow_dispatch:
+    inputs:
+      scope:
+        description: "Mirror scope"
+        required: false
+        type: choice
+        options:
+          - all
+          - repo
+          - apt
+        default: all
+      force:
+        description: "Force re-download (ignore incremental cache)"
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  mirror:
+    name: Mirror devkitPro pacman/apt indexes
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # devkitPro 上游在 Cloudflare 后面，gh runner 直连经常被 403。用 WARP 换一个
+      # 干净出口。注：WARP 步骤偶发随 runner 网络抖动失败；这里故意**用 continue-on-error
+      # 但加后续连通性校验**：若 WARP 生效，上游返回 200；若 WARP 失败但直连偶然可用，
+      # 也放行（首次先拿日志看真实结构）。担心 WARP 崩会导致整次 workflow 白跑，因此
+      # 不把它设为硬失败。
+      - name: Setup Cloudflare WARP (WireGuard)
+        uses: fscarmen/warp-on-actions@v1.4
+        with:
+          mode: wireguard
+          stack: ipv4
+        continue-on-error: true
+
+      - name: Verify WARP egress + upstream reachability
+        id: reach
+        continue-on-error: true
+        run: |
+          echo "--- geoip ---"
+          curl -s --max-time 10 https://api-ipv4.ip.sb/geoip || echo "(geoip failed)"
+          echo "--- pkg.devkitpro.org/packages/dkp-libs.db ---"
+          curl -sS -o /dev/null -w "pkg:%{http_code}\n" --max-time 15 https://pkg.devkitpro.org/packages/dkp-libs.db || echo "(pkg unreachable)"
+          echo "--- apt.devkitpro.org/dists/stable/InRelease ---"
+          curl -sS -o /dev/null -w "apt:%{http_code}\n" --max-time 15 https://apt.devkitpro.org/dists/stable/InRelease || echo "(apt unreachable)"
+
+      - name: Verify bundled curl-impersonate binary
+        continue-on-error: true
+        run: |
+          chmod +x "${{ github.workspace }}/bin/curl-impersonate"
+          "${{ github.workspace }}/bin/curl-impersonate" --version
+
+      - name: Run mirror-indexes
+        id: mirror
+        env:
+          CURL_IMPERSONATE_BIN: ${{ github.workspace }}/bin/curl-impersonate
+        run: |
+          args=""
+          [ "${{ inputs.force }}" == "true" ] && args="$args --force"
+          if [ "${{ inputs.scope }}" != "all" ]; then args="$args --scope ${{ inputs.scope }}"; fi
+          node scripts/mirror-indexes.mjs $args
+        # 核心索引失败返回非零；这里显式 continue-on-error 以保留退出码诊断，
+        # 但仍允许后续 commit（部分核心失败仍应把已成功的镜像提交）。
+        continue-on-error: true
+
+      - name: Check for changes
+        id: changes
+        run: |
+          git add public/repo public/apt scripts/.mirror-cache.json
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Commit and push
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore: mirror package indexes [$(date -u +%Y-%m-%d)]"
+          git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git push origin main
