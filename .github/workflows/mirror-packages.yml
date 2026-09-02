@@ -19,6 +19,14 @@ on:
         required: false
         type: boolean
         default: false
+  push:
+    branches: [main]
+    paths:
+      - "scripts/mirror-indexes.mjs"
+      - ".github/workflows/mirror-packages.yml"
+      - "vercel.json"
+      - "public/repo/**"
+      - "public/apt/**"
 
 permissions:
   contents: write
