@@ -5,7 +5,7 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://devkitpro-mirror.vercel.app",
+  site: "https://devkitpro.marisa.ml",
   output: "server",
 
   adapter: vercel({

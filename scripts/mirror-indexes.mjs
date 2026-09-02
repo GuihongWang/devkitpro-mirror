@@ -40,6 +40,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import zlib from "node:zlib";
+import { parsePacmanDb } from "./utils/pacman-db.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.dirname(__dirname);
@@ -458,6 +459,115 @@ async function verifyGzip(file, name) {
 }
 
 // ---------------------------------------------------------------------------
+// packages 元数据生成
+//
+// 从 public/repo 下已抓取的 pacman .db 解析出包列表，聚合写入
+// src/content/packages/index.json（供 /packages/ 页面读取）。仅在 db 文件
+// 实际存在时才解析——缺失的候选跳过，不视为失败。
+//
+// 候选 db（存在才解析）：
+//   public/repo/dkp-libs.db
+//   public/repo/linux/x86_64/dkp-linux.db
+//   public/repo/linux/aarch64/dkp-linux.db
+// ---------------------------------------------------------------------------
+const PACKAGES_DB_REPOS = [
+  {
+    rel: "dkp-libs.db",
+    name: "dkp-libs",
+    url: "https://pkg.devkitpro.org/packages/",
+    dbUrl: "https://pkg.devkitpro.org/packages/dkp-libs.db",
+  },
+  {
+    rel: "linux/x86_64/dkp-linux.db",
+    name: "dkp-linux",
+    url: "https://pkg.devkitpro.org/packages/linux/x86_64/",
+    dbUrl: "https://pkg.devkitpro.org/packages/linux/x86_64/dkp-linux.db",
+    arch: "x86_64",
+  },
+  {
+    rel: "linux/aarch64/dkp-linux.db",
+    name: "dkp-linux",
+    url: "https://pkg.devkitpro.org/packages/linux/aarch64/",
+    dbUrl: "https://pkg.devkitpro.org/packages/linux/aarch64/dkp-linux.db",
+    arch: "aarch64",
+  },
+];
+
+function generatePackagesMeta(cache) {
+  const parsedRepos = [];
+  let maxUpdatedAt = "";
+
+  for (const repo of PACKAGES_DB_REPOS) {
+    const dbPath = path.join(ROOT, "public", "repo", repo.rel);
+    if (!fs.existsSync(dbPath)) {
+      console.log(`[pkg-meta] 跳过缺失 db: ${repo.rel}`);
+      continue;
+    }
+    const pkgs = parsePacmanDb(dbPath);
+    // dkp-libs 不在架构子目录，天然是 "any"；dkp-linux 显式 arch（x86_64/aarch64）
+    const arch = repo.arch || "any";
+    parsedRepos.push({
+      name: repo.name,
+      url: repo.url,
+      arch,
+      packages: pkgs.map((p) => ({ name: p.name, version: p.version, arch })),
+    });
+    console.log(`[pkg-meta] ${repo.rel}: 解析出 ${pkgs.length} 个包`);
+
+    // 取该 db 对应 url 的缓存 updatedAt
+    const cached = cache[repo.dbUrl];
+    if (cached && cached.updatedAt && cached.updatedAt > maxUpdatedAt) {
+      maxUpdatedAt = cached.updatedAt;
+    }
+  }
+
+  if (parsedRepos.length === 0) {
+    console.warn("[pkg-meta] 没有任何 db 可解析，跳过写入 index.json");
+    return;
+  }
+
+  // 按 name 聚合
+  const byName = new Map();
+  for (const repo of parsedRepos) {
+    for (const p of repo.packages) {
+      let entry = byName.get(p.name);
+      if (!entry) {
+        entry = { name: p.name, architectures: new Set(), versions: {} };
+        byName.set(p.name, entry);
+      }
+      entry.architectures.add(p.arch);
+      entry.versions[p.arch] = p.version;
+    }
+  }
+
+  const packages = [...byName.values()]
+    .map((e) => ({
+      name: e.name,
+      architectures: [...e.architectures].sort(),
+      versions: e.versions,
+    }))
+    .sort((a, b) => a.name.localeCompare(b.name));
+
+  const scrapedAt = maxUpdatedAt || new Date().toISOString();
+
+  const index = {
+    scraped_at: scrapedAt,
+    total_files: packages.length,
+    unique_packages: packages.length,
+    repos: parsedRepos.map((r) => ({ name: r.name, url: r.url })),
+    packages,
+  };
+
+  // 原子写入
+  const dest = path.join(ROOT, "src", "content", "packages", "index.json");
+  fs.mkdirSync(path.dirname(dest), { recursive: true });
+  const tmp = `${dest}.tmp`;
+  fs.writeFileSync(tmp, JSON.stringify(index, null, 2) + "\n");
+  fs.renameSync(tmp, dest);
+  console.log(`[pkg-meta] 已写入 ${dest}（${packages.length} 个包, scraped_at=${scrapedAt}）`);
+}
+
+// ---------------------------------------------------------------------------
 // 主流程
 // ---------------------------------------------------------------------------
 async function main() {
@@ -543,6 +653,18 @@ async function main() {
     for (const e of stats.coreErrors) console.log(`    - ${e}`);
   }
   console.log("====================");
+
+  // -----------------------------------------------------------------------
+  // 生成 packages 元数据（仅 repo scope）
+  // -----------------------------------------------------------------------
+  if (opts.scope === "repo" || opts.scope === "all") {
+    try {
+      console.log("\n[pkg-meta] 开始生成 packages 元数据…");
+      generatePackagesMeta(cache);
+    } catch (e) {
+      console.warn(`[pkg-meta] 生成 packages 元数据失败（不阻塞镜像流程）: ${e.message}`);
+    }
+  }
 
   if (stats.coreErrors.length > 0) {
     console.error(`\n[FAIL] ${stats.coreErrors.length} 个核心文件下载失败，退出码 1`);

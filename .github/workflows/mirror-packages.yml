@@ -202,6 +202,7 @@ jobs:
         id: changes
         run: |
           git add scripts/.mirror-cache.json
+          git add src/content/packages/index.json
           [ -d public/repo ] && git add public/repo || true
           [ -d public/apt ] && git add public/apt || true
           if git diff --cached --quiet; then

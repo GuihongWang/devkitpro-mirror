@@ -9,7 +9,7 @@
  *   1. PUBLIC_SITE_URL — Vercel / build-time environment variable (use this
  *      to point at a custom domain without editing the codebase).
  *   2. import.meta.env.SITE — the Astro `site` value from astro.config.mjs.
- *   3. The historical default deployment as a last resort.
+ *   3. The custom domain default (https://devkitpro.marisa.ml) as a last resort.
  */
 
 function normalize(value: string | undefined): string {
@@ -19,7 +19,7 @@ function normalize(value: string | undefined): string {
 export const SITE_URL: string =
   normalize(import.meta.env.PUBLIC_SITE_URL) ||
   normalize(import.meta.env.SITE) ||
-  "https://devkitpro-mirror.vercel.app";
+  "https://devkitpro.marisa.ml";
 
 /**
  * dkp-pacman `Server =` line that points at the mirror's own package
