@@ -39,18 +39,6 @@ import { fileURLToPath } from "node:url";
 
 const BIN_FILENAME = "curl-impersonate";
 
-/**
- * 模块加载期的静态状态：`node:child_process` 是否可被导入。
- *
- * 本模块顶部就 `import { execFile } from "node:child_process"`——若模块能加载到底部
- * 并被调用到此，证明该导入已成功；否则模块本身在加载阶段就崩了（假设 B）。
- * 这只是静态标记，绝不 spawn/execFile 任何进程。
- */
-export function childProcessLoadable(): boolean {
-  // 顶部的静态 `import { execFile }` 能成功执行到,说明 child_process 可加载。
-  return true;
-}
-
 export interface CurlImpersonateResult {
   status: number;
   statusText: string;
@@ -104,43 +92,6 @@ export function resolveBinaryPath(): string {
   );
 }
 
-/**
- * 纯 fs 诊断（== 假设 A / B 的二分关键 ==）。
- *
- * 本接口代表 `__diag` **默认**（无 `?__exec=1`）应返回的内容：全部是同步 fs / 直接读，
- * **绝不调用 execFile/spawn 任何进程**。若这个纯 fs 版返回 200 JSON → `_render` Lambda
- * 函数与模块加载正常，问题在「执行二进制」→ 支持假设 A。若仍 FUNCTION_INVOCATION_FAILED
- * → `_render` 函数级 / 模块加载问题 → 支持假设 B，与二进制无关。
- */
-export interface BinaryDiagFs {
-  kind: "fs-only" | "exec";
-  /** resolveBinaryPath() 解析出的路径（可能不带具体二进制是否存在）。 */
-  path: string;
-  exists: boolean;
-  executable: boolean;
-  size: number | null;
-  isFile: boolean;
-  mode: string | null;
-  /** 环境变量是否覆盖了二进制路径。 */
-  fromEnv: boolean;
-  /** 解析二进制路径是否抛错（resolveBinaryPath 失败时的错误消息）。 */
-  resolveError: string | null;
-  /** 进程信息。 */
-  process: {
-    version: string;
-    platform: string;
-    arch: string;
-  };
-  /** process.report.getReport() 里的 glibc/OS 信息（若可用）。 */
-  glibc: Record<string, unknown> | null;
-  /** child_process 模块在本模块加载期是否可导入（静态标记，不 spawn）。 */
-  childProcessLoadable: boolean;
-}
-
-/**
- * 仅执行纯 fs 检查（绝不 spawn）。同步，不抛错——任何 stat/access 失败都折叠成字段返回。
- * 用于 `__diag` 默认路径。
- */
 function safeStat(binPath: string): { size: number | null; isFile: boolean; mode: string | null } {
   try {
     const s = statSync(binPath);
@@ -161,110 +112,6 @@ function safeAccess(binPath: string): boolean {
   } catch {
     return false;
   }
-}
-
-export function binaryDiagFs(): BinaryDiagFs {
-  let binPath: string;
-  let resolveError: string | null = null;
-  try {
-    binPath = resolveBinaryPath();
-  } catch (e) {
-    binPath = "";
-    resolveError = e instanceof Error ? e.message : String(e);
-  }
-
-  const exists = binPath ? existsSync(binPath) : false;
-  const st = binPath ? safeStat(binPath) : { size: null, isFile: false, mode: null };
-  const executable = binPath && exists ? safeAccess(binPath) : false;
-
-  // 直接从 process.report 读取 glibc 版本（同步，不 spawn）。
-  let glibc: Record<string, unknown> | null = null;
-  try {
-    const report = (process.report?.getReport?.() ?? {}) as {
-      header?: Record<string, unknown>;
-      os?: Record<string, unknown>;
-    };
-    const header = report.header ?? {};
-    const os = report.os ?? {};
-    // 挑选可能与 "二进制能否跑 / 动态链接库" 相关的字段
-    glibc = {
-      osType: typeof os.platform === "string" ? os.platform : undefined,
-      osRelease: typeof os.release === "string" ? os.release : undefined,
-      osVersion: typeof os.version === "string" ? os.version : undefined,
-      glibcVersionRuntime: typeof header.glibcVersionRuntime === "string" ? header.glibcVersionRuntime : undefined,
-      glibcVersion: typeof header.glibcVersion === "string" ? header.glibcVersion : undefined,
-      cpus: typeof os.cpus === "number" ? os.cpus : undefined,
-      arch: typeof os.arch === "string" ? os.arch : undefined,
-      hostname: typeof os.hostname === "string" ? os.hostname : undefined,
-    };
-    // 去掉 undefined 字段，让输出干净
-    for (const k of Object.keys(glibc)) if (glibc[k] === undefined) delete glibc[k];
-  } catch (e) {
-    glibc = { error: e instanceof Error ? e.message : String(e) };
-  }
-
-  return {
-    kind: "fs-only",
-    path: binPath,
-    exists,
-    executable,
-    size: st.size,
-    isFile: st.isFile,
-    mode: st.mode,
-    fromEnv: !!process.env.CURL_IMPERSONATE_BIN,
-    resolveError,
-    process: {
-      version: process.version,
-      platform: process.platform,
-      arch: process.arch,
-    },
-    glibc,
-    childProcessLoadable: childProcessLoadable(),
-  };
-}
-
-/**
- * execFile 触发版（只在 `?__exec=1` 下才调用）：在纯 fs 基础上，真正执行
- * `execFile(binary, ["--version"])` 并返回结果。用于确认「执行二进制时」是否崩（假设 A 后半）。
- * 若二进制在子进程中导致原生崩溃（SIGSEGV / 被 kill），此处产出的响应可能无法回传——
- * 这本身就是诊断信息。
- */
-export interface BinaryDiagExec extends BinaryDiagFs {
-  kind: "exec";
-  version: string | null;
-  versionError: string | null;
-}
-
-export async function binaryDiagExec(): Promise<BinaryDiagExec> {
-  const base = binaryDiagFs();
-
-  let version: string | null = null;
-  let versionError: string | null = null;
-  if (base.exists && base.path) {
-    try {
-      version = await new Promise<string>((resolve, reject) => {
-        execFile(base.path, ["--version"], { timeout: 10_000, windowsHide: true }, (err, stdout, stderr) => {
-          if (err) {
-            reject(new Error(`${err.message}${stderr ? ` :: ${stderr.toString().trim()}` : ""}`));
-            return;
-          }
-          resolve(stdout.toString().trim().split("\n")[0] || "");
-        });
-      });
-    } catch (e) {
-      versionError = e instanceof Error ? e.message : String(e);
-    }
-  }
-
-  return { ...base, kind: "exec", version, versionError };
-}
-
-/**
- * 兼容旧调用：默认跑纯 fs（不 spawn），避免 `__diag` 默认触发二进制执行导致崩溃。
- * 需要 execFile 时请改用 binaryDiagExec()。
- */
-export async function binaryDiag(): Promise<BinaryDiagFs> {
-  return binaryDiagFs();
 }
 
 /* 解析 curl `-D` 头文件输出 → { status, statusText, headers }（headers 小写键） */
