@@ -85,7 +85,9 @@ jobs:
       - name: Check for changes
         id: changes
         run: |
-          git add public/repo public/apt scripts/.mirror-cache.json
+          git add scripts/.mirror-cache.json
+          [ -d public/repo ] && git add public/repo || true
+          [ -d public/apt ] && git add public/apt || true
           if git diff --cached --quiet; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else

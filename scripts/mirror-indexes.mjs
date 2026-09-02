@@ -239,6 +239,12 @@ function runCurl(bin, args) {
  *   error     → 下载/校验失败（核心文件会令退出码非零）
  */
 async function fetchCandidate(curl, cand, cache, opts) {
+  // 干跑：不发起任何网络请求（HEAD/GET），只打印计划
+  if (opts.dryRun) {
+    console.log(`[dry-run] 将下载 ${cand.kind}/${cand.rel}  ←  ${cand.url}`);
+    return { status: "plan", detail: cand.name };
+  }
+
   const dest = path.join(ROOT, "public", cand.kind, cand.rel);
   const tmpDir = path.join(ROOT, "public", ".mirror-tmp");
   fs.mkdirSync(path.dirname(dest), { recursive: true });
@@ -278,12 +284,6 @@ async function fetchCandidate(curl, cand, cache, opts) {
         return { status: "unchanged", detail: cand.name };
       }
     }
-  }
-
-  // 干跑：不下载
-  if (opts.dryRun) {
-    console.log(`[dry-run] 将下载 ${cand.kind}/${cand.rel}  ←  ${cand.url}`);
-    return { status: "skipped?(dry-run)", detail: cand.name };
   }
 
   // GET 下载（含最大 2 次重试）
