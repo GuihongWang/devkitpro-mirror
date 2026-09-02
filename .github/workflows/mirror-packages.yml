@@ -89,7 +89,6 @@ jobs:
           fi
           if [ -z "${LAN:-}" ]; then
             echo "::error::WARP_SETUP_FAILED cannot-detect-lan-ip"
-            echo "ip=unreachable" >> "$GITHUB_OUTPUT"
             echo "::endgroup::"
             exit 0
           fi
@@ -121,13 +120,13 @@ jobs:
           echo "::endgroup::"
 
           # 6) 校验出口 IP → annotation（Summary 页无需登录可见）
-          IP="$(curl -s4 --max-time 10 https://api-ipv4.ip.sb/geoip 2>/dev/null || true)"
+          #    使用可靠返回纯文本 IP 的端点，带兜底链；不写入 GITHUB_OUTPUT（无下游引用，且多行
+          #    HTML 写入会导致 file command 解析失败 → 步骤 marked failed）。
+          IP="$(curl -s4 --max-time 10 https://api.ipify.org 2>/dev/null || curl -s4 --max-time 10 https://ipv4.icanhazip.com 2>/dev/null || true)"
           if [ "$FAIL" -eq 0 ] && [ -n "${IP:-}" ]; then
             echo "::notice::WARP_OK ip=${IP}"
-            echo "ip=${IP}" >> "$GITHUB_OUTPUT"
           else
             echo "::error::WARP_SETUP_FAILED fail=${FAIL} ip=${IP:-unreachable}"
-            echo "ip=unreachable" >> "$GITHUB_OUTPUT"
           fi
           # 不 fail-fast：exit 0，让后续 verify + mirror 继续（直连备选），失败经 ::error:: 可见。
           exit 0
@@ -137,16 +136,13 @@ jobs:
         shell: bash
         run: |
           set +e
-          GEO="$(curl -s4 --max-time 10 https://api-ipv4.ip.sb/geoip 2>/dev/null || true)"
+          GEO="$(curl -s4 --max-time 10 https://api.ipify.org 2>/dev/null || curl -s4 --max-time 10 https://ipv4.icanhazip.com 2>/dev/null || true)"
           PKG="$(curl -sS -o /dev/null -w '%{http_code}' --max-time 15 https://pkg.devkitpro.org/packages/dkp-libs.db 2>/dev/null || true)"
           APT="$(curl -sS -o /dev/null -w '%{http_code}' --max-time 15 https://apt.devkitpro.org/dists/stable/InRelease 2>/dev/null || true)"
           set -e
           PKG="${PKG:-000}"; APT="${APT:-000}"; GEO="${GEO:-unreachable}"
           # 供无登录 Summary 页查看的 annotation
           echo "::notice::UPSTREAM pkg=${PKG} apt=${APT} geoip=${GEO}"
-          echo "pkg=${PKG}" >> "$GITHUB_OUTPUT"
-          echo "apt=${APT}" >> "$GITHUB_OUTPUT"
-          echo "geoip=${GEO}" >> "$GITHUB_OUTPUT"
           echo
           echo "pkg.devkitpro.org -> ${PKG}"
           echo "apt.devkitpro.org  -> ${APT}"
@@ -176,8 +172,8 @@ jobs:
         shell: bash
         run: |
           args=""
-          [ "${{ inputs.force }}" == "true" ] && args="$args --force"
-          if [ "${{ inputs.scope }}" != "all" ]; then args="$args --scope ${{ inputs.scope }}"; fi
+          if [ "${{ inputs.force }}" == "true" ]; then args="$args --force"; fi
+          if [ -n "${{ inputs.scope }}" ] && [ "${{ inputs.scope }}" != "all" ]; then args="$args --scope ${{ inputs.scope }}"; fi
 
           # 捕获输出与退出码，同时打印完整日志并输出 annotation。
           set +e
