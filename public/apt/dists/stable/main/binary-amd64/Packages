@@ -1,0 +1,17 @@
+Package: devkitpro-pacman
+Version: 6.0.1-2
+Architecture: amd64
+Maintainer: Dave Murphy <davem@devkitpro.org>
+Depends: gpg, curl, bash, libarchive13, xz-utils, libc6, pkg-config, make, libarchive-tools
+Filename: pool/main/devkitpro-pacman_6.0.1-2_amd64.deb
+Size: 3937736
+MD5sum: 491bcb4e43f6bc290f33d0ff206adb3c
+SHA1: aa96c673ea8320e3511f9bdddb960d95fd92bdcf
+SHA256: 88f4ec80e0d68615c7a40713ffe591b3ebac4ad5e5e944b2be88b3726cf4a97a
+Section: devel
+Priority: optional
+Homepage: https://devkitpro.org
+Description: devkitPro package manager
+  A lightly customised build of arch pacman used to manage the tools and libraries maintained and distributed by devktPro.
+Build-Depends: debhelper
+

@@ -1,0 +1,50 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Origin: devkitPro pacman Repository
+Label: devkitPro pacman
+Suite: stable
+Codename: stable
+Version: 1.0
+Architectures: amd64 arm64 i386
+Components: main
+Description: devkitPro pacman repository
+Date: Sun, 29 May 2022 16:42:05 +0000
+MD5Sum:
+ 1a5afb0b53ca7cbff358b7081a0032bc 685 main/binary-amd64/Packages
+ fb1a5c065cea80be52b18090c67827a8 468 main/binary-amd64/Packages.gz
+ fadd784ef576582711e8cde8f279f914 683 main/binary-i386/Packages
+ d798b4e4ba98a72ebcecff302376d79b 467 main/binary-i386/Packages.gz
+ b5742c3f35792ae977307137859476a5 685 main/binary-arm64/Packages
+ b3b5f58af335fe13e09ebd5a9c94a4aa 469 main/binary-arm64/Packages.gz
+SHA1:
+ bc729f6ec630293ee04062357a8a02bea72d6d66 685 main/binary-amd64/Packages
+ faf926ec08f327e8d927d7d5e3eda0081a798529 468 main/binary-amd64/Packages.gz
+ 1731488a5c6d331bd43a867ac7d22dae819a9608 683 main/binary-i386/Packages
+ 0a1533947551e7baf9090f4420e045a4fd6d60bf 467 main/binary-i386/Packages.gz
+ 9cc577572054ad909af6ac75178586bed46265af 685 main/binary-arm64/Packages
+ d9cf2bb3ac1424c1276725af1a498f30136a4911 469 main/binary-arm64/Packages.gz
+SHA256:
+ 7e467f4a03295b2514402d4b9f3e64e9213c5fac3e398e505f2bde849536f3d3 685 main/binary-amd64/Packages
+ 69f6623bf483eda0c2fdf1420eab78580e950a6508eca6ff1d14cf215c9f3042 468 main/binary-amd64/Packages.gz
+ 8ab55b7539f9857b6ee3878d3c9b91838343156667d2fd947a40ff6010d903f6 683 main/binary-i386/Packages
+ e6586a31c274246e19af5cf810c9d7ed02fa7853f492758d4610178073163554 467 main/binary-i386/Packages.gz
+ 7165ca7de4bac43b979d1029b50aabef090268631bca3c3b938b6a89666c2799 685 main/binary-arm64/Packages
+ 8514a2a31b721bc2086a92fa7419fee87db59ca4d31b3d9ce8afbada6d26bf4e 469 main/binary-arm64/Packages.gz
+-----BEGIN PGP SIGNATURE-----
+
+iQJLBAEBCgA1FiEE70MKLIgVNuPjzT2YydZyr0EoovEFAmKTomMXHHJlbGVhc2Vz
+QGRldmtpdHByby5vcmcACgkQydZyr0EoovHwDA/9Flnfk1mzyN139rCQs15gap0q
+vZTl6C8hoLd0UHkbijirsmzl4/JVCCH1KMYZhEX9dgP0W3wh4BLlk37QhDfiZIMK
+Ba+aSoXTghK3C5bSIXE2oNKRbqUTC8zm5VWZkOadW2IL7mC14MgykREZXIPS4RnK
+njYEVzxFUblgIOYjSIMWGcdezND8wuQKXu7kiBeBhWaRZuZVv3EnESvBG/9ZwQj3
+quPUJvvi9haoy3yVV3DGDkD0R1ok9w1gBV9/QLGEOXL29a370GN0vT5OCYUS2jNj
+iY07XGS14leK5c3S/4cWFqxzkxwG2+566wfMZQa7DRLGY+0KQ7hRGdvBfMp7GfJ2
+m49KwXJiYWuOLh3psT8DBNCFk1TppnXtsoOzSlTZeyCr+nwboe9biy7ncJV7Guqh
+2mxo16AfS3rSawtQCSkl+APBMEAIn42UGadvRVUDmV4598BLpGrtm9Q02RxWiuyl
+nJ2EVV/zxmxAuEdlfRZnQfj303W2VDN1Ww3oVLGyildrB6O8uZqI3t6GeMd21QHw
+bynObNMdPaL2CpqH/1hCpjSNlPrDYK2e261JzsI8LRqSI5/Rc7IcdCxGcltkzyH/
+pN31InQ0YUjQ/N4TFWRMohxe9VFy8fN3xFIZKAchQlrFEMMpfVuIuIzeDmT9oy2X
+jFTmejD3LKS3fjH9J6w=
+=DoEi
+-----END PGP SIGNATURE-----

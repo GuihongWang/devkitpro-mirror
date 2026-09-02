@@ -1,1 +1,170 @@
-{}
+{
+  "https://pkg.devkitpro.org/packages/dkp-libs.db": {
+    "ok": true,
+    "size": 217571,
+    "etag": "\"351e3-653ebe52deb75\"",
+    "lastModified": "Wed, 10 Jun 2026 20:14:47 GMT",
+    "updatedAt": "2026-09-02T06:09:44.382Z"
+  },
+  "https://pkg.devkitpro.org/packages/dkp-libs.db.sig": {
+    "ok": true,
+    "size": 566,
+    "etag": "\"236-653ebe52deb75\"",
+    "lastModified": "Wed, 10 Jun 2026 20:14:47 GMT",
+    "updatedAt": "2026-09-02T06:09:44.796Z"
+  },
+  "https://pkg.devkitpro.org/packages/dkp-libs.files": {
+    "ok": true,
+    "size": 296106,
+    "etag": "\"484aa-653ebe52dfb16\"",
+    "lastModified": "Wed, 10 Jun 2026 20:14:47 GMT",
+    "updatedAt": "2026-09-02T06:09:45.244Z"
+  },
+  "https://pkg.devkitpro.org/packages/dkp-libs.files.sig": {
+    "ok": true,
+    "size": 566,
+    "etag": "\"236-653ebe52dfb16\"",
+    "lastModified": "Wed, 10 Jun 2026 20:14:47 GMT",
+    "updatedAt": "2026-09-02T06:09:45.654Z"
+  },
+  "https://pkg.devkitpro.org/packages/dkp-libs.db.tar.gz": {
+    "ok": true,
+    "size": 217571,
+    "etag": "\"351e3-653ebe52deb75\"",
+    "lastModified": "Wed, 10 Jun 2026 20:14:47 GMT",
+    "updatedAt": "2026-09-02T06:09:46.135Z"
+  },
+  "https://pkg.devkitpro.org/packages/linux/x86_64/dkp-linux.db": {
+    "ok": true,
+    "size": 24477,
+    "etag": "\"5f9d-653eb88f39564\"",
+    "lastModified": "Wed, 10 Jun 2026 19:49:00 GMT",
+    "updatedAt": "2026-09-02T06:09:47.431Z"
+  },
+  "https://pkg.devkitpro.org/packages/linux/x86_64/dkp-linux.db.sig": {
+    "ok": true,
+    "size": 566,
+    "etag": "\"236-653eb88f39564\"",
+    "lastModified": "Wed, 10 Jun 2026 19:49:00 GMT",
+    "updatedAt": "2026-09-02T06:09:47.875Z"
+  },
+  "https://pkg.devkitpro.org/packages/linux/x86_64/dkp-linux.files": {
+    "ok": true,
+    "size": 65171,
+    "etag": "\"fe93-653eb88f39564\"",
+    "lastModified": "Wed, 10 Jun 2026 19:49:00 GMT",
+    "updatedAt": "2026-09-02T06:09:48.300Z"
+  },
+  "https://pkg.devkitpro.org/packages/linux/x86_64/dkp-linux.files.sig": {
+    "ok": true,
+    "size": 566,
+    "etag": "\"236-653eb88f39564\"",
+    "lastModified": "Wed, 10 Jun 2026 19:49:00 GMT",
+    "updatedAt": "2026-09-02T06:09:48.712Z"
+  },
+  "https://pkg.devkitpro.org/packages/linux/x86_64/dkp-linux.db.tar.gz": {
+    "ok": true,
+    "size": 24477,
+    "etag": "\"5f9d-653eb88f39564\"",
+    "lastModified": "Wed, 10 Jun 2026 19:49:00 GMT",
+    "updatedAt": "2026-09-02T06:09:49.141Z"
+  },
+  "https://pkg.devkitpro.org/packages/linux/aarch64/dkp-linux.db": {
+    "ok": true,
+    "size": 23686,
+    "etag": "\"5c86-653eb89360e75\"",
+    "lastModified": "Wed, 10 Jun 2026 19:49:04 GMT",
+    "updatedAt": "2026-09-02T06:10:19.327Z"
+  },
+  "https://pkg.devkitpro.org/packages/linux/aarch64/dkp-linux.db.sig": {
+    "ok": true,
+    "size": 566,
+    "etag": "\"236-653eb89360e75\"",
+    "lastModified": "Wed, 10 Jun 2026 19:49:04 GMT",
+    "updatedAt": "2026-09-02T06:10:19.801Z"
+  },
+  "https://pkg.devkitpro.org/packages/linux/aarch64/dkp-linux.files": {
+    "ok": true,
+    "size": 64193,
+    "etag": "\"fac1-653eb89360e75\"",
+    "lastModified": "Wed, 10 Jun 2026 19:49:04 GMT",
+    "updatedAt": "2026-09-02T06:10:20.247Z"
+  },
+  "https://pkg.devkitpro.org/packages/linux/aarch64/dkp-linux.files.sig": {
+    "ok": true,
+    "size": 566,
+    "etag": "\"236-653eb89360e75\"",
+    "lastModified": "Wed, 10 Jun 2026 19:49:04 GMT",
+    "updatedAt": "2026-09-02T06:10:20.674Z"
+  },
+  "https://pkg.devkitpro.org/packages/linux/aarch64/dkp-linux.db.tar.gz": {
+    "ok": true,
+    "size": 23686,
+    "etag": "\"5c86-653eb89360e75\"",
+    "lastModified": "Wed, 10 Jun 2026 19:49:04 GMT",
+    "updatedAt": "2026-09-02T06:10:21.176Z"
+  },
+  "https://apt.devkitpro.org/dists/stable/InRelease": {
+    "ok": true,
+    "size": 2600,
+    "etag": "\"a28-5e02938a48ad5\"",
+    "lastModified": "Sun, 29 May 2022 16:42:12 GMT",
+    "updatedAt": "2026-09-02T06:10:22.302Z"
+  },
+  "https://apt.devkitpro.org/dists/stable/Release": {
+    "ok": true,
+    "size": 1685,
+    "etag": "\"695-5e029383e3b13\"",
+    "lastModified": "Sun, 29 May 2022 16:42:05 GMT",
+    "updatedAt": "2026-09-02T06:10:22.501Z"
+  },
+  "https://apt.devkitpro.org/dists/stable/Release.gpg": {
+    "ok": true,
+    "size": 866,
+    "etag": "\"362-5e029389f119a\"",
+    "lastModified": "Sun, 29 May 2022 16:42:11 GMT",
+    "updatedAt": "2026-09-02T06:10:22.703Z"
+  },
+  "https://apt.devkitpro.org/dists/stable/main/binary-i386/Packages": {
+    "ok": true,
+    "size": 683,
+    "etag": "\"2ab-5e029383d32f4\"",
+    "lastModified": "Sun, 29 May 2022 16:42:05 GMT",
+    "updatedAt": "2026-09-02T06:10:22.894Z"
+  },
+  "https://apt.devkitpro.org/dists/stable/main/binary-i386/Packages.gz": {
+    "ok": true,
+    "size": 467,
+    "etag": "\"1d3-5e029383d6190\"",
+    "lastModified": "Sun, 29 May 2022 16:42:05 GMT",
+    "updatedAt": "2026-09-02T06:10:23.087Z"
+  },
+  "https://apt.devkitpro.org/dists/stable/main/binary-amd64/Packages": {
+    "ok": true,
+    "size": 685,
+    "etag": "\"2ad-5e029383bae8b\"",
+    "lastModified": "Sun, 29 May 2022 16:42:05 GMT",
+    "updatedAt": "2026-09-02T06:10:23.501Z"
+  },
+  "https://apt.devkitpro.org/dists/stable/main/binary-amd64/Packages.gz": {
+    "ok": true,
+    "size": 468,
+    "etag": "\"1d4-5e029383becb0\"",
+    "lastModified": "Sun, 29 May 2022 16:42:05 GMT",
+    "updatedAt": "2026-09-02T06:10:23.685Z"
+  },
+  "https://apt.devkitpro.org/dists/stable/main/binary-arm64/Packages": {
+    "ok": true,
+    "size": 685,
+    "etag": "\"2ad-5e029383a58be\"",
+    "lastModified": "Sun, 29 May 2022 16:42:05 GMT",
+    "updatedAt": "2026-09-02T06:10:24.052Z"
+  },
+  "https://apt.devkitpro.org/dists/stable/main/binary-arm64/Packages.gz": {
+    "ok": true,
+    "size": 469,
+    "etag": "\"1d5-5e029383a875a\"",
+    "lastModified": "Sun, 29 May 2022 16:42:05 GMT",
+    "updatedAt": "2026-09-02T06:10:24.245Z"
+  }
+}
