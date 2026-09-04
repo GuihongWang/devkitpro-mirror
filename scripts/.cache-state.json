@@ -3,7 +3,7 @@
   "modules": {
     "wiki": {
       "frequency": "weekly",
-      "lastCheckedAt": "2026-09-03T07:03:30.609Z",
+      "lastCheckedAt": "2026-09-04T07:07:51.021Z",
       "lastScrapedAt": "2026-08-30T03:32:35.600Z",
       "lastChangedAt": "2026-08-30T03:32:35.600Z",
       "consecutiveUnchangedWeeks": 0,
@@ -13,7 +13,7 @@
     },
     "forum": {
       "frequency": "weekly",
-      "lastCheckedAt": "2026-09-03T07:03:30.609Z",
+      "lastCheckedAt": "2026-09-04T07:07:51.021Z",
       "lastScrapedAt": "2026-08-30T03:34:20.661Z",
       "lastChangedAt": "2026-08-30T03:34:20.661Z",
       "consecutiveUnchangedWeeks": 0,
@@ -23,7 +23,7 @@
     },
     "docs": {
       "frequency": "weekly",
-      "lastCheckedAt": "2026-09-03T07:03:30.609Z",
+      "lastCheckedAt": "2026-09-04T07:07:51.021Z",
       "lastScrapedAt": "2026-08-30T03:35:48.981Z",
       "lastChangedAt": "2026-08-30T03:35:48.981Z",
       "consecutiveUnchangedWeeks": 0,
@@ -33,7 +33,7 @@
     },
     "packages": {
       "frequency": "weekly",
-      "lastCheckedAt": "2026-09-03T07:03:30.609Z",
+      "lastCheckedAt": "2026-09-04T07:07:51.021Z",
       "lastScrapedAt": "2026-08-30T03:42:04.588Z",
       "lastChangedAt": "2026-08-30T03:42:04.588Z",
       "consecutiveUnchangedWeeks": 0,
