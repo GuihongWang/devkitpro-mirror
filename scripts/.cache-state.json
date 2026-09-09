@@ -3,7 +3,7 @@
   "modules": {
     "wiki": {
       "frequency": "weekly",
-      "lastCheckedAt": "2026-09-08T07:08:31.364Z",
+      "lastCheckedAt": "2026-09-09T07:15:24.197Z",
       "lastScrapedAt": "2026-08-30T03:32:35.600Z",
       "lastChangedAt": "2026-08-30T03:32:35.600Z",
       "consecutiveUnchangedWeeks": 0,
@@ -13,7 +13,7 @@
     },
     "forum": {
       "frequency": "weekly",
-      "lastCheckedAt": "2026-09-08T07:08:39.343Z",
+      "lastCheckedAt": "2026-09-09T07:15:24.197Z",
       "lastScrapedAt": "2026-08-30T03:34:20.661Z",
       "lastChangedAt": "2026-08-30T03:34:20.661Z",
       "consecutiveUnchangedWeeks": 0,
@@ -23,20 +23,20 @@
     },
     "docs": {
       "frequency": "monthly",
-      "lastCheckedAt": "2026-09-08T07:08:47.333Z",
+      "lastCheckedAt": "2026-09-09T07:15:24.197Z",
       "lastScrapedAt": "2026-08-30T03:35:48.981Z",
       "lastChangedAt": "2026-08-30T03:35:48.981Z",
-      "consecutiveUnchangedWeeks": 3,
+      "consecutiveUnchangedWeeks": 4,
       "consecutiveCheckFailures": 0,
       "lastCheckHash": "cbe5cfdf7c2118a9",
       "lastCheckResult": "unchanged"
     },
     "packages": {
       "frequency": "monthly",
-      "lastCheckedAt": "2026-09-08T07:08:47.655Z",
+      "lastCheckedAt": "2026-09-09T07:15:24.444Z",
       "lastScrapedAt": "2026-08-30T03:42:04.588Z",
       "lastChangedAt": "2026-08-30T03:42:04.588Z",
-      "consecutiveUnchangedWeeks": 3,
+      "consecutiveUnchangedWeeks": 4,
       "consecutiveCheckFailures": 0,
       "lastCheckHash": null,
       "lastCheckResult": "unchanged"
