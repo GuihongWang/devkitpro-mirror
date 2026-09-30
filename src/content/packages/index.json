@@ -1,7 +1,7 @@
 {
-  "scraped_at": "2026-09-29T08:17:47.866Z",
-  "total_files": 0,
-  "unique_packages": 0,
+  "scraped_at": "2026-09-17T09:20:21.008Z",
+  "total_files": 310,
+  "unique_packages": 310,
   "repos": [
     {
       "name": "dkp-libs",
@@ -10,18 +10,2864 @@
     {
       "name": "dkp-linux",
       "url": "https://pkg.devkitpro.org/packages/linux/x86_64/"
-    }
-  ],
-  "packages": [],
-  "raw_files": [],
-  "errors": [
-    {
-      "repo": "dkp-libs",
-      "error": ".db 下载失败 HTTP 403"
     },
     {
-      "repo": "dkp-linux",
-      "error": ".db 下载失败 HTTP 403"
+      "name": "dkp-linux",
+      "url": "https://pkg.devkitpro.org/packages/linux/aarch64/"
+    }
+  ],
+  "packages": [
+    {
+      "name": "3ds-box2d",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.4.1-1"
+      }
+    },
+    {
+      "name": "3ds-bulletphysics",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.87-5"
+      }
+    },
+    {
+      "name": "3ds-bzip2",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.0.8-1"
+      }
+    },
+    {
+      "name": "3ds-cmake",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.5.2-1"
+      }
+    },
+    {
+      "name": "3ds-curl",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "8.4.0-1"
+      }
+    },
+    {
+      "name": "3ds-examples",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "20240917-1"
+      }
+    },
+    {
+      "name": "3ds-flac",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.3.4-1"
+      }
+    },
+    {
+      "name": "3ds-flite",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.1-2"
+      }
+    },
+    {
+      "name": "3ds-freetype",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.14.1-1"
+      }
+    },
+    {
+      "name": "3ds-giflib",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "5.1.4-3"
+      }
+    },
+    {
+      "name": "3ds-jansson",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.13-1"
+      }
+    },
+    {
+      "name": "3ds-libarchive",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "3.7.4-1"
+      }
+    },
+    {
+      "name": "3ds-libconfig",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.7.2-3"
+      }
+    },
+    {
+      "name": "3ds-libfribidi",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.0.12-1"
+      }
+    },
+    {
+      "name": "3ds-libiconv",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.17-1"
+      }
+    },
+    {
+      "name": "3ds-libid3tag",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.15.1b-2"
+      }
+    },
+    {
+      "name": "3ds-libjpeg-turbo",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "3.1.3-1"
+      }
+    },
+    {
+      "name": "3ds-libjson-c",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.16-1"
+      }
+    },
+    {
+      "name": "3ds-liblua51",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "5.1.5-1"
+      }
+    },
+    {
+      "name": "3ds-liblzma",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "5.8.2-1"
+      }
+    },
+    {
+      "name": "3ds-libmad",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.15.1b-2"
+      }
+    },
+    {
+      "name": "3ds-libmodplug",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.8.9.0-1"
+      }
+    },
+    {
+      "name": "3ds-libogg",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.3.6-1"
+      }
+    },
+    {
+      "name": "3ds-libopus",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.4-1"
+      }
+    },
+    {
+      "name": "3ds-libpng",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.6.53-1"
+      }
+    },
+    {
+      "name": "3ds-libsidplay",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.36.60-1"
+      }
+    },
+    {
+      "name": "3ds-libtheora",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.2.0alpha1-2"
+      }
+    },
+    {
+      "name": "3ds-libvorbisidec",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.2.1-3"
+      }
+    },
+    {
+      "name": "3ds-libxmp",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "4.6.0-1"
+      }
+    },
+    {
+      "name": "3ds-libzstd",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.5.5-2"
+      }
+    },
+    {
+      "name": "3ds-lz4",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.9.3-1"
+      }
+    },
+    {
+      "name": "3ds-mbedtls",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.28.8-1"
+      }
+    },
+    {
+      "name": "3ds-mikmod",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "3.3.13-1"
+      }
+    },
+    {
+      "name": "3ds-mpg123",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.31.3-3"
+      }
+    },
+    {
+      "name": "3ds-opusfile",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.11-1"
+      }
+    },
+    {
+      "name": "3ds-physfs",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "3.2.0-2"
+      }
+    },
+    {
+      "name": "3ds-pkg-config",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.28-5"
+      }
+    },
+    {
+      "name": "3ds-sdl",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.2.15-19"
+      }
+    },
+    {
+      "name": "3ds-sdl_gfx",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.0.25-2"
+      }
+    },
+    {
+      "name": "3ds-sdl_image",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.2.12-3"
+      }
+    },
+    {
+      "name": "3ds-sdl_mixer",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.2.12-9"
+      }
+    },
+    {
+      "name": "3ds-sdl_ttf",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.0.11-2"
+      }
+    },
+    {
+      "name": "3ds-tinyxml2",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "6.0.0-2"
+      }
+    },
+    {
+      "name": "3ds-wildmidi",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.4.3-2"
+      }
+    },
+    {
+      "name": "3ds-wslay",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.1.1-1"
+      }
+    },
+    {
+      "name": "3ds-yaml_cpp",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.8.0-1"
+      }
+    },
+    {
+      "name": "3ds-zlib",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.3.1-1"
+      }
+    },
+    {
+      "name": "3dslink",
+      "architectures": [
+        "aarch64",
+        "x86_64"
+      ],
+      "versions": {
+        "x86_64": "0.6.3-1",
+        "aarch64": "0.6.3-1"
+      }
+    },
+    {
+      "name": "3dstools",
+      "architectures": [
+        "aarch64",
+        "x86_64"
+      ],
+      "versions": {
+        "x86_64": "1.3.1-3",
+        "aarch64": "1.3.1-3"
+      }
+    },
+    {
+      "name": "armv4t-bzip2",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.0.8-1"
+      }
+    },
+    {
+      "name": "armv4t-flac",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.3.2-1"
+      }
+    },
+    {
+      "name": "armv4t-flite",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.1-2"
+      }
+    },
+    {
+      "name": "armv4t-freetype",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.13.0-1"
+      }
+    },
+    {
+      "name": "armv4t-libconfig",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.7.2-1"
+      }
+    },
+    {
+      "name": "armv4t-libexpat",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.2.5-1"
+      }
+    },
+    {
+      "name": "armv4t-libid3tag",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.15.1b-1"
+      }
+    },
+    {
+      "name": "armv4t-liblzma",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "5.8.2-1"
+      }
+    },
+    {
+      "name": "armv4t-libogg",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.3.4-1"
+      }
+    },
+    {
+      "name": "armv4t-libpng",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.6.48-1"
+      }
+    },
+    {
+      "name": "armv4t-libvorbisidec",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.2.1-1"
+      }
+    },
+    {
+      "name": "armv4t-mikmod",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "3.3.11.1-1"
+      }
+    },
+    {
+      "name": "armv4t-mpg123",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.31.3-2"
+      }
+    },
+    {
+      "name": "armv4t-pkg-config",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.28-1"
+      }
+    },
+    {
+      "name": "armv4t-zlib",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.3-1"
+      }
+    },
+    {
+      "name": "calico",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.2.0-1"
+      }
+    },
+    {
+      "name": "catnip",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.2.0-1"
+      }
+    },
+    {
+      "name": "citro2d",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.7.0-1"
+      }
+    },
+    {
+      "name": "citro3d",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.7.1-2"
+      }
+    },
+    {
+      "name": "contents-delivery-manager",
+      "architectures": [
+        "x86_64"
+      ],
+      "versions": {
+        "x86_64": "1.0.0-3"
+      }
+    },
+    {
+      "name": "default-arm7",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.8.4-4"
+      }
+    },
+    {
+      "name": "deko3d",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.5.0-1"
+      }
+    },
+    {
+      "name": "devkit-env",
+      "architectures": [
+        "aarch64",
+        "x86_64"
+      ],
+      "versions": {
+        "x86_64": "1.0.1-2",
+        "aarch64": "1.0.1-2"
+      }
+    },
+    {
+      "name": "devkitA64",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "r30-1"
+      }
+    },
+    {
+      "name": "devkita64-binutils",
+      "architectures": [
+        "aarch64",
+        "x86_64"
+      ],
+      "versions": {
+        "x86_64": "2.46.0-1",
+        "aarch64": "2.46.0-1"
+      }
+    },
+    {
+      "name": "devkita64-cmake",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.1.3-1"
+      }
+    },
+    {
+      "name": "devkita64-gcc",
+      "architectures": [
+        "aarch64",
+        "x86_64"
+      ],
+      "versions": {
+        "x86_64": "16.1.0-1",
+        "aarch64": "16.1.0-1"
+      }
+    },
+    {
+      "name": "devkitA64-gdb",
+      "architectures": [
+        "aarch64",
+        "x86_64"
+      ],
+      "versions": {
+        "x86_64": "14.1-1",
+        "aarch64": "14.1-1"
+      }
+    },
+    {
+      "name": "devkita64-newlib",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "4.6.0.20260123-4"
+      }
+    },
+    {
+      "name": "devkita64-rules",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.1.1-1"
+      }
+    },
+    {
+      "name": "devkitARM",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "r68-1"
+      }
+    },
+    {
+      "name": "devkitarm-binutils",
+      "architectures": [
+        "aarch64",
+        "x86_64"
+      ],
+      "versions": {
+        "x86_64": "2.46.0-1",
+        "aarch64": "2.46.0-1"
+      }
+    },
+    {
+      "name": "devkitarm-cmake",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.2.4-1"
+      }
+    },
+    {
+      "name": "devkitarm-crtls",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.2.6-1"
+      }
+    },
+    {
+      "name": "devkitarm-gcc",
+      "architectures": [
+        "aarch64",
+        "x86_64"
+      ],
+      "versions": {
+        "x86_64": "16.1.0-1",
+        "aarch64": "16.1.0-1"
+      }
+    },
+    {
+      "name": "devkitARM-gdb",
+      "architectures": [
+        "aarch64",
+        "x86_64"
+      ],
+      "versions": {
+        "x86_64": "14.1-2",
+        "aarch64": "14.1-1"
+      }
+    },
+    {
+      "name": "devkitarm-newlib",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "4.6.0.20260123-5"
+      }
+    },
+    {
+      "name": "devkitarm-rules",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.6.0-4"
+      }
+    },
+    {
+      "name": "devkitPPC",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "r50-1"
+      }
+    },
+    {
+      "name": "devkitppc-binutils",
+      "architectures": [
+        "aarch64",
+        "x86_64"
+      ],
+      "versions": {
+        "x86_64": "2.46.0-1",
+        "aarch64": "2.46.0-1"
+      }
+    },
+    {
+      "name": "devkitppc-cmake",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.1.4-1"
+      }
+    },
+    {
+      "name": "devkitppc-crtls",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.1.0-1"
+      }
+    },
+    {
+      "name": "devkitppc-gcc",
+      "architectures": [
+        "aarch64",
+        "x86_64"
+      ],
+      "versions": {
+        "x86_64": "16.1.0-1",
+        "aarch64": "16.1.0-1"
+      }
+    },
+    {
+      "name": "devkitPPC-gdb",
+      "architectures": [
+        "aarch64",
+        "x86_64"
+      ],
+      "versions": {
+        "x86_64": "14.1-2",
+        "aarch64": "14.1-1"
+      }
+    },
+    {
+      "name": "devkitppc-mn10200-binutils",
+      "architectures": [
+        "aarch64",
+        "x86_64"
+      ],
+      "versions": {
+        "x86_64": "2.24-3",
+        "aarch64": "2.24-3"
+      }
+    },
+    {
+      "name": "devkitppc-newlib",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "4.6.0.20260123-4"
+      }
+    },
+    {
+      "name": "devkitppc-rules",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.2.1-1"
+      }
+    },
+    {
+      "name": "devkitpro-keyring",
+      "architectures": [
+        "aarch64",
+        "x86_64"
+      ],
+      "versions": {
+        "x86_64": "20241017-2",
+        "aarch64": "20241017-2"
+      }
+    },
+    {
+      "name": "dkp-cmake-common-utils",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.5.3-1"
+      }
+    },
+    {
+      "name": "dkp-meson-scripts",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.1.0-1"
+      }
+    },
+    {
+      "name": "dkp-toolchain-vars",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.0.5-1"
+      }
+    },
+    {
+      "name": "dstools",
+      "architectures": [
+        "aarch64",
+        "x86_64"
+      ],
+      "versions": {
+        "x86_64": "1.3.3-3",
+        "aarch64": "1.3.3-3"
+      }
+    },
+    {
+      "name": "dswifi",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.1.0-1"
+      }
+    },
+    {
+      "name": "gamecube-cmake",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.0.1-1"
+      }
+    },
+    {
+      "name": "gamecube-examples",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "20260125-1"
+      }
+    },
+    {
+      "name": "gamecube-freeglut",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "3.6.0-4"
+      }
+    },
+    {
+      "name": "gamecube-glu",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "9.0.3-1"
+      }
+    },
+    {
+      "name": "gamecube-opengx",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.17.0-2"
+      }
+    },
+    {
+      "name": "gamecube-physfs",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "3.2.0-3"
+      }
+    },
+    {
+      "name": "gamecube-pkg-config",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.28-5"
+      }
+    },
+    {
+      "name": "gamecube-sdl",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.2.15-21"
+      }
+    },
+    {
+      "name": "gamecube-sdl_gfx",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.0.25-3"
+      }
+    },
+    {
+      "name": "gamecube-sdl_image",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.2.12-6"
+      }
+    },
+    {
+      "name": "gamecube-sdl_mixer",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.2.12-2"
+      }
+    },
+    {
+      "name": "gamecube-sdl_ttf",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.0.11-5"
+      }
+    },
+    {
+      "name": "gamecube-sdl2",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.28.5-17"
+      }
+    },
+    {
+      "name": "gamecube-sdl2_gfx",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.0.4-4"
+      }
+    },
+    {
+      "name": "gamecube-sdl2_image",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.8.2-1"
+      }
+    },
+    {
+      "name": "gamecube-sdl2_mixer",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.6.3-2"
+      }
+    },
+    {
+      "name": "gamecube-sdl2_ttf",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.22.0-2"
+      }
+    },
+    {
+      "name": "gamecube-tools",
+      "architectures": [
+        "aarch64",
+        "x86_64"
+      ],
+      "versions": {
+        "x86_64": "1.0.7-1",
+        "aarch64": "1.0.7-1"
+      }
+    },
+    {
+      "name": "gba-cmake",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.0.2-1"
+      }
+    },
+    {
+      "name": "gba-examples",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "20240626-1"
+      }
+    },
+    {
+      "name": "gba-pkg-config",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.28-4"
+      }
+    },
+    {
+      "name": "gba-tools",
+      "architectures": [
+        "aarch64",
+        "x86_64"
+      ],
+      "versions": {
+        "x86_64": "1.2.0-1",
+        "aarch64": "1.2.0-1"
+      }
+    },
+    {
+      "name": "general-tools",
+      "architectures": [
+        "aarch64",
+        "x86_64"
+      ],
+      "versions": {
+        "x86_64": "1.4.4-1",
+        "aarch64": "1.4.4-1"
+      }
+    },
+    {
+      "name": "gp2x-core",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.2.0-1"
+      }
+    },
+    {
+      "name": "gp2x-examples",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.2.1-1"
+      }
+    },
+    {
+      "name": "gp2x-pkg-config",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.29-1"
+      }
+    },
+    {
+      "name": "gp2x-tools",
+      "architectures": [
+        "aarch64",
+        "x86_64"
+      ],
+      "versions": {
+        "x86_64": "1.0.1-1",
+        "aarch64": "1.0.1-1"
+      }
+    },
+    {
+      "name": "gp32-examples",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "20051021-2"
+      }
+    },
+    {
+      "name": "gp32-tools",
+      "architectures": [
+        "aarch64",
+        "x86_64"
+      ],
+      "versions": {
+        "x86_64": "1.0.3-1",
+        "aarch64": "1.0.4-1"
+      }
+    },
+    {
+      "name": "grit",
+      "architectures": [
+        "aarch64",
+        "x86_64"
+      ],
+      "versions": {
+        "x86_64": "0.10.0-1",
+        "aarch64": "0.10.0-1"
+      }
+    },
+    {
+      "name": "hactool",
+      "architectures": [
+        "aarch64",
+        "x86_64"
+      ],
+      "versions": {
+        "x86_64": "1.4.0-3",
+        "aarch64": "1.4.0-3"
+      }
+    },
+    {
+      "name": "libctru",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.7.0-1"
+      }
+    },
+    {
+      "name": "libfat-gba",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.1.5-1"
+      }
+    },
+    {
+      "name": "libfat-gp2x",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.2.0-1"
+      }
+    },
+    {
+      "name": "libfat-nds",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.1.0-4"
+      }
+    },
+    {
+      "name": "libfat-ogc",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.1.0-4"
+      }
+    },
+    {
+      "name": "libgba",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.5.4-1"
+      }
+    },
+    {
+      "name": "libgxflux",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "20230423-3"
+      }
+    },
+    {
+      "name": "libmirko",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.9.8-1"
+      }
+    },
+    {
+      "name": "libnds",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.0.2-1"
+      }
+    },
+    {
+      "name": "libnx",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "4.12.0-1"
+      }
+    },
+    {
+      "name": "libogc",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "3.1.0-1"
+      }
+    },
+    {
+      "name": "libtonc",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.4.5-1"
+      }
+    },
+    {
+      "name": "maxmod-gba",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.0.15-1"
+      }
+    },
+    {
+      "name": "maxmod-nds",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.1.0-2"
+      }
+    },
+    {
+      "name": "mmutil",
+      "architectures": [
+        "aarch64",
+        "x86_64"
+      ],
+      "versions": {
+        "x86_64": "1.10.1-1",
+        "aarch64": "1.10.1-1"
+      }
+    },
+    {
+      "name": "nds-bzip2",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.0.8-1"
+      }
+    },
+    {
+      "name": "nds-cmake",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.3.1-1"
+      }
+    },
+    {
+      "name": "nds-examples",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "20241110-1"
+      }
+    },
+    {
+      "name": "nds-freetype",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.13.2-1"
+      }
+    },
+    {
+      "name": "nds-libexpat",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.2.5-1"
+      }
+    },
+    {
+      "name": "nds-libmad",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.15.1b-1"
+      }
+    },
+    {
+      "name": "nds-libpng",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.6.39-3"
+      }
+    },
+    {
+      "name": "nds-pkg-config",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.28-4"
+      }
+    },
+    {
+      "name": "nds-zlib",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.3-1"
+      }
+    },
+    {
+      "name": "ndstool",
+      "architectures": [
+        "aarch64",
+        "x86_64"
+      ],
+      "versions": {
+        "x86_64": "2.3.1-1",
+        "aarch64": "2.3.1-1"
+      }
+    },
+    {
+      "name": "ogc-cmake",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.3.0-1"
+      }
+    },
+    {
+      "name": "orcus",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.3.0-1"
+      }
+    },
+    {
+      "name": "pacman",
+      "architectures": [
+        "aarch64",
+        "x86_64"
+      ],
+      "versions": {
+        "x86_64": "6.0.2-6",
+        "aarch64": "6.0.2-2"
+      }
+    },
+    {
+      "name": "picasso",
+      "architectures": [
+        "aarch64",
+        "x86_64"
+      ],
+      "versions": {
+        "x86_64": "2.7.2-3",
+        "aarch64": "2.7.2-3"
+      }
+    },
+    {
+      "name": "ppc-box2d",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.4.1-2"
+      }
+    },
+    {
+      "name": "ppc-brotli",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.2.0-1"
+      }
+    },
+    {
+      "name": "ppc-bzip2",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.0.8-2"
+      }
+    },
+    {
+      "name": "ppc-faad2",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.11.2-1"
+      }
+    },
+    {
+      "name": "ppc-flac",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.5.0-1"
+      }
+    },
+    {
+      "name": "ppc-freetype",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.14.1-1"
+      }
+    },
+    {
+      "name": "ppc-giflib",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "5.1.4-2"
+      }
+    },
+    {
+      "name": "ppc-glm",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.0.2-1"
+      }
+    },
+    {
+      "name": "ppc-harfbuzz",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "12.3.2-1"
+      }
+    },
+    {
+      "name": "ppc-jansson",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.14-1"
+      }
+    },
+    {
+      "name": "ppc-jsoncpp",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.9.5-1"
+      }
+    },
+    {
+      "name": "ppc-libconfig",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.8.1-1"
+      }
+    },
+    {
+      "name": "ppc-libexpat",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.5.0-1"
+      }
+    },
+    {
+      "name": "ppc-libfribidi",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.0.16-1"
+      }
+    },
+    {
+      "name": "ppc-libgd",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.3.3-3"
+      }
+    },
+    {
+      "name": "ppc-libjpeg-turbo",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "3.1.4.1-1"
+      }
+    },
+    {
+      "name": "ppc-liblua51",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "5.1.5-2"
+      }
+    },
+    {
+      "name": "ppc-liblzma",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "5.8.2-1"
+      }
+    },
+    {
+      "name": "ppc-libmad",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.15.1b-2"
+      }
+    },
+    {
+      "name": "ppc-libmodplug",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.8.9.0-3"
+      }
+    },
+    {
+      "name": "ppc-libogg",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.3.6-1"
+      }
+    },
+    {
+      "name": "ppc-libopus",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.6.1-1"
+      }
+    },
+    {
+      "name": "ppc-libpng",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.6.55-1"
+      }
+    },
+    {
+      "name": "ppc-libtheora",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.2.0alpha1-1"
+      }
+    },
+    {
+      "name": "ppc-libvorbis",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.3.7-1"
+      }
+    },
+    {
+      "name": "ppc-libvorbisidec",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.2.1-2"
+      }
+    },
+    {
+      "name": "ppc-libwebp",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.6.0-1"
+      }
+    },
+    {
+      "name": "ppc-libzip",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.10.1-1"
+      }
+    },
+    {
+      "name": "ppc-lz4",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.9.3-1"
+      }
+    },
+    {
+      "name": "ppc-mpg123",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.33.4-1"
+      }
+    },
+    {
+      "name": "ppc-mxml",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "3.3.1-1"
+      }
+    },
+    {
+      "name": "ppc-ode",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.16.4-1"
+      }
+    },
+    {
+      "name": "ppc-opusfile",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.12-1"
+      }
+    },
+    {
+      "name": "ppc-pkg-config",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.28-5"
+      }
+    },
+    {
+      "name": "ppc-tinyxml2",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "10.0.0-1"
+      }
+    },
+    {
+      "name": "ppc-yaml_cpp",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.8.0-1"
+      }
+    },
+    {
+      "name": "ppc-zlib",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.3.1-1"
+      }
+    },
+    {
+      "name": "ppc-zstd",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.5.7-1"
+      }
+    },
+    {
+      "name": "switch-box2d",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.4.1-1"
+      }
+    },
+    {
+      "name": "switch-bulletphysics",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.88-3"
+      }
+    },
+    {
+      "name": "switch-bzip2",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.0.8-1"
+      }
+    },
+    {
+      "name": "switch-cmake",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.5.2-1"
+      }
+    },
+    {
+      "name": "switch-curl",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "7.69.1-5"
+      }
+    },
+    {
+      "name": "switch-dav1d",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.5.0-1"
+      }
+    },
+    {
+      "name": "switch-enet",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.3.17-1"
+      }
+    },
+    {
+      "name": "switch-examples",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "20260201-1"
+      }
+    },
+    {
+      "name": "switch-ffmpeg",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "7.1-5"
+      }
+    },
+    {
+      "name": "switch-flac",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.3.2-4"
+      }
+    },
+    {
+      "name": "switch-freetype",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.13.3-1"
+      }
+    },
+    {
+      "name": "switch-giflib",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "5.1.4-2"
+      }
+    },
+    {
+      "name": "switch-glad",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.1.27-1"
+      }
+    },
+    {
+      "name": "switch-glfw",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "3.3.4-2"
+      }
+    },
+    {
+      "name": "switch-glm",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.9.9.7-2"
+      }
+    },
+    {
+      "name": "switch-harfbuzz",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "10.0.1-1"
+      }
+    },
+    {
+      "name": "switch-jansson",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.11-3"
+      }
+    },
+    {
+      "name": "switch-libarchive",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "3.7.2-7"
+      }
+    },
+    {
+      "name": "switch-libass",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.17.3-1"
+      }
+    },
+    {
+      "name": "switch-libavif",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.0.1-2"
+      }
+    },
+    {
+      "name": "switch-libconfig",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.7.2-3"
+      }
+    },
+    {
+      "name": "switch-libdrm_nouveau",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.0.1-2"
+      }
+    },
+    {
+      "name": "switch-libexpat",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.2.5-3"
+      }
+    },
+    {
+      "name": "switch-libfribidi",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.0.12-1"
+      }
+    },
+    {
+      "name": "switch-libgd",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.2.5-2"
+      }
+    },
+    {
+      "name": "switch-libjpeg-turbo",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.1.2-2"
+      }
+    },
+    {
+      "name": "switch-libjson-c",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.16-2"
+      }
+    },
+    {
+      "name": "switch-liblua51",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "5.1.5-1"
+      }
+    },
+    {
+      "name": "switch-liblzma",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "5.8.2-1"
+      }
+    },
+    {
+      "name": "switch-liblzo2",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.10-2"
+      }
+    },
+    {
+      "name": "switch-libmad",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.15.1b-3"
+      }
+    },
+    {
+      "name": "switch-libmikmod",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "3.3.11.1-2"
+      }
+    },
+    {
+      "name": "switch-libmodplug",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.8.9.0-2"
+      }
+    },
+    {
+      "name": "switch-libmpv",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.39.0-4"
+      }
+    },
+    {
+      "name": "switch-libogg",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.3.4-2"
+      }
+    },
+    {
+      "name": "switch-libopus",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.3-2"
+      }
+    },
+    {
+      "name": "switch-libpcre2",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "10.33-1"
+      }
+    },
+    {
+      "name": "switch-libplacebo",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "6.338.2-1"
+      }
+    },
+    {
+      "name": "switch-libpng",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.6.48-1"
+      }
+    },
+    {
+      "name": "switch-libsamplerate",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.1.9-2"
+      }
+    },
+    {
+      "name": "switch-libsodium",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.0.20-1"
+      }
+    },
+    {
+      "name": "switch-libssh2",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.10.0-2"
+      }
+    },
+    {
+      "name": "switch-libtheora",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.2.0alpha1-1"
+      }
+    },
+    {
+      "name": "switch-libtimidity",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.2.6-2"
+      }
+    },
+    {
+      "name": "switch-libvorbis",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.3.7-1"
+      }
+    },
+    {
+      "name": "switch-libvorbisidec",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.2.1-2"
+      }
+    },
+    {
+      "name": "switch-libvpx",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.8.0-2"
+      }
+    },
+    {
+      "name": "switch-libwebp",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.0.2-2"
+      }
+    },
+    {
+      "name": "switch-libxml2",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.9.8-4"
+      }
+    },
+    {
+      "name": "switch-libzstd",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.5.7-1"
+      }
+    },
+    {
+      "name": "switch-lwext4",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.0.0-1"
+      }
+    },
+    {
+      "name": "switch-lz4",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.9.3-1"
+      }
+    },
+    {
+      "name": "switch-mbedtls",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.28.10-1"
+      }
+    },
+    {
+      "name": "switch-mesa",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "20.1.0-5"
+      }
+    },
+    {
+      "name": "switch-miniupnpc",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.1.20190824-1"
+      }
+    },
+    {
+      "name": "switch-mpg123",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.31.3-3"
+      }
+    },
+    {
+      "name": "switch-mupdf",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.17.0-1"
+      }
+    },
+    {
+      "name": "switch-ntfs-3g",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2022.10.3-4"
+      }
+    },
+    {
+      "name": "switch-ode",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.16.4-1"
+      }
+    },
+    {
+      "name": "switch-oniguruma",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "6.9.2-2"
+      }
+    },
+    {
+      "name": "switch-openal-soft",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.21.1-5"
+      }
+    },
+    {
+      "name": "switch-opusfile",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.10-3"
+      }
+    },
+    {
+      "name": "switch-physfs",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "3.2.0-3"
+      }
+    },
+    {
+      "name": "switch-pkg-config",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.28-4"
+      }
+    },
+    {
+      "name": "switch-sdl2",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.28.5-4"
+      }
+    },
+    {
+      "name": "switch-sdl2_gfx",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.0.4-2"
+      }
+    },
+    {
+      "name": "switch-sdl2_image",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.0.4-1"
+      }
+    },
+    {
+      "name": "switch-sdl2_mixer",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.0.4-2"
+      }
+    },
+    {
+      "name": "switch-sdl2_net",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.0.1-3"
+      }
+    },
+    {
+      "name": "switch-sdl2_ttf",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.22.0-2"
+      }
+    },
+    {
+      "name": "switch-smpeg2",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.0.0-1"
+      }
+    },
+    {
+      "name": "switch-tinyxml2",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "6.0.0-2"
+      }
+    },
+    {
+      "name": "switch-tools",
+      "architectures": [
+        "aarch64",
+        "x86_64"
+      ],
+      "versions": {
+        "x86_64": "1.13.1-1",
+        "aarch64": "1.13.1-1"
+      }
+    },
+    {
+      "name": "switch-wslay",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.1.0-1"
+      }
+    },
+    {
+      "name": "switch-xxhash",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.8.2-1"
+      }
+    },
+    {
+      "name": "switch-zlib",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.3.1-1"
+      }
+    },
+    {
+      "name": "switch-zziplib",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.13.78-1"
+      }
+    },
+    {
+      "name": "tex3ds",
+      "architectures": [
+        "aarch64",
+        "x86_64"
+      ],
+      "versions": {
+        "x86_64": "2.3.0-4",
+        "aarch64": "2.3.0-4"
+      }
+    },
+    {
+      "name": "uam",
+      "architectures": [
+        "aarch64",
+        "x86_64"
+      ],
+      "versions": {
+        "x86_64": "1.1.0-1",
+        "aarch64": "1.1.0-1"
+      }
+    },
+    {
+      "name": "wii-cmake",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.0.1-1"
+      }
+    },
+    {
+      "name": "wii-examples",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "20260510-1"
+      }
+    },
+    {
+      "name": "wii-freeglut",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "3.6.0-4"
+      }
+    },
+    {
+      "name": "wii-glu",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "9.0.3-1"
+      }
+    },
+    {
+      "name": "wii-opengx",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.17.0-2"
+      }
+    },
+    {
+      "name": "wii-physfs",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "3.2.0-3"
+      }
+    },
+    {
+      "name": "wii-pkg-config",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.28-5"
+      }
+    },
+    {
+      "name": "wii-sdl",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.2.15-21"
+      }
+    },
+    {
+      "name": "wii-sdl_gfx",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.0.27-1"
+      }
+    },
+    {
+      "name": "wii-sdl_image",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.2.12-6"
+      }
+    },
+    {
+      "name": "wii-sdl_mixer",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.2.12-10"
+      }
+    },
+    {
+      "name": "wii-sdl_ttf",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.0.11-6"
+      }
+    },
+    {
+      "name": "wii-sdl2",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.28.5-17"
+      }
+    },
+    {
+      "name": "wii-sdl2_gfx",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.0.4-3"
+      }
+    },
+    {
+      "name": "wii-sdl2_image",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.8.2-1"
+      }
+    },
+    {
+      "name": "wii-sdl2_mixer",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.6.3-2"
+      }
+    },
+    {
+      "name": "wii-sdl2_ttf",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.22.0-2"
+      }
+    },
+    {
+      "name": "wiiload",
+      "architectures": [
+        "aarch64",
+        "x86_64"
+      ],
+      "versions": {
+        "x86_64": "0.5.3-1",
+        "aarch64": "0.5.3-1"
+      }
+    },
+    {
+      "name": "wiiu-cmake",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.3.2-1"
+      }
+    },
+    {
+      "name": "wiiu-curl",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "8.7.1-4"
+      }
+    },
+    {
+      "name": "wiiu-mbedtls",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.28.8-1"
+      }
+    },
+    {
+      "name": "wiiu-physfs",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "3.0.2-4"
+      }
+    },
+    {
+      "name": "wiiu-pkg-config",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "0.28-4"
+      }
+    },
+    {
+      "name": "wiiu-sdl2",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.32.10-2"
+      }
+    },
+    {
+      "name": "wiiu-sdl2_gfx",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.0.4-1"
+      }
+    },
+    {
+      "name": "wiiu-sdl2_image",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.6.3-1"
+      }
+    },
+    {
+      "name": "wiiu-sdl2_mixer",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.6.3-3"
+      }
+    },
+    {
+      "name": "wiiu-sdl2_net",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.2.0-1"
+      }
+    },
+    {
+      "name": "wiiu-sdl2_ttf",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "2.20.2-1"
+      }
+    },
+    {
+      "name": "wut",
+      "architectures": [
+        "any"
+      ],
+      "versions": {
+        "any": "1.9.1-1"
+      }
+    },
+    {
+      "name": "wut-tools",
+      "architectures": [
+        "aarch64",
+        "x86_64"
+      ],
+      "versions": {
+        "x86_64": "1.3.5-1",
+        "aarch64": "1.3.5-1"
+      }
     }
   ]
 }
