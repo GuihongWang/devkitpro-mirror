@@ -1,10 +1,10 @@
 {
   "https://pkg.devkitpro.org/packages/dkp-libs.db": {
     "ok": true,
-    "size": 217571,
-    "etag": "\"351e3-653ebe52deb75\"",
-    "lastModified": "Wed, 10 Jun 2026 20:14:47 GMT",
-    "updatedAt": "2026-09-17T09:20:21.008Z"
+    "size": 217575,
+    "etag": "\"351e7-65d92e55b1b3f\"",
+    "lastModified": "Sun, 11 Oct 2026 16:15:54 GMT",
+    "updatedAt": "2026-10-12T11:47:14.162Z"
   },
   "https://pkg.devkitpro.org/packages/dkp-libs.db.sig": {
     "ok": true,
@@ -15,10 +15,10 @@
   },
   "https://pkg.devkitpro.org/packages/dkp-libs.files": {
     "ok": true,
-    "size": 296106,
-    "etag": "\"484aa-653ebe52dfb16\"",
-    "lastModified": "Wed, 10 Jun 2026 20:14:47 GMT",
-    "updatedAt": "2026-09-02T06:09:45.244Z"
+    "size": 296116,
+    "etag": "\"484b4-65d92e55b2ae0\"",
+    "lastModified": "Sun, 11 Oct 2026 16:15:54 GMT",
+    "updatedAt": "2026-10-12T11:47:16.097Z"
   },
   "https://pkg.devkitpro.org/packages/dkp-libs.files.sig": {
     "ok": true,
@@ -29,10 +29,10 @@
   },
   "https://pkg.devkitpro.org/packages/dkp-libs.db.tar.gz": {
     "ok": true,
-    "size": 217571,
-    "etag": "\"351e3-653ebe52deb75\"",
-    "lastModified": "Wed, 10 Jun 2026 20:14:47 GMT",
-    "updatedAt": "2026-09-17T09:22:52.629Z"
+    "size": 217575,
+    "etag": "\"351e7-65d92e55b1b3f\"",
+    "lastModified": "Sun, 11 Oct 2026 16:15:54 GMT",
+    "updatedAt": "2026-10-12T11:47:17.432Z"
   },
   "https://pkg.devkitpro.org/packages/linux/x86_64/dkp-linux.db": {
     "ok": true,
