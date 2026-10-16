@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-10-12T11:47:14.162Z",
+  "scraped_at": "2026-10-16T08:54:12.869Z",
   "total_files": 310,
   "unique_packages": 310,
   "repos": [
@@ -1354,7 +1354,7 @@
         "any"
       ],
       "versions": {
-        "any": "3.1.0-1"
+        "any": "3.2.1-1"
       }
     },
     {
